@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/loginBackground"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/rlHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5ssp">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_5ssp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingLeft="@dimen/_5ssp"
+                android:paddingRight="@dimen/_5ssp"
+                android:src="@drawable/close_s_6"
+                android:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/filter"
+                android:textColor="@color/color_22_22_22"
+                android:textSize="@dimen/_18ssp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cardClear"
+                style="@style/MainButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_5ssp"
+                android:letterSpacing="0"
+                android:text="@string/clear"
+                android:textColor="@color/colorWhite"
+                android:theme="@style/MatButtonPrimary"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/buttonColor"
+                app:cornerRadius="@dimen/_20ssp"
+                app:rippleColor="@color/colorWhite"
+                app:strokeColor="@color/buttonColor" />
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/cardApply"
+            android:layout_below="@+id/rlHeader"
+            android:layout_margin="@dimen/_10ssp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/llFilterLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5ssp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:src="@drawable/map_ic" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_10ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/location"
+                            android:textColor="@color/color_22_22_22"
+                            android:textSize="@dimen/_16ssp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/_10ssp"
+                        android:visibility="visible">
+
+
+                        <RelativeLayout
+                            android:id="@+id/rlLocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5ssp"
+                            android:background="@drawable/voter_details_edit_text_background">
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/etLocation"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_35ssp"
+                                android:layout_toStartOf="@+id/ivLocation"
+                                android:background="@null"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:gravity="center_vertical"
+                                android:hint="@string/location"
+                                android:imeOptions="actionDone"
+                                android:paddingStart="@dimen/_10ssp"
+                                android:paddingEnd="@dimen/_10ssp"
+                                android:singleLine="true"
+                                android:textColor="@color/color_22_22_22"
+                                android:textSize="@dimen/_14ssp" />
+
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivLocation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_10ssp"
+                                android:src="@drawable/dropdown_arrow_h"
+                                android:tint="@color/color_22_22_22" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5ssp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:src="@drawable/map_ic"
+                            android:visibility="invisible"/>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_10ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/clan"
+                            android:textColor="@color/color_22_22_22"
+                            android:textSize="@dimen/_16ssp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/_10ssp"
+                        android:visibility="visible">
+
+
+                        <RelativeLayout
+                            android:id="@+id/rlClan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5ssp"
+                            android:background="@drawable/voter_details_edit_text_background">
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/etClan"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_35ssp"
+                                android:layout_toStartOf="@+id/ivClan"
+                                android:background="@null"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:gravity="center_vertical"
+                                android:hint="@string/clan"
+                                android:imeOptions="actionDone"
+                                android:paddingStart="@dimen/_10ssp"
+                                android:paddingEnd="@dimen/_10ssp"
+                                android:singleLine="true"
+                                android:textColor="@color/color_22_22_22"
+                                android:textSize="@dimen/_14ssp" />
+
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivClan"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_10ssp"
+                                android:src="@drawable/dropdown_arrow_h"
+                                android:tint="@color/color_22_22_22" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10ssp"
+                        android:background="@color/colorWhite"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5ssp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:src="@drawable/e_user" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_10ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/status"
+                            android:textColor="@color/color_22_22_22"
+                            android:textSize="@dimen/_16ssp" />
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvStatusList"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_10ssp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cardApply"
+            style="@style/MainButtonStyle"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_35ssp"
+            android:layout_marginTop="@dimen/_15ssp"
+            android:layout_marginEnd="@dimen/_35ssp"
+            android:layout_marginBottom="@dimen/_25ssp"
+            android:letterSpacing="0"
+            android:padding="@dimen/_10ssp"
+            android:text="@string/apply"
+            android:textColor="@color/colorWhite"
+            android:theme="@style/MatButtonPrimary"
+            app:cardBackgroundColor="@color/buttonColor"
+            app:cornerRadius="@dimen/_20ssp"
+            app:rippleColor="@color/colorWhite"
+            app:strokeColor="@color/buttonColor" />
+
+
+    </RelativeLayout>
+</layout>

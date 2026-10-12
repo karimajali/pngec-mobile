@@ -1,0 +1,338 @@
+[
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\item_sync_voter.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\item_sync_voter.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_transfer_in_scan.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_transfer_in_scan.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_updated_voters_list.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_updated_voters_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_voter_image_capture.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_voter_image_capture.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_failed_voter_edit_details.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_failed_voter_edit_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_login.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\item_filter.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\item_filter.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_roll_look_up_voter_details.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_roll_look_up_voter_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\dialog_form11_image.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\dialog_form11_image.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_new_enrolment.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_new_enrolment.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_offline_transfer_in_voters_list.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_offline_transfer_in_voters_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\dialog_update_status.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\dialog_update_status.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_status_discrepancy_report.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_status_discrepancy_report.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\item_ward_roll_voter.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\item_ward_roll_voter.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_roll_look_up.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_roll_look_up.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\dialog_filter_screen.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\dialog_filter_screen.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\update_crop_image_view.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\update_crop_image_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_biomatrix_vlidate_voter.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_biomatrix_vlidate_voter.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_biomatirx_main.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_biomatirx_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\dialog_duplicate_voters_list.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\dialog_duplicate_voters_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_gender_less_voters_list_report.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_gender_less_voters_list_report.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\dialog_year_picker.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\dialog_year_picker.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_biomatrix.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_biomatrix.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_new_enrolment_form.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_new_enrolment_form.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\item_dialog_spinner.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\item_dialog_spinner.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_settings.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_home.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\item_ward_voter.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\item_ward_voter.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_edit_voter_details.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_edit_voter_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\item_sync_failed_voter.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\item_sync_failed_voter.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_splash.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_transfer_in.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_transfer_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_biomatrix_all_voters.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_biomatrix_all_voters.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\download_file_progress.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\download_file_progress.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_dpo_geo_structure_update.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_dpo_geo_structure_update.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\item_home.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\item_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_transfer_in_voters_list.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_transfer_in_voters_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_device_operator_report.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_device_operator_report.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_transfer_in_voter_details.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_transfer_in_voter_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\dialog_audit_setting_screen.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\dialog_audit_setting_screen.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_device_operator_report_selection.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_device_operator_report_selection.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\dialog_sync_settings_password.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\dialog_sync_settings_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\layout_loader_download_progress_bar.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\layout_loader_download_progress_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_reverse_sync.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_reverse_sync.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_synced_voters_list.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_synced_voters_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\barcode_capture.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\barcode_capture.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\item_sync_voter_new.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\item_sync_voter_new.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\dialog_geo_and_filter_selection.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\dialog_geo_and_filter_selection.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\dialog_geo_selection.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\dialog_geo_selection.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_voter_details.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_voter_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\item_transfer_in_voter.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\item_transfer_in_voter.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_download.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_download.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_gender_less_voters_list_selection.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_gender_less_voters_list_selection.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_form11_image_capture.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_form11_image_capture.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_working_roll_update_status.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_working_roll_update_status.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_ward_roll_voter_list.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_ward_roll_voter_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_rejected_voter_edit_details.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_rejected_voter_edit_details.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_sync_voters_list.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_sync_voters_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\get_device_id.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\get_device_id.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\forgot_password.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\forgot_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\dialog_qrcode_help.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\dialog_qrcode_help.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\layout_loader_progress_bar.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\layout_loader_progress_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_offline_roll_look_up_voters_list.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_offline_roll_look_up_voters_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_rejected_voter_list.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_rejected_voter_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_field_tally_summary_sheet_report_selection.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_field_tally_summary_sheet_report_selection.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\dialog_download_preliminary.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\dialog_download_preliminary.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_provisional_reg_ward_selection.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_provisional_reg_ward_selection.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\item_gender_less_voter.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\item_gender_less_voter.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\item_status_discrepancy_voter.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\item_status_discrepancy_voter.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\dialog_date_picker.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\dialog_date_picker.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_roll_look_up_voters_list.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_roll_look_up_voters_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_image_display.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_image_display.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\dialog_ward_selection.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\dialog_ward_selection.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\layout_loader_copy_image_progress_bar.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\layout_loader_copy_image_progress_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\dialog_photo_voter_count.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\dialog_photo_voter_count.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\dialog_manual_form11_number.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\dialog_manual_form11_number.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_new_reg_ward_selection.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_new_reg_ward_selection.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\dialog_gender_voter_count.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\dialog_gender_voter_count.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_provisional_enrolment_form.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_provisional_enrolment_form.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\dialog_spinner.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\dialog_spinner.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_status_discrepancy_report_selection.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_status_discrepancy_report_selection.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_field_tally_summary_sheet_report.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_field_tally_summary_sheet_report.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\activity_transfer_in_ward_selection.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\activity_transfer_in_ward_selection.xml"
+    },
+    {
+        "merged": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\build\\intermediates\\incremental\\mergeDevDebugResources\\stripped.dir\\layout\\un_sync_progress.xml",
+        "source": "C:\\Users\\qfn\\Desktop\\shahbaz\\png_mobile\\app\\src\\main\\res\\layout\\un_sync_progress.xml"
+    }
+]

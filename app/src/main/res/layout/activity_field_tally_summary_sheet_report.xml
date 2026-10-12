@@ -1,0 +1,1336 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="registrationViewModel"
+            type="com.pngelectoral.ui.viewModel.RegistrationViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/loginBackground">
+
+        <RelativeLayout
+            android:id="@+id/rlTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50ssp"
+            android:background="@color/colorPrimary">
+
+            <!--            <androidx.appcompat.widget.AppCompatButton-->
+            <!--                android:id="@+id/btnBack"-->
+            <!--                style="@style/back_button"-->
+            <!--                 />-->
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnBack"
+                style="@style/back_button_image" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toStartOf="@id/btnHome"
+                android:layout_toEndOf="@id/btnBack"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center_horizontal"
+                android:text="@string/quality_check_tally_sheet"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold" />
+
+            <!--            <androidx.appcompat.widget.AppCompatImageView-->
+            <!--                android:id="@+id/btnHome"-->
+            <!--                style="@style/home_button"-->
+            <!--                android:layout_alignParentEnd="true" />-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnHome"
+                style="@style/home_button_image"
+                android:layout_alignParentEnd="true" />
+
+
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/rlBottom"
+            android:layout_below="@+id/rlTopBar">
+
+            <RelativeLayout
+                android:id="@+id/rlDeviceReport"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/_5ssp"
+                android:visibility="visible">
+
+
+                <LinearLayout
+                    android:id="@+id/llSummaryHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/llProvince"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3ssp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.3"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:text="@string/province"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvProvince"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.7"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3ssp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.3"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:text="@string/district"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvDistrict"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.7"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3ssp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.3"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:text="@string/llg"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvLLG"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.7"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3ssp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.3"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:text="@string/ward"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvWard"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.7"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3ssp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.3"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:text="@string/location"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvLocation"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.7"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3ssp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.3"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:text="@string/device"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvDeviceId"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.7"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3ssp"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.3"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:text="@string/date"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvDeviceReportRunTime"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.7"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llVotersCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/llSummaryHeader"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5ssp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_weight="0.7"
+                            android:fontFamily="@font/poppins_bold"
+                            android:gravity="center_vertical"
+                            android:text="@string/edit"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.3"
+                            android:fontFamily="@font/poppins_bold"
+                            android:gravity="center"
+                            android:text="@string/count"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/_14ssp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/report_background"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_1ssp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5ssp"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/_5ssp"
+                                android:text="@string/updated"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <View
+                                android:layout_width="@dimen/_1ssp"
+                                android:layout_height="match_parent"
+                                android:background="@color/lightGrey" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvUpdatedCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.3"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1ssp"
+                            android:background="@color/lightGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5ssp"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/_5ssp"
+                                android:text="@string/ghost"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <View
+                                android:layout_width="@dimen/_1ssp"
+                                android:layout_height="match_parent"
+                                android:background="@color/lightGrey" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvGhostCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.3"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1ssp"
+                            android:background="@color/lightGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5ssp"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/_5ssp"
+                                android:text="@string/duplicates"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <View
+                                android:layout_width="@dimen/_1ssp"
+                                android:layout_height="match_parent"
+                                android:background="@color/lightGrey" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvDuplicateCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.3"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1ssp"
+                            android:background="@color/lightGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5ssp"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/_5ssp"
+                                android:text="@string/transfer_out"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <View
+                                android:layout_width="@dimen/_1ssp"
+                                android:layout_height="match_parent"
+                                android:background="@color/lightGrey" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvTransferOutCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.3"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1ssp"
+                            android:background="@color/lightGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5ssp"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/_5ssp"
+                                android:text="@string/deceased"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <View
+                                android:layout_width="@dimen/_1ssp"
+                                android:layout_height="match_parent"
+                                android:background="@color/lightGrey" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvDeceasedCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.3"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1ssp"
+                            android:background="@color/lightGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5ssp"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/_5ssp"
+                                android:text="@string/under_aged"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <View
+                                android:layout_width="@dimen/_1ssp"
+                                android:layout_height="match_parent"
+                                android:background="@color/lightGrey" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvUnderAgeCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.3"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1ssp"
+                            android:background="@color/lightGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5ssp"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/_5ssp"
+                                android:text="@string/total"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <View
+                                android:layout_width="@dimen/_1ssp"
+                                android:layout_height="match_parent"
+                                android:background="@color/lightGrey" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvEditTotalCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.3"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1ssp"
+                            android:background="@color/lightGrey" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5ssp"
+                        android:background="@color/colorPrimary"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5ssp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_weight="0.7"
+                            android:fontFamily="@font/poppins_bold"
+                            android:gravity="center_vertical"
+                            android:text="@string/new_enrolments"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.3"
+                            android:fontFamily="@font/poppins_bold"
+                            android:gravity="center"
+                            android:text="@string/count"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/_14ssp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/report_background"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_1ssp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5ssp"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/_5ssp"
+                                android:text="@string/new_status"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <View
+                                android:layout_width="@dimen/_1ssp"
+                                android:layout_height="match_parent"
+                                android:background="@color/lightGrey" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvNewCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.3"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1ssp"
+                            android:background="@color/lightGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5ssp"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/_5ssp"
+                                android:text="@string/transfer_in"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <View
+                                android:layout_width="@dimen/_1ssp"
+                                android:layout_height="match_parent"
+                                android:background="@color/lightGrey" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.3"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1ssp"
+                            android:background="@color/lightGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5ssp"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_light"
+                                android:gravity="center_vertical"
+                                android:paddingStart="@dimen/_20ssp"
+                                android:text="@string/with_in_province"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_12ssp" />
+
+                            <View
+                                android:layout_width="@dimen/_1ssp"
+                                android:layout_height="match_parent"
+                                android:background="@color/lightGrey" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvWithInProvinceCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.3"
+                                android:fontFamily="@font/poppins_light"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1ssp"
+                            android:background="@color/lightGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5ssp"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_light"
+                                android:gravity="center_vertical"
+                                android:paddingStart="@dimen/_20ssp"
+                                android:text="@string/from_different_province"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_12ssp" />
+
+                            <View
+                                android:layout_width="@dimen/_1ssp"
+                                android:layout_height="match_parent"
+                                android:background="@color/lightGrey" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvFromDifferentProvinceCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.3"
+                                android:fontFamily="@font/poppins_light"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1ssp"
+                            android:background="@color/lightGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5ssp"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/_5ssp"
+                                android:text="@string/provisional"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <View
+                                android:layout_width="@dimen/_1ssp"
+                                android:layout_height="match_parent"
+                                android:background="@color/lightGrey" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvProvisionalCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.3"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1ssp"
+                            android:background="@color/lightGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5ssp"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/_5ssp"
+                                android:text="@string/total"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <View
+                                android:layout_width="@dimen/_1ssp"
+                                android:layout_height="match_parent"
+                                android:background="@color/lightGrey" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvNewEnrolmentTotalCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.3"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1ssp"
+                            android:background="@color/lightGrey" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llGrandTotal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/llVotersCount"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:background="@drawable/report_background"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_1ssp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_5ssp"
+                        android:layout_weight="0.7"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/_5ssp"
+                        android:text="@string/grand_total"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <View
+                        android:layout_width="@dimen/_1ssp"
+                        android:layout_height="match_parent"
+                        android:background="@color/lightGrey" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvGrandTotalCount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.3"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center"
+                        android:padding="@dimen/_5ssp"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/_14ssp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llVotersPhotoCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/llGrandTotal"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5ssp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_weight="0.7"
+                            android:fontFamily="@font/poppins_bold"
+                            android:gravity="center_vertical"
+                            android:text="PHOTO"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="0.3"
+                            android:fontFamily="@font/poppins_bold"
+                            android:gravity="center"
+                            android:text="@string/count"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/_14ssp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/report_background"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_1ssp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5ssp"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/_5ssp"
+                                android:text="WITH PREVIOUS PHOTO"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <View
+                                android:layout_width="@dimen/_1ssp"
+                                android:layout_height="match_parent"
+                                android:background="@color/lightGrey" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvWithPreviousPhotoCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.3"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1ssp"
+                            android:background="@color/lightGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5ssp"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/_5ssp"
+                                android:text="NEW PHOTO"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <View
+                                android:layout_width="@dimen/_1ssp"
+                                android:layout_height="match_parent"
+                                android:background="@color/lightGrey" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvNewPhotoCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.3"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1ssp"
+                            android:background="@color/lightGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5ssp"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/_5ssp"
+                                android:text="TOTAL WITH PHOTO"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <View
+                                android:layout_width="@dimen/_1ssp"
+                                android:layout_height="match_parent"
+                                android:background="@color/lightGrey" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvTotalWithPhotoCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.3"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1ssp"
+                            android:background="@color/lightGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5ssp"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/_5ssp"
+                                android:text="TOTAL WITH NO PHOTO "
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <View
+                                android:layout_width="@dimen/_1ssp"
+                                android:layout_height="match_parent"
+                                android:background="@color/lightGrey" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvTotalWithNoPhotoCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.3"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1ssp"
+                            android:background="@color/lightGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/_5ssp"
+                                android:text="TOTAL RECORDS"
+                                android:layout_weight="0.7"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:gravity="center_vertical"
+                                android:padding="@dimen/_5ssp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp"
+                                />
+
+                            <View
+                                android:layout_width="@dimen/_1ssp"
+                                android:layout_height="match_parent"
+                                android:background="@color/lightGrey" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvTotalRecordsCount"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="0.3"
+                                android:fontFamily="@font/poppins_regular"
+                                android:gravity="center"
+                                android:padding="@dimen/_5ssp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/_14ssp"  />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1ssp"
+                            android:background="@color/lightGrey" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/cardPrint"
+                    style="@style/MainButtonStyle"
+                    android:layout_width="150dp"
+                    android:layout_below="@+id/llVotersPhotoCount"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:letterSpacing="0"
+                    android:text="@string/print"
+                    android:textColor="@color/colorWhite"
+                    android:theme="@style/MatButtonPrimary"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/buttonColor"
+                    app:cornerRadius="@dimen/_20ssp"
+                    app:rippleColor="@color/colorWhite"
+                    app:strokeColor="@color/buttonColor" />
+
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:id="@+id/rlBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/_20ssp"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/_5ssp">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBottomData"
+                style="@style/bottom_data_text_view" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rlProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/semi_transparent"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:indeterminateTint="@color/colorPrimary" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

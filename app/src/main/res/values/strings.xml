@@ -1,0 +1,357 @@
+<resources>
+    <string name="app_name">PNGEC Provincial App</string>
+    <string name="login">Login</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="forgot_password">FORGOT PASSWORD?</string>
+    <string name="password">PASSWORD</string>
+    <string name="email">EMAIL</string>
+    <string name="error_please_enter_email_address">Please enter email address.</string>
+    <string name="error_please_enter_valid_email_address">Please enter valid email address.</string>
+    <string name="error_please_enter_password">Please enter password.</string>
+    <string name="forgot_password_label">Forgot Password</string>
+    <string name="submit">Submit</string>
+    <string name="revert">Revert</string>
+    <string name="cancel">Cancel</string>
+    <string name="no_matching_item_found">No matching item found.</string>
+    <string name="server_not_responding_please_try_later">Request Time Out.</string>
+    <string name="download">Download</string>
+    <string name="you_have_new_data_changes_please_click_on_download_button_to_continue_next">You have new data changes, please click on Download button to continue next</string>
+    <string name="search_by_voter_name_elector_id">Search by Voter name, Elector Id</string>
+    <string name="search_by_first_name_last_name_elector_id">Search by First name, Last name, Elector Id</string>
+    <string name="apply">Apply</string>
+    <string name="filter">Filter</string>
+    <string name="location">Location</string>
+    <string name="status">Status</string>
+    <string name="updated_on">Updated on:</string>
+    <string name="clear">Clear</string>
+    <string name="voter_details">Voter Details</string>
+    <string name="update_status">Update Status</string>
+    <string name="personal_particulars">Personal Particulars</string>
+    <string name="place_of_residence">Place Of Residence</string>
+    <string name="rural">Rural</string>
+    <string name="urban">Urban</string>
+    <string name="family_number">Family Number</string>
+    <string name="family_name">Family Name</string>
+    <string name="family_order_no">Family Order No</string>
+    <string name="last_name">Last Name</string>
+    <string name="given_name">Given Name</string>
+    <string name="national_id_card_number">National ID Card Number</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="place_of_birth">Place of Birth</string>
+    <string name="province_of_birth">Province of Birth</string>
+    <string name="gender">Gender</string>
+    <string name="occupation">Occupation</string>
+    <string name="person_with_disability">Person with Disability</string>
+    <string name="father_s_first_name">Father\'s First Name</string>
+    <string name="father_s_last_name">Father\'s Last Name</string>
+    <string name="mother_s_first_name">Mother\'s First Name</string>
+    <string name="mother_s_last_name">Mother\'s Last Name</string>
+    <string name="province">Province</string>
+    <string name="open_electorate">Open Electorate</string>
+    <string name="llg">LLG</string>
+    <string name="ward_no_name"><![CDATA[Ward No & Name]]></string>
+    <string name="location_village">Location / Village</string>
+    <string name="clan">Clan</string>
+    <string name="sub_clan">Sub Clan</string>
+    <string name="rest_house">Rest House</string>
+    <string name="section_no">Section No</string>
+    <string name="lot_no">Lot No</string>
+    <string name="street_name">Street Name</string>
+    <string name="suburb_town_settlement">Suburb/Town/Settlement</string>
+    <string name="comment">Comment</string>
+    <string name="gps_location">GPS Location</string>
+    <string name="date_and_time">Date and Time</string>
+    <string name="submitted_by">Submitted By</string>
+    <string name="region">Region</string>
+    <string name="district">District</string>
+    <string name="ward">Ward</string>
+    <string name="update_voter_details">Update Voter Details</string>
+    <string name="done">Done</string>
+    <string name="new_enrolment">New Enrolment</string>
+    <string name="scan_qr_code">Scan QR Code</string>
+    <string name="align_the_qr_code_to_fit_inside_the_frame">Align the QR code to fit inside the frame</string>
+    <string name="after_the_scan_qr_code_there_will_be_2_case">After the Scan QR Code there will be 2 case</string>
+    <string name="case_1">Case 1</string>
+    <string name="case_2">Case 2</string>
+    <string name="if_qr_code_is_invalid_to_province">If QR code is Invalid to Province</string>
+    <string name="if_qr_code_is_valid_to_province">If QR code is valid to Province</string>
+    <string name="camera_permission">needs your permission to access the camera to capture image and upload to server. Allow the permission from the settings menu by tapping below.</string>
+    <string name="store_permission">needs your permission to access storage. Allow the permission from the settings menu by tapping below.</string>
+    <string name="settings">Settings</string>
+    <string name="save">Save</string>
+    <string name="recapture">Recapture</string>
+    <string name="digital_form">Digital Form</string>
+    <string name="form_11_photo">Form 11 Photo</string>
+    <string name="voter_image">Voter Image</string>
+    <string name="new_status">NEW</string>
+    <string name="please_enter_family_number">Please enter family number</string>
+    <string name="search_select_voter"><![CDATA[Search & Select Voter]]></string>
+    <string name="ward_name">Ward Name</string>
+    <string name="search">Search</string>
+    <string name="transfer_in">Transfer In</string>
+    <string name="no_voters_found">No Voters found</string>
+    <string name="new_nenrolment">New\nEnrolment</string>
+    <string name="transfer_nin">Transfer\nIn</string>
+    <string name="provisional_nenrolment">Provisional\nEnrolment</string>
+    <string name="updated">UPDATED</string>
+    <string name="old">OLD</string>
+    <string name="transferred_in">TRANSFERRED IN</string>
+    <string name="home">Home</string>
+    <string name="provisional_enrolment">Provisional Enrolment</string>
+    <string name="transferin_voters_list">TransferIn Voters List</string>
+    <string name="logout">Logout</string>
+    <string name="get_device_id">Get Device Id</string>
+    <string name="copy">Copy</string>
+    <string name="ok">OK</string>
+    <string name="device_id">Device Id</string>
+    <string name="sync">Sync</string>
+    <string name="sync_pngec">Sync Voter (PNGEC)</string>
+    <string name="sync_mka">Sync Voter</string>
+    <string name="select_all">Select All</string>
+    <string name="select_voters">Select Voters</string>
+    <string name="rejected_voter_data_staging">Rejected Voter Data (STAGING)</string>
+    <string name="rejected_voter_data">Rejected Voter Data</string>
+    <string name="rejected_voters_list">Rejected Voters List</string>
+    <string name="please_enable_the_camera_permission_from_application_settings">Please enable the camera permission from Application settings</string>
+    <string name="voter_lookup">Voter Lookup</string>
+    <string name="found_voters">Found Voters</string>
+    <string name="download_all_22_provinces_voters_data">Download all 22 Provinces Voters Data</string>
+    <string name="skip">Skip</string>
+    <string name="update_geo_structure">Update Geo Structure</string>
+    <string name="update">Update</string>
+    <string name="download_province_voters_list">Download Province Voters List</string>
+    <string name="duplicate_voters">Duplicate Voters</string>
+    <string name="msg_we_need_permission_allow_from_settings">We need permission to continue, please allow it from settings.</string>
+    <string name="form_11_already_used">This Form 11 has been used already. No Form 11 can be used more than once</string>
+    <string name="search_select_ward">Select Ward</string>
+    <string name="proceed">Proceed</string>
+    <string name="religion">Religion</string>
+    <string name="first_name">First Name</string>
+    <string name="download_from_staging">Download from staging</string>
+    <string name="roll_lookup">Roll\nLookup</string>
+    <string name="roll_lookup_title">Voter Roll Lookup</string>
+    <string name="search_voter">Search Voter</string>
+    <string name="transfer_in_voter_lookup">Transfer In Voter Roll Lookup</string>
+    <string name="search_by_voter_name">Search by First name, Last name</string>
+    <string name="transferred_out">TRANSFERRED OUT</string>
+    <string name="updated_voters_data">Updated Voters Data</string>
+    <string name="updated_voters">Updated Voters</string>
+    <string name="delete">Delete</string>
+    <string name="last_date_of_enrolment">Last Date Of Enrolment</string>
+    <string name="last_date_of_enrolment_saved_successfully">Last date of enrolment saved successfully</string>
+    <string name="device_operator_report">Device Operator Report</string>
+    <string name="start_date">Start Date</string>
+    <string name="end_date">End Date</string>
+    <string name="device_operator_statistics">Device Operator Statistics</string>
+    <string name="device_report_run">Device Run:</string>
+    <string name="device_operator">Device Operator:</string>
+    <string name="device_name">Device Name:</string>
+    <string name="start_date_report">Start Date:</string>
+    <string name="end_date_report">End Date:</string>
+    <string name="provincial_data_center">Provincial Data Center:</string>
+    <string name="district_report">DISTRICT:</string>
+    <string name="llg_report">LLG:</string>
+    <string name="ward_report">WARD:</string>
+    <string name="old_report">Old</string>
+    <string name="new_report">New</string>
+    <string name="transferred_in_report">Transferred In</string>
+    <string name="transferred_out_report">Transferred Out</string>
+    <string name="deceased_report">Deceased</string>
+    <string name="ghost">Ghost</string>
+    <string name="underage_report">UnderAge</string>
+    <string name="duplicate_report">Duplicate</string>
+    <string name="updated_report">Updated</string>
+    <string name="total">TOTAL</string>
+    <string name="dpo">DPO:</string>
+    <string name="device_id_">Device Id:</string>
+    <string name="ward_summary">WARD SUMMARY</string>
+    <string name="deceased">DECEASED</string>
+    <string name="duplicate">DUPLICATE</string>
+    <string name="zero">0</string>
+    <string name="t_f_out">T/F OUT</string>
+    <string name="t_f_in">T/F IN</string>
+    <string name="under_age">UNDER AGE</string>
+    <string name="ghost_report">GHOST</string>
+    <string name="tran_out">TRAN OUT</string>
+    <string name="tran_in">TRAN IN</string>
+    <string name="print">Print</string>
+    <string name="ward_updated_roll_list">Ward Updated Roll List</string>
+    <string name="ward_new_enrollment_list">Ward New Enrollment List</string>
+    <string name="continue_face_detection">Continue</string>
+    <string name="capture">Capture</string>
+    <string name="restore">RESTORE</string>
+
+    // FACE DETECTION
+
+    <string name="pref_key_rear_camera_preview_size" translatable="false">rcpvs</string>
+    <string name="pref_key_rear_camera_picture_size" translatable="false">rcpts</string>
+    <string name="pref_key_front_camera_preview_size" translatable="false">fcpvs</string>
+    <string name="pref_key_front_camera_picture_size" translatable="false">fcpts</string>
+
+    <string name="pref_key_info_hide" translatable="false">ih</string>
+
+    <!-- Strings for face detector landmark mode preference. -->
+    <string name="pref_title_face_detector_landmark_mode" translatable="false">Landmark mode</string>
+    <string name="pref_key_live_preview_face_detection_landmark_mode" translatable="false">lpfdlm</string>
+    <string name="pref_entries_face_detector_landmark_mode_no_landmarks" translatable="false">No landmarks</string>
+    <string name="pref_entries_face_detector_landmark_mode_all_landmarks" translatable="false">All landmarks</string>
+    <!-- The following entry values must match the ones in FaceDetectorOptions#LandmarkMode -->
+    <string name="pref_entry_values_face_detector_landmark_mode_no_landmarks" translatable="false">1</string>
+    <string name="pref_entry_values_face_detector_landmark_mode_all_landmarks" translatable="false">2</string>
+
+    <!-- Strings for face detector contour mode preference. -->
+    <string name="pref_title_face_detector_contour_mode" translatable="false">Contour mode</string>
+    <string name="pref_key_live_preview_face_detection_contour_mode" translatable="false">lpfdcm</string>
+    <string name="pref_entries_face_detector_contour_mode_no_contours" translatable="false">No contours</string>
+    <string name="pref_entries_face_detector_contour_mode_all_contours" translatable="false">All contours</string>
+    <!-- The following entry values must match the ones in FaceDetectorOptions#ContourMode -->
+    <string name="pref_entry_values_face_detector_contour_mode_no_contours" translatable="false">1</string>
+    <string name="pref_entry_values_face_detector_contour_mode_all_contours" translatable="false">2</string>
+
+    <!-- Strings for face detector classification mode preference. -->
+    <string name="pref_title_face_detector_classification_mode" translatable="false">Classification mode</string>
+    <string name="pref_key_live_preview_face_detection_classification_mode" translatable="false">lpfdcfm</string>
+    <string name="pref_entries_face_detector_classification_mode_no_classifications" translatable="false">No classifications</string>
+    <string name="pref_entries_face_detector_classification_mode_all_classifications" translatable="false">All classifications</string>
+    <!-- The following entry values must match the ones in FaceDetectorOptions#ClassificationMode -->
+    <string name="pref_entry_values_face_detector_classification_mode_no_classifications" translatable="false">1</string>
+    <string name="pref_entry_values_face_detector_classification_mode_all_classifications" translatable="false">2</string>
+
+    <!-- Strings for face detector performance mode preference. -->
+    <string name="pref_title_face_detector_performance_mode" translatable="false">Performance mode</string>
+    <string name="pref_key_live_preview_face_detection_performance_mode" translatable="false">lpfdpm</string>
+    <string name="pref_entries_face_detector_performance_mode_fast" translatable="false">Fast</string>
+    <string name="pref_entries_face_detector_performance_mode_accurate" translatable="false">Accurate</string>
+    <!-- The following entry values must match the ones in FaceDetectorOptions#PerformanceMode -->
+    <string name="pref_entry_values_face_detector_performance_mode_fast" translatable="false">1</string>
+    <string name="pref_entry_values_face_detector_performance_mode_accurate" translatable="false">2</string>
+
+    <!-- Strings for face detector face tracking preference. -->
+    <string name="pref_title_face_detector_face_tracking" translatable="false">Face tracking</string>
+    <string name="pref_key_live_preview_face_detection_face_tracking" translatable="false">lpfdft</string>
+
+    <!-- Strings for face detector min face size preference. -->
+    <string name="pref_title_face_detector_min_face_size" translatable="false">Minimum face size</string>
+    <string name="pref_key_live_preview_face_detection_min_face_size" translatable="false">lpfdmfs</string>
+    <string name="pref_dialog_message_face_detector_min_face_size" translatable="false">Proportion of the head width to the image width, and the valid value range is [0.0, 1.0]</string>
+    <string name="pref_toast_invalid_min_face_size" translatable="false">Minimum face size must be a float value and in the range [0.0, 1.0]</string>
+
+    <string name="pref_key_camera_live_viewport" translatable="false">clv</string>
+    <string name="please_wait_until_the_download_is_complete">Please wait until the download is complete</string>
+    <string name="downloaded_0">Downloaded: 0%</string>
+    <string name="operator_report_staging">Device Operator Report (STAGING)</string>
+    <string name="error_please_enter_valid_password">Please enter valid password.</string>
+    <string name="provisional">PROVISIONAL</string>
+    <string name="field_tally_summary_report">Field Tally Summary Report</string>
+    <string name="field_tally_summary_staging_report">Field Tally Summary Report (STAGING)</string>
+    <string name="edit">Edit</string>
+    <string name="count">Count</string>
+    <string name="duplicates">Duplicates</string>
+    <string name="transfer_out">Transfer Out</string>
+    <string name="under_aged">Under-Aged</string>
+    <string name="new_enrolments">New Enrolments</string>
+    <string name="with_in_province">With In Province</string>
+    <string name="from_different_province">From Different Province</string>
+    <string name="grand_total">Grand Total</string>
+    <string name="quality_check_tally_sheet">Quality Check Tally Sheet</string>
+    <string name="device">Device</string>
+    <string name="date">Date</string>
+    <string name="mandatory_data_fields">Mandatory Data Fields</string>
+    <string name="search_occupation">Search Occupation</string>
+    <string name="password_to_access_sync">Enter password to access Sync</string>
+    <string name="password_to_access_settings">Enter password to access Settings</string>
+    <string name="password_to_revert_changes">Enter password to revert changes</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="working_roll">Working Roll</string>
+    <string name="working_roll_pngec">Working Roll (PNGEC)</string>
+    <string name="working_roll_mka">Working Roll (MKA)</string>
+    <string name="roll_look_up">Roll Lookup</string>
+    <string name="transfer_in_enrolment">Transfer In Enrolment</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="elector_id">Elector Id</string>
+    <string name="common_fields">Common Data Fields</string>
+    <string name="is_year">Is Year</string>
+    <string name="provisional_cutoff_date">Provisional Cut-Off Date</string>
+    <string name="issue_of_writ_date">Issue Of Writ Date</string>
+    <string name="provisional_cutoff_date_saved_successfully">Provisional Cut-Off Date saved successfully</string>
+    <string name="issue_of_writ_date_saved_successfully">Issue Of Writ Date saved successfully</string>
+    <string name="gender_clan_null_message">There are some electors with null gender and null clan. Please ensure these electors are corrected.</string>
+    <string name="gender_clan_null_message_sync">There are some electors with null gender and null clan. Please ensure these electors are corrected before attempting to sync.</string>
+    <string name="please_select_status">Please select status</string>
+    <string name="can_not_update_this_voter_as_duplicate">Can\'t update this voter as duplicate</string>
+    <string name="select_working_roll_filter">Select Working Roll Filter</string>
+    <string name="revert_restore_status">Revert and Restore Status OLD</string>
+    <string name="workingr_Roll_filter_settings_saved_successfully">Working Roll Filter Settings saved successfully</string>
+    <string name="please_set_the_ward_using_working_roll_filter_in_settings_menu">Please set the ward using working roll filter in settings menu</string>
+    <string name="dob_and_status_discrepancy_report">DOB and Status Discrepancy Report</string>
+    <string name="voter_status_and_dob_discrepancy_report">Voter Status and DOB Discrepancy Report</string>
+    <string name="dpo_report">DPO</string>
+    <string name="file_provider_name" translatable="false">.fileProvider</string>
+    <string name="select_capture_image">Select Image</string>
+    <string name="download_data_for_preliminary_roll">Download Data for Preliminary Roll</string>
+    <string name="please_set_the_location_using_working_roll_filter_in_settings_menu">Please set the location using working roll filter in settings menu</string>
+    <string name="save_voter_confirmation">Are you sure you want to save this voter?</string>
+    <string name="updated_voter_details_confirmation">Are you sure you want to updated the voter details?</string>
+    <string name="updated_GeoStructureData_confirmation">Are you sure you want to updated the Geo structure data?</string>
+    <string name="manual_form_11">Manual Form 11</string>
+    <string name="password_to_access_manual_form11_entry">Enter password to access Manual Form 11 entry</string>
+    <string name="please_enter_form_11_number">Please enter form 11 number</string>
+    <string name="enter_form_11_number">Enter Form 11 Number</string>
+    <string name="download_geo_structure_data">Download Geo Structure Data</string>
+    <string name="please_wait_until_the_geo_structure_download_is_complete">Please wait until the geo structure data download is complete</string>
+    <string name="total_voters">Total Voters</string>
+    <string name="gender_split_report">Gender split report</string>
+    <string name="please_wait_until_the_upload_is_complete">Please wait until the uploading is complete</string>
+    <string name="download_occupation_list">Download Occupation List</string>
+    <string name="all">All</string>
+    <string name="update_form11">Update Form11</string>
+    <string name="district_gender_less_voter_list">District Gender Less Voter List</string>
+    <string name="gender_less_voter_list">Gender Less Voter List</string>
+    <string name="no_data_available_to_sync">No data available to sync</string>
+    <string name="download_new">Download New</string>
+    <string name="downloading_the_voters_data_file">Downloading the voters data file (1/2)</string>
+    <string name="synced_voters_data">Synced Voters Data</string>
+    <string name="synced_voters">Synced Voters</string>
+    <string name="un_sync">Un Sync</string>
+    <string name="no_synced_voters_found">No Synced Voters Found</string>
+    <string name="unsyncing_the_voters">UnSyncing the voters</string>
+    <string name="unsync_progress_0">UnSync Progress: 0%</string>
+    <string name="no_voters_rejected">No Voters Rejected</string>
+    <string name="select_25_records_to_sync">Select 25 voters to sync</string>
+    <string name="copy_images">Copy Images</string>
+    <string name="audit_setting">Audit Settings</string>
+    <string name="biometric_test">Biometric Test</string>
+    <string name="export_database">Export Database</string>
+    <string name="please_wait_until_the_copy_is_complete">Please wait until the copy is complete</string>
+    <string name="copied_0">Copied: 0%</string>
+    <string name="reverse_sync">Reverse Sync</string>
+    <string name="what_record_type_do_you_wish_to_reverse">What Record type do you wish to reverse?</string>
+    <string name="reverse_new_transfer_in_enrolment_records"><![CDATA[Reverse New & Transfer In Enrolment Records]]></string>
+    <string name="reverse_updated_records">Reverse Updated Records</string>
+    <string name="reverse_deleted_records">Reverse Deleted Records</string>
+    <string name="reverse_all_records">Reverse All Records</string>
+    <string name="mkaBio">MKA Bio</string>
+    <string name="mkaDistrict">MKA District</string>
+    <string name="mkaLlg">MKA LLG</string>
+    <string name="mkaWard">MKA Ward</string>
+    <string name="mkaLocation">MKA Location</string>
+    <string name="mkaClan">MKA Clan</string>
+
+
+
+    <string name="crop_image_activity_title"></string>
+    <string name="crop_image_menu_rotate_left">Rotate counter clockwise</string>
+    <string name="crop_image_menu_rotate_right">Rotate</string>
+    <string name="crop_image_menu_crop">Crop</string>
+    <string name="crop_image_menu_flip">Flip</string>
+    <string name="crop_image_menu_flip_horizontally">Flip horizontally</string>
+    <string name="crop_image_menu_flip_vertically">Flip vertically</string>
+
+    <string name="pick_image_intent_chooser_title">Select source</string>
+
+    <string name="crop_image_activity_no_permissions">Cancelling, required permissions are not granted</string>
+
+</resources>

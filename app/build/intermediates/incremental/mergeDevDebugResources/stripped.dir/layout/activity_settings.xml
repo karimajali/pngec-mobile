@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                                   
+
+    
+
+                 
+                                    
+                                                                     
+           
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/loginBackground" android:tag="layout/activity_settings_0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/rlBottom"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/rlHeader"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50ssp"
+                android:background="@color/colorPrimary">
+
+
+                <!--            <androidx.appcompat.widget.AppCompatButton-->
+                <!--                android:id="@+id/btnHome"-->
+                <!--                style="@style/home_button" />-->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btnHome"
+                    style="@style/home_button_image" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/settings"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_18ssp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlSelectWorkingRollFilter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="visible">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/select_working_roll_filter"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlDownloadGeoStructureData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="visible">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/download_geo_structure_data"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlDownloadOccupationData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="visible">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/download_occupation_list"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlDownloadData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="visible">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/download_data_for_preliminary_roll"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlRejected"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="visible">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/rejected_voter_data_staging"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlUpdatedVotersData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/rejected_voter_data"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlSyncedVotersData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="visible">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/synced_voters_data"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlReverseSync"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="gone">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/reverse_sync"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlLastDateOfEnrolment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="gone">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/last_date_of_enrolment"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlProvisionalCutOffDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="gone">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/provisional_cutoff_date"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlIssueOfWritDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="visible">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/issue_of_writ_date"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlGenderLessReport"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="visible">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/gender_less_voter_list"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlDOReport"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="visible">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/device_operator_report"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlDOReportStaging"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="visible">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/operator_report_staging"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlFieldTallySummeryReport"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="visible">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/field_tally_summary_report"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlDOBAndStatusDiscrepancyReport"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="visible">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/dob_and_status_discrepancy_report"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlCopyDatabase"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="gone">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="CopyDatabase"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlCopyImages"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="visible">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/copy_images"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlAuditSetting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="visible">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/audit_setting"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlBiometricTest"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="gone">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/biometric_test"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+
+                    <!--<RelativeLayout
+                        android:id="@+id/rlExport"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="visible">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/export_database"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_13ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>-->
+
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rlBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/_20ssp"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/_5ssp">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBottomData"
+                style="@style/bottom_data_text_view" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+         

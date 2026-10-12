@@ -1,0 +1,3499 @@
+package com.pngelectoral.data.dao;
+
+import android.database.Cursor;
+import androidx.room.EntityDeletionOrUpdateAdapter;
+import androidx.room.EntityInsertionAdapter;
+import androidx.room.RoomDatabase;
+import androidx.room.RoomSQLiteQuery;
+import androidx.room.SharedSQLiteStatement;
+import androidx.sqlite.db.SupportSQLiteStatement;
+import com.pngelectoral.ui.model.VotersList;
+import java.lang.Integer;
+import java.lang.Long;
+import java.lang.Override;
+import java.lang.String;
+import java.lang.SuppressWarnings;
+import java.util.ArrayList;
+import java.util.List;
+
+@SuppressWarnings("unchecked")
+public final class TransferInVotersListDao_Impl implements TransferInVotersListDao {
+  private final RoomDatabase __db;
+
+  private final EntityInsertionAdapter __insertionAdapterOfVotersList;
+
+  private final EntityDeletionOrUpdateAdapter __deletionAdapterOfVotersList;
+
+  private final EntityDeletionOrUpdateAdapter __updateAdapterOfVotersList;
+
+  private final SharedSQLiteStatement __preparedStmtOfUpdateDataSyncStatus;
+
+  private final SharedSQLiteStatement __preparedStmtOfUpdateImageSyncStatus;
+
+  private final SharedSQLiteStatement __preparedStmtOfUpdateVoterSyncStatus;
+
+  private final SharedSQLiteStatement __preparedStmtOfUpdateWithErrorMessage;
+
+  private final SharedSQLiteStatement __preparedStmtOfUpdateVoterSyncStatusAfterAPI;
+
+  private final SharedSQLiteStatement __preparedStmtOfUpdateVoterSyncStatusWithUpdatedDateTime;
+
+  private final SharedSQLiteStatement __preparedStmtOfDeleteAll;
+
+  private final SharedSQLiteStatement __preparedStmtOfUpdateVoterSyncStatusToUnSync;
+
+  private final SharedSQLiteStatement __preparedStmtOfUpdateVoterSyncStatusAfterAPIToUnSync;
+
+  public TransferInVotersListDao_Impl(RoomDatabase __db) {
+    this.__db = __db;
+    this.__insertionAdapterOfVotersList = new EntityInsertionAdapter<VotersList>(__db) {
+      @Override
+      public String createQuery() {
+        return "INSERT OR REPLACE INTO `VotersList`(`tempElectorId`,`electorId`,`oldElectorID`,`locationId`,`OldLocationId`,`locationName`,`wardId`,`wardName`,`llgId`,`llgName`,`districtId`,`provinceId`,`regionId`,`lName`,`fName`,`voterName`,`gender`,`dob`,`isYOB`,`isProvisional`,`isPWD`,`religion`,`fatherLName`,`fatherFName`,`motherLName`,`motherFName`,`provOfBirthFK`,`provinceOfBirth`,`provinceName`,`districtName`,`placeOfBirth`,`occupationFK`,`occupation`,`clanFK`,`clan`,`subClan`,`address`,`natID`,`natIDRecordNo`,`status`,`houseFK`,`houseSortOrder`,`restHouse`,`sectionNo`,`lotNo`,`streetName`,`suburbTownSettlement`,`familyFK`,`familySortOrder`,`familyNumber`,`familyName`,`dpo`,`lat`,`long`,`posted`,`updatedDate`,`comment`,`electorProfileImage`,`electorProfileImageUrl`,`electorFormImage`,`electorFormImageUrl`,`electorProfileImageFile`,`electorFormImageFile`,`enrolmentFormNumber`,`createdBy`,`isSyncToServer`,`isDataUploaded`,`isImageUploaded`,`updatedDateTime`,`syncStatus`,`rejectRecordUpdated`,`syncDateTime`,`duplicateId`,`transferOutRegionId`,`transferOutProvinceId`,`transferOutDistrictId`,`transferOutLLGId`,`transferOutWardId`,`transferOutLocationId`,`transferInRegionId`,`transferInProvinceId`,`transferInDistrictId`,`transferInLLGId`,`transferInWardId`,`transferInLocationId`,`errorMessage`,`rejectedReason`,`isRejected`,`isHeader`,`mkaDistrictId`,`mkaDistrictName`,`mkallgId`,`mkallgName`,`mkaWardId`,`mkaWardName`,`mkaLocationId`,`mkaLocationName`,`mkaClanId`,`mkaClanName`,`enrollFormType`,`transferOutMkaDistrictId`,`transferOutMkaLlgId`,`transferOutMkaWardId`,`transferOutMkaLocationId`,`transferInMkaDistrictId`,`transferInMkaLlgId`,`transferInMkaWardId`,`transferInMkaLocationId`,`clanId`,`clanName`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, VotersList value) {
+        if (value.tempElectorId == null) {
+          stmt.bindNull(1);
+        } else {
+          stmt.bindLong(1, value.tempElectorId);
+        }
+        if (value.electorId == null) {
+          stmt.bindNull(2);
+        } else {
+          stmt.bindLong(2, value.electorId);
+        }
+        if (value.oldElectorID == null) {
+          stmt.bindNull(3);
+        } else {
+          stmt.bindLong(3, value.oldElectorID);
+        }
+        if (value.locationId == null) {
+          stmt.bindNull(4);
+        } else {
+          stmt.bindLong(4, value.locationId);
+        }
+        if (value.oldLocationId == null) {
+          stmt.bindNull(5);
+        } else {
+          stmt.bindLong(5, value.oldLocationId);
+        }
+        if (value.locationName == null) {
+          stmt.bindNull(6);
+        } else {
+          stmt.bindString(6, value.locationName);
+        }
+        if (value.wardId == null) {
+          stmt.bindNull(7);
+        } else {
+          stmt.bindLong(7, value.wardId);
+        }
+        if (value.wardName == null) {
+          stmt.bindNull(8);
+        } else {
+          stmt.bindString(8, value.wardName);
+        }
+        if (value.llgId == null) {
+          stmt.bindNull(9);
+        } else {
+          stmt.bindLong(9, value.llgId);
+        }
+        if (value.llgName == null) {
+          stmt.bindNull(10);
+        } else {
+          stmt.bindString(10, value.llgName);
+        }
+        if (value.districtId == null) {
+          stmt.bindNull(11);
+        } else {
+          stmt.bindLong(11, value.districtId);
+        }
+        if (value.provinceId == null) {
+          stmt.bindNull(12);
+        } else {
+          stmt.bindLong(12, value.provinceId);
+        }
+        if (value.regionId == null) {
+          stmt.bindNull(13);
+        } else {
+          stmt.bindLong(13, value.regionId);
+        }
+        if (value.lName == null) {
+          stmt.bindNull(14);
+        } else {
+          stmt.bindString(14, value.lName);
+        }
+        if (value.fName == null) {
+          stmt.bindNull(15);
+        } else {
+          stmt.bindString(15, value.fName);
+        }
+        if (value.voterName == null) {
+          stmt.bindNull(16);
+        } else {
+          stmt.bindString(16, value.voterName);
+        }
+        if (value.gender == null) {
+          stmt.bindNull(17);
+        } else {
+          stmt.bindString(17, value.gender);
+        }
+        if (value.dob == null) {
+          stmt.bindNull(18);
+        } else {
+          stmt.bindString(18, value.dob);
+        }
+        final Integer _tmp;
+        _tmp = value.isYOB == null ? null : (value.isYOB ? 1 : 0);
+        if (_tmp == null) {
+          stmt.bindNull(19);
+        } else {
+          stmt.bindLong(19, _tmp);
+        }
+        final Integer _tmp_1;
+        _tmp_1 = value.isProvisional == null ? null : (value.isProvisional ? 1 : 0);
+        if (_tmp_1 == null) {
+          stmt.bindNull(20);
+        } else {
+          stmt.bindLong(20, _tmp_1);
+        }
+        final Integer _tmp_2;
+        _tmp_2 = value.isPWD == null ? null : (value.isPWD ? 1 : 0);
+        if (_tmp_2 == null) {
+          stmt.bindNull(21);
+        } else {
+          stmt.bindLong(21, _tmp_2);
+        }
+        if (value.religion == null) {
+          stmt.bindNull(22);
+        } else {
+          stmt.bindString(22, value.religion);
+        }
+        if (value.fatherLName == null) {
+          stmt.bindNull(23);
+        } else {
+          stmt.bindString(23, value.fatherLName);
+        }
+        if (value.fatherFName == null) {
+          stmt.bindNull(24);
+        } else {
+          stmt.bindString(24, value.fatherFName);
+        }
+        if (value.motherLName == null) {
+          stmt.bindNull(25);
+        } else {
+          stmt.bindString(25, value.motherLName);
+        }
+        if (value.motherFName == null) {
+          stmt.bindNull(26);
+        } else {
+          stmt.bindString(26, value.motherFName);
+        }
+        if (value.provOfBirthFK == null) {
+          stmt.bindNull(27);
+        } else {
+          stmt.bindLong(27, value.provOfBirthFK);
+        }
+        if (value.provinceOfBirth == null) {
+          stmt.bindNull(28);
+        } else {
+          stmt.bindString(28, value.provinceOfBirth);
+        }
+        if (value.provinceName == null) {
+          stmt.bindNull(29);
+        } else {
+          stmt.bindString(29, value.provinceName);
+        }
+        if (value.districtName == null) {
+          stmt.bindNull(30);
+        } else {
+          stmt.bindString(30, value.districtName);
+        }
+        if (value.placeOfBirth == null) {
+          stmt.bindNull(31);
+        } else {
+          stmt.bindString(31, value.placeOfBirth);
+        }
+        if (value.occupationFK == null) {
+          stmt.bindNull(32);
+        } else {
+          stmt.bindLong(32, value.occupationFK);
+        }
+        if (value.occupation == null) {
+          stmt.bindNull(33);
+        } else {
+          stmt.bindString(33, value.occupation);
+        }
+        if (value.clanFK == null) {
+          stmt.bindNull(34);
+        } else {
+          stmt.bindLong(34, value.clanFK);
+        }
+        if (value.clan == null) {
+          stmt.bindNull(35);
+        } else {
+          stmt.bindString(35, value.clan);
+        }
+        if (value.subClan == null) {
+          stmt.bindNull(36);
+        } else {
+          stmt.bindString(36, value.subClan);
+        }
+        if (value.address == null) {
+          stmt.bindNull(37);
+        } else {
+          stmt.bindString(37, value.address);
+        }
+        if (value.natID == null) {
+          stmt.bindNull(38);
+        } else {
+          stmt.bindString(38, value.natID);
+        }
+        if (value.natIDRecordNo == null) {
+          stmt.bindNull(39);
+        } else {
+          stmt.bindString(39, value.natIDRecordNo);
+        }
+        if (value.status == null) {
+          stmt.bindNull(40);
+        } else {
+          stmt.bindString(40, value.status);
+        }
+        if (value.houseFK == null) {
+          stmt.bindNull(41);
+        } else {
+          stmt.bindLong(41, value.houseFK);
+        }
+        if (value.houseSortOrder == null) {
+          stmt.bindNull(42);
+        } else {
+          stmt.bindLong(42, value.houseSortOrder);
+        }
+        if (value.restHouse == null) {
+          stmt.bindNull(43);
+        } else {
+          stmt.bindString(43, value.restHouse);
+        }
+        if (value.sectionNo == null) {
+          stmt.bindNull(44);
+        } else {
+          stmt.bindLong(44, value.sectionNo);
+        }
+        if (value.lotNo == null) {
+          stmt.bindNull(45);
+        } else {
+          stmt.bindLong(45, value.lotNo);
+        }
+        if (value.streetName == null) {
+          stmt.bindNull(46);
+        } else {
+          stmt.bindString(46, value.streetName);
+        }
+        if (value.suburbTownSettlement == null) {
+          stmt.bindNull(47);
+        } else {
+          stmt.bindString(47, value.suburbTownSettlement);
+        }
+        if (value.familyFK == null) {
+          stmt.bindNull(48);
+        } else {
+          stmt.bindLong(48, value.familyFK);
+        }
+        if (value.familySortOrder == null) {
+          stmt.bindNull(49);
+        } else {
+          stmt.bindLong(49, value.familySortOrder);
+        }
+        if (value.familyNumber == null) {
+          stmt.bindNull(50);
+        } else {
+          stmt.bindLong(50, value.familyNumber);
+        }
+        if (value.familyName == null) {
+          stmt.bindNull(51);
+        } else {
+          stmt.bindString(51, value.familyName);
+        }
+        if (value.dpo == null) {
+          stmt.bindNull(52);
+        } else {
+          stmt.bindString(52, value.dpo);
+        }
+        if (value.lat == null) {
+          stmt.bindNull(53);
+        } else {
+          stmt.bindDouble(53, value.lat);
+        }
+        if (value.longitude == null) {
+          stmt.bindNull(54);
+        } else {
+          stmt.bindDouble(54, value.longitude);
+        }
+        if (value.posted == null) {
+          stmt.bindNull(55);
+        } else {
+          stmt.bindString(55, value.posted);
+        }
+        if (value.updatedDate == null) {
+          stmt.bindNull(56);
+        } else {
+          stmt.bindString(56, value.updatedDate);
+        }
+        if (value.comment == null) {
+          stmt.bindNull(57);
+        } else {
+          stmt.bindString(57, value.comment);
+        }
+        if (value.electorProfileImage == null) {
+          stmt.bindNull(58);
+        } else {
+          stmt.bindString(58, value.electorProfileImage);
+        }
+        if (value.electorProfileImageUrl == null) {
+          stmt.bindNull(59);
+        } else {
+          stmt.bindString(59, value.electorProfileImageUrl);
+        }
+        if (value.electorFormImage == null) {
+          stmt.bindNull(60);
+        } else {
+          stmt.bindString(60, value.electorFormImage);
+        }
+        if (value.electorFormImageUrl == null) {
+          stmt.bindNull(61);
+        } else {
+          stmt.bindString(61, value.electorFormImageUrl);
+        }
+        if (value.electorProfileImageFile == null) {
+          stmt.bindNull(62);
+        } else {
+          stmt.bindString(62, value.electorProfileImageFile);
+        }
+        if (value.electorFormImageFile == null) {
+          stmt.bindNull(63);
+        } else {
+          stmt.bindString(63, value.electorFormImageFile);
+        }
+        if (value.enrolmentFormNumber == null) {
+          stmt.bindNull(64);
+        } else {
+          stmt.bindString(64, value.enrolmentFormNumber);
+        }
+        if (value.createdBy == null) {
+          stmt.bindNull(65);
+        } else {
+          stmt.bindLong(65, value.createdBy);
+        }
+        if (value.isSyncToServer == null) {
+          stmt.bindNull(66);
+        } else {
+          stmt.bindLong(66, value.isSyncToServer);
+        }
+        if (value.isDataUploaded == null) {
+          stmt.bindNull(67);
+        } else {
+          stmt.bindLong(67, value.isDataUploaded);
+        }
+        if (value.isImageUploaded == null) {
+          stmt.bindNull(68);
+        } else {
+          stmt.bindLong(68, value.isImageUploaded);
+        }
+        if (value.updatedDateTime == null) {
+          stmt.bindNull(69);
+        } else {
+          stmt.bindLong(69, value.updatedDateTime);
+        }
+        if (value.syncStatus == null) {
+          stmt.bindNull(70);
+        } else {
+          stmt.bindLong(70, value.syncStatus);
+        }
+        if (value.rejectRecordUpdated == null) {
+          stmt.bindNull(71);
+        } else {
+          stmt.bindLong(71, value.rejectRecordUpdated);
+        }
+        if (value.syncDateTime == null) {
+          stmt.bindNull(72);
+        } else {
+          stmt.bindString(72, value.syncDateTime);
+        }
+        if (value.duplicateId == null) {
+          stmt.bindNull(73);
+        } else {
+          stmt.bindLong(73, value.duplicateId);
+        }
+        if (value.transferOutRegionId == null) {
+          stmt.bindNull(74);
+        } else {
+          stmt.bindLong(74, value.transferOutRegionId);
+        }
+        if (value.transferOutProvinceId == null) {
+          stmt.bindNull(75);
+        } else {
+          stmt.bindLong(75, value.transferOutProvinceId);
+        }
+        if (value.transferOutDistrictId == null) {
+          stmt.bindNull(76);
+        } else {
+          stmt.bindLong(76, value.transferOutDistrictId);
+        }
+        if (value.transferOutLLGId == null) {
+          stmt.bindNull(77);
+        } else {
+          stmt.bindLong(77, value.transferOutLLGId);
+        }
+        if (value.transferOutWardId == null) {
+          stmt.bindNull(78);
+        } else {
+          stmt.bindLong(78, value.transferOutWardId);
+        }
+        if (value.transferOutLocationId == null) {
+          stmt.bindNull(79);
+        } else {
+          stmt.bindLong(79, value.transferOutLocationId);
+        }
+        if (value.transferInRegionId == null) {
+          stmt.bindNull(80);
+        } else {
+          stmt.bindLong(80, value.transferInRegionId);
+        }
+        if (value.transferInProvinceId == null) {
+          stmt.bindNull(81);
+        } else {
+          stmt.bindLong(81, value.transferInProvinceId);
+        }
+        if (value.transferInDistrictId == null) {
+          stmt.bindNull(82);
+        } else {
+          stmt.bindLong(82, value.transferInDistrictId);
+        }
+        if (value.transferInLLGId == null) {
+          stmt.bindNull(83);
+        } else {
+          stmt.bindLong(83, value.transferInLLGId);
+        }
+        if (value.transferInWardId == null) {
+          stmt.bindNull(84);
+        } else {
+          stmt.bindLong(84, value.transferInWardId);
+        }
+        if (value.transferInLocationId == null) {
+          stmt.bindNull(85);
+        } else {
+          stmt.bindLong(85, value.transferInLocationId);
+        }
+        if (value.errorMessage == null) {
+          stmt.bindNull(86);
+        } else {
+          stmt.bindString(86, value.errorMessage);
+        }
+        if (value.rejectedReason == null) {
+          stmt.bindNull(87);
+        } else {
+          stmt.bindString(87, value.rejectedReason);
+        }
+        final Integer _tmp_3;
+        _tmp_3 = value.isRejected == null ? null : (value.isRejected ? 1 : 0);
+        if (_tmp_3 == null) {
+          stmt.bindNull(88);
+        } else {
+          stmt.bindLong(88, _tmp_3);
+        }
+        final Integer _tmp_4;
+        _tmp_4 = value.isHeader == null ? null : (value.isHeader ? 1 : 0);
+        if (_tmp_4 == null) {
+          stmt.bindNull(89);
+        } else {
+          stmt.bindLong(89, _tmp_4);
+        }
+        if (value.mkaDistrictId == null) {
+          stmt.bindNull(90);
+        } else {
+          stmt.bindLong(90, value.mkaDistrictId);
+        }
+        if (value.mkaDistrictName == null) {
+          stmt.bindNull(91);
+        } else {
+          stmt.bindString(91, value.mkaDistrictName);
+        }
+        if (value.mkaLlgId == null) {
+          stmt.bindNull(92);
+        } else {
+          stmt.bindLong(92, value.mkaLlgId);
+        }
+        if (value.mkaLlgName == null) {
+          stmt.bindNull(93);
+        } else {
+          stmt.bindString(93, value.mkaLlgName);
+        }
+        if (value.mkaWardId == null) {
+          stmt.bindNull(94);
+        } else {
+          stmt.bindLong(94, value.mkaWardId);
+        }
+        if (value.mkaWardName == null) {
+          stmt.bindNull(95);
+        } else {
+          stmt.bindString(95, value.mkaWardName);
+        }
+        if (value.mkaLocationId == null) {
+          stmt.bindNull(96);
+        } else {
+          stmt.bindLong(96, value.mkaLocationId);
+        }
+        if (value.mkaLocationName == null) {
+          stmt.bindNull(97);
+        } else {
+          stmt.bindString(97, value.mkaLocationName);
+        }
+        if (value.mkaClanId == null) {
+          stmt.bindNull(98);
+        } else {
+          stmt.bindLong(98, value.mkaClanId);
+        }
+        if (value.mkaClanName == null) {
+          stmt.bindNull(99);
+        } else {
+          stmt.bindString(99, value.mkaClanName);
+        }
+        if (value.enrollFormType == null) {
+          stmt.bindNull(100);
+        } else {
+          stmt.bindString(100, value.enrollFormType);
+        }
+        if (value.transferOutMkaDistrictId == null) {
+          stmt.bindNull(101);
+        } else {
+          stmt.bindLong(101, value.transferOutMkaDistrictId);
+        }
+        if (value.transferOutMkaLlgId == null) {
+          stmt.bindNull(102);
+        } else {
+          stmt.bindLong(102, value.transferOutMkaLlgId);
+        }
+        if (value.transferOutMkaWardId == null) {
+          stmt.bindNull(103);
+        } else {
+          stmt.bindLong(103, value.transferOutMkaWardId);
+        }
+        if (value.transferOutMkaLocationId == null) {
+          stmt.bindNull(104);
+        } else {
+          stmt.bindLong(104, value.transferOutMkaLocationId);
+        }
+        if (value.transferInMkaDistrictId == null) {
+          stmt.bindNull(105);
+        } else {
+          stmt.bindLong(105, value.transferInMkaDistrictId);
+        }
+        if (value.transferInMkaLlgId == null) {
+          stmt.bindNull(106);
+        } else {
+          stmt.bindLong(106, value.transferInMkaLlgId);
+        }
+        if (value.transferInMkaWardId == null) {
+          stmt.bindNull(107);
+        } else {
+          stmt.bindLong(107, value.transferInMkaWardId);
+        }
+        if (value.transferInMkaLocationId == null) {
+          stmt.bindNull(108);
+        } else {
+          stmt.bindLong(108, value.transferInMkaLocationId);
+        }
+        if (value.clanId == null) {
+          stmt.bindNull(109);
+        } else {
+          stmt.bindLong(109, value.clanId);
+        }
+        if (value.clanName == null) {
+          stmt.bindNull(110);
+        } else {
+          stmt.bindString(110, value.clanName);
+        }
+      }
+    };
+    this.__deletionAdapterOfVotersList = new EntityDeletionOrUpdateAdapter<VotersList>(__db) {
+      @Override
+      public String createQuery() {
+        return "DELETE FROM `VotersList` WHERE `electorId` = ?";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, VotersList value) {
+        if (value.electorId == null) {
+          stmt.bindNull(1);
+        } else {
+          stmt.bindLong(1, value.electorId);
+        }
+      }
+    };
+    this.__updateAdapterOfVotersList = new EntityDeletionOrUpdateAdapter<VotersList>(__db) {
+      @Override
+      public String createQuery() {
+        return "UPDATE OR ABORT `VotersList` SET `tempElectorId` = ?,`electorId` = ?,`oldElectorID` = ?,`locationId` = ?,`OldLocationId` = ?,`locationName` = ?,`wardId` = ?,`wardName` = ?,`llgId` = ?,`llgName` = ?,`districtId` = ?,`provinceId` = ?,`regionId` = ?,`lName` = ?,`fName` = ?,`voterName` = ?,`gender` = ?,`dob` = ?,`isYOB` = ?,`isProvisional` = ?,`isPWD` = ?,`religion` = ?,`fatherLName` = ?,`fatherFName` = ?,`motherLName` = ?,`motherFName` = ?,`provOfBirthFK` = ?,`provinceOfBirth` = ?,`provinceName` = ?,`districtName` = ?,`placeOfBirth` = ?,`occupationFK` = ?,`occupation` = ?,`clanFK` = ?,`clan` = ?,`subClan` = ?,`address` = ?,`natID` = ?,`natIDRecordNo` = ?,`status` = ?,`houseFK` = ?,`houseSortOrder` = ?,`restHouse` = ?,`sectionNo` = ?,`lotNo` = ?,`streetName` = ?,`suburbTownSettlement` = ?,`familyFK` = ?,`familySortOrder` = ?,`familyNumber` = ?,`familyName` = ?,`dpo` = ?,`lat` = ?,`long` = ?,`posted` = ?,`updatedDate` = ?,`comment` = ?,`electorProfileImage` = ?,`electorProfileImageUrl` = ?,`electorFormImage` = ?,`electorFormImageUrl` = ?,`electorProfileImageFile` = ?,`electorFormImageFile` = ?,`enrolmentFormNumber` = ?,`createdBy` = ?,`isSyncToServer` = ?,`isDataUploaded` = ?,`isImageUploaded` = ?,`updatedDateTime` = ?,`syncStatus` = ?,`rejectRecordUpdated` = ?,`syncDateTime` = ?,`duplicateId` = ?,`transferOutRegionId` = ?,`transferOutProvinceId` = ?,`transferOutDistrictId` = ?,`transferOutLLGId` = ?,`transferOutWardId` = ?,`transferOutLocationId` = ?,`transferInRegionId` = ?,`transferInProvinceId` = ?,`transferInDistrictId` = ?,`transferInLLGId` = ?,`transferInWardId` = ?,`transferInLocationId` = ?,`errorMessage` = ?,`rejectedReason` = ?,`isRejected` = ?,`isHeader` = ?,`mkaDistrictId` = ?,`mkaDistrictName` = ?,`mkallgId` = ?,`mkallgName` = ?,`mkaWardId` = ?,`mkaWardName` = ?,`mkaLocationId` = ?,`mkaLocationName` = ?,`mkaClanId` = ?,`mkaClanName` = ?,`enrollFormType` = ?,`transferOutMkaDistrictId` = ?,`transferOutMkaLlgId` = ?,`transferOutMkaWardId` = ?,`transferOutMkaLocationId` = ?,`transferInMkaDistrictId` = ?,`transferInMkaLlgId` = ?,`transferInMkaWardId` = ?,`transferInMkaLocationId` = ?,`clanId` = ?,`clanName` = ? WHERE `electorId` = ?";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, VotersList value) {
+        if (value.tempElectorId == null) {
+          stmt.bindNull(1);
+        } else {
+          stmt.bindLong(1, value.tempElectorId);
+        }
+        if (value.electorId == null) {
+          stmt.bindNull(2);
+        } else {
+          stmt.bindLong(2, value.electorId);
+        }
+        if (value.oldElectorID == null) {
+          stmt.bindNull(3);
+        } else {
+          stmt.bindLong(3, value.oldElectorID);
+        }
+        if (value.locationId == null) {
+          stmt.bindNull(4);
+        } else {
+          stmt.bindLong(4, value.locationId);
+        }
+        if (value.oldLocationId == null) {
+          stmt.bindNull(5);
+        } else {
+          stmt.bindLong(5, value.oldLocationId);
+        }
+        if (value.locationName == null) {
+          stmt.bindNull(6);
+        } else {
+          stmt.bindString(6, value.locationName);
+        }
+        if (value.wardId == null) {
+          stmt.bindNull(7);
+        } else {
+          stmt.bindLong(7, value.wardId);
+        }
+        if (value.wardName == null) {
+          stmt.bindNull(8);
+        } else {
+          stmt.bindString(8, value.wardName);
+        }
+        if (value.llgId == null) {
+          stmt.bindNull(9);
+        } else {
+          stmt.bindLong(9, value.llgId);
+        }
+        if (value.llgName == null) {
+          stmt.bindNull(10);
+        } else {
+          stmt.bindString(10, value.llgName);
+        }
+        if (value.districtId == null) {
+          stmt.bindNull(11);
+        } else {
+          stmt.bindLong(11, value.districtId);
+        }
+        if (value.provinceId == null) {
+          stmt.bindNull(12);
+        } else {
+          stmt.bindLong(12, value.provinceId);
+        }
+        if (value.regionId == null) {
+          stmt.bindNull(13);
+        } else {
+          stmt.bindLong(13, value.regionId);
+        }
+        if (value.lName == null) {
+          stmt.bindNull(14);
+        } else {
+          stmt.bindString(14, value.lName);
+        }
+        if (value.fName == null) {
+          stmt.bindNull(15);
+        } else {
+          stmt.bindString(15, value.fName);
+        }
+        if (value.voterName == null) {
+          stmt.bindNull(16);
+        } else {
+          stmt.bindString(16, value.voterName);
+        }
+        if (value.gender == null) {
+          stmt.bindNull(17);
+        } else {
+          stmt.bindString(17, value.gender);
+        }
+        if (value.dob == null) {
+          stmt.bindNull(18);
+        } else {
+          stmt.bindString(18, value.dob);
+        }
+        final Integer _tmp;
+        _tmp = value.isYOB == null ? null : (value.isYOB ? 1 : 0);
+        if (_tmp == null) {
+          stmt.bindNull(19);
+        } else {
+          stmt.bindLong(19, _tmp);
+        }
+        final Integer _tmp_1;
+        _tmp_1 = value.isProvisional == null ? null : (value.isProvisional ? 1 : 0);
+        if (_tmp_1 == null) {
+          stmt.bindNull(20);
+        } else {
+          stmt.bindLong(20, _tmp_1);
+        }
+        final Integer _tmp_2;
+        _tmp_2 = value.isPWD == null ? null : (value.isPWD ? 1 : 0);
+        if (_tmp_2 == null) {
+          stmt.bindNull(21);
+        } else {
+          stmt.bindLong(21, _tmp_2);
+        }
+        if (value.religion == null) {
+          stmt.bindNull(22);
+        } else {
+          stmt.bindString(22, value.religion);
+        }
+        if (value.fatherLName == null) {
+          stmt.bindNull(23);
+        } else {
+          stmt.bindString(23, value.fatherLName);
+        }
+        if (value.fatherFName == null) {
+          stmt.bindNull(24);
+        } else {
+          stmt.bindString(24, value.fatherFName);
+        }
+        if (value.motherLName == null) {
+          stmt.bindNull(25);
+        } else {
+          stmt.bindString(25, value.motherLName);
+        }
+        if (value.motherFName == null) {
+          stmt.bindNull(26);
+        } else {
+          stmt.bindString(26, value.motherFName);
+        }
+        if (value.provOfBirthFK == null) {
+          stmt.bindNull(27);
+        } else {
+          stmt.bindLong(27, value.provOfBirthFK);
+        }
+        if (value.provinceOfBirth == null) {
+          stmt.bindNull(28);
+        } else {
+          stmt.bindString(28, value.provinceOfBirth);
+        }
+        if (value.provinceName == null) {
+          stmt.bindNull(29);
+        } else {
+          stmt.bindString(29, value.provinceName);
+        }
+        if (value.districtName == null) {
+          stmt.bindNull(30);
+        } else {
+          stmt.bindString(30, value.districtName);
+        }
+        if (value.placeOfBirth == null) {
+          stmt.bindNull(31);
+        } else {
+          stmt.bindString(31, value.placeOfBirth);
+        }
+        if (value.occupationFK == null) {
+          stmt.bindNull(32);
+        } else {
+          stmt.bindLong(32, value.occupationFK);
+        }
+        if (value.occupation == null) {
+          stmt.bindNull(33);
+        } else {
+          stmt.bindString(33, value.occupation);
+        }
+        if (value.clanFK == null) {
+          stmt.bindNull(34);
+        } else {
+          stmt.bindLong(34, value.clanFK);
+        }
+        if (value.clan == null) {
+          stmt.bindNull(35);
+        } else {
+          stmt.bindString(35, value.clan);
+        }
+        if (value.subClan == null) {
+          stmt.bindNull(36);
+        } else {
+          stmt.bindString(36, value.subClan);
+        }
+        if (value.address == null) {
+          stmt.bindNull(37);
+        } else {
+          stmt.bindString(37, value.address);
+        }
+        if (value.natID == null) {
+          stmt.bindNull(38);
+        } else {
+          stmt.bindString(38, value.natID);
+        }
+        if (value.natIDRecordNo == null) {
+          stmt.bindNull(39);
+        } else {
+          stmt.bindString(39, value.natIDRecordNo);
+        }
+        if (value.status == null) {
+          stmt.bindNull(40);
+        } else {
+          stmt.bindString(40, value.status);
+        }
+        if (value.houseFK == null) {
+          stmt.bindNull(41);
+        } else {
+          stmt.bindLong(41, value.houseFK);
+        }
+        if (value.houseSortOrder == null) {
+          stmt.bindNull(42);
+        } else {
+          stmt.bindLong(42, value.houseSortOrder);
+        }
+        if (value.restHouse == null) {
+          stmt.bindNull(43);
+        } else {
+          stmt.bindString(43, value.restHouse);
+        }
+        if (value.sectionNo == null) {
+          stmt.bindNull(44);
+        } else {
+          stmt.bindLong(44, value.sectionNo);
+        }
+        if (value.lotNo == null) {
+          stmt.bindNull(45);
+        } else {
+          stmt.bindLong(45, value.lotNo);
+        }
+        if (value.streetName == null) {
+          stmt.bindNull(46);
+        } else {
+          stmt.bindString(46, value.streetName);
+        }
+        if (value.suburbTownSettlement == null) {
+          stmt.bindNull(47);
+        } else {
+          stmt.bindString(47, value.suburbTownSettlement);
+        }
+        if (value.familyFK == null) {
+          stmt.bindNull(48);
+        } else {
+          stmt.bindLong(48, value.familyFK);
+        }
+        if (value.familySortOrder == null) {
+          stmt.bindNull(49);
+        } else {
+          stmt.bindLong(49, value.familySortOrder);
+        }
+        if (value.familyNumber == null) {
+          stmt.bindNull(50);
+        } else {
+          stmt.bindLong(50, value.familyNumber);
+        }
+        if (value.familyName == null) {
+          stmt.bindNull(51);
+        } else {
+          stmt.bindString(51, value.familyName);
+        }
+        if (value.dpo == null) {
+          stmt.bindNull(52);
+        } else {
+          stmt.bindString(52, value.dpo);
+        }
+        if (value.lat == null) {
+          stmt.bindNull(53);
+        } else {
+          stmt.bindDouble(53, value.lat);
+        }
+        if (value.longitude == null) {
+          stmt.bindNull(54);
+        } else {
+          stmt.bindDouble(54, value.longitude);
+        }
+        if (value.posted == null) {
+          stmt.bindNull(55);
+        } else {
+          stmt.bindString(55, value.posted);
+        }
+        if (value.updatedDate == null) {
+          stmt.bindNull(56);
+        } else {
+          stmt.bindString(56, value.updatedDate);
+        }
+        if (value.comment == null) {
+          stmt.bindNull(57);
+        } else {
+          stmt.bindString(57, value.comment);
+        }
+        if (value.electorProfileImage == null) {
+          stmt.bindNull(58);
+        } else {
+          stmt.bindString(58, value.electorProfileImage);
+        }
+        if (value.electorProfileImageUrl == null) {
+          stmt.bindNull(59);
+        } else {
+          stmt.bindString(59, value.electorProfileImageUrl);
+        }
+        if (value.electorFormImage == null) {
+          stmt.bindNull(60);
+        } else {
+          stmt.bindString(60, value.electorFormImage);
+        }
+        if (value.electorFormImageUrl == null) {
+          stmt.bindNull(61);
+        } else {
+          stmt.bindString(61, value.electorFormImageUrl);
+        }
+        if (value.electorProfileImageFile == null) {
+          stmt.bindNull(62);
+        } else {
+          stmt.bindString(62, value.electorProfileImageFile);
+        }
+        if (value.electorFormImageFile == null) {
+          stmt.bindNull(63);
+        } else {
+          stmt.bindString(63, value.electorFormImageFile);
+        }
+        if (value.enrolmentFormNumber == null) {
+          stmt.bindNull(64);
+        } else {
+          stmt.bindString(64, value.enrolmentFormNumber);
+        }
+        if (value.createdBy == null) {
+          stmt.bindNull(65);
+        } else {
+          stmt.bindLong(65, value.createdBy);
+        }
+        if (value.isSyncToServer == null) {
+          stmt.bindNull(66);
+        } else {
+          stmt.bindLong(66, value.isSyncToServer);
+        }
+        if (value.isDataUploaded == null) {
+          stmt.bindNull(67);
+        } else {
+          stmt.bindLong(67, value.isDataUploaded);
+        }
+        if (value.isImageUploaded == null) {
+          stmt.bindNull(68);
+        } else {
+          stmt.bindLong(68, value.isImageUploaded);
+        }
+        if (value.updatedDateTime == null) {
+          stmt.bindNull(69);
+        } else {
+          stmt.bindLong(69, value.updatedDateTime);
+        }
+        if (value.syncStatus == null) {
+          stmt.bindNull(70);
+        } else {
+          stmt.bindLong(70, value.syncStatus);
+        }
+        if (value.rejectRecordUpdated == null) {
+          stmt.bindNull(71);
+        } else {
+          stmt.bindLong(71, value.rejectRecordUpdated);
+        }
+        if (value.syncDateTime == null) {
+          stmt.bindNull(72);
+        } else {
+          stmt.bindString(72, value.syncDateTime);
+        }
+        if (value.duplicateId == null) {
+          stmt.bindNull(73);
+        } else {
+          stmt.bindLong(73, value.duplicateId);
+        }
+        if (value.transferOutRegionId == null) {
+          stmt.bindNull(74);
+        } else {
+          stmt.bindLong(74, value.transferOutRegionId);
+        }
+        if (value.transferOutProvinceId == null) {
+          stmt.bindNull(75);
+        } else {
+          stmt.bindLong(75, value.transferOutProvinceId);
+        }
+        if (value.transferOutDistrictId == null) {
+          stmt.bindNull(76);
+        } else {
+          stmt.bindLong(76, value.transferOutDistrictId);
+        }
+        if (value.transferOutLLGId == null) {
+          stmt.bindNull(77);
+        } else {
+          stmt.bindLong(77, value.transferOutLLGId);
+        }
+        if (value.transferOutWardId == null) {
+          stmt.bindNull(78);
+        } else {
+          stmt.bindLong(78, value.transferOutWardId);
+        }
+        if (value.transferOutLocationId == null) {
+          stmt.bindNull(79);
+        } else {
+          stmt.bindLong(79, value.transferOutLocationId);
+        }
+        if (value.transferInRegionId == null) {
+          stmt.bindNull(80);
+        } else {
+          stmt.bindLong(80, value.transferInRegionId);
+        }
+        if (value.transferInProvinceId == null) {
+          stmt.bindNull(81);
+        } else {
+          stmt.bindLong(81, value.transferInProvinceId);
+        }
+        if (value.transferInDistrictId == null) {
+          stmt.bindNull(82);
+        } else {
+          stmt.bindLong(82, value.transferInDistrictId);
+        }
+        if (value.transferInLLGId == null) {
+          stmt.bindNull(83);
+        } else {
+          stmt.bindLong(83, value.transferInLLGId);
+        }
+        if (value.transferInWardId == null) {
+          stmt.bindNull(84);
+        } else {
+          stmt.bindLong(84, value.transferInWardId);
+        }
+        if (value.transferInLocationId == null) {
+          stmt.bindNull(85);
+        } else {
+          stmt.bindLong(85, value.transferInLocationId);
+        }
+        if (value.errorMessage == null) {
+          stmt.bindNull(86);
+        } else {
+          stmt.bindString(86, value.errorMessage);
+        }
+        if (value.rejectedReason == null) {
+          stmt.bindNull(87);
+        } else {
+          stmt.bindString(87, value.rejectedReason);
+        }
+        final Integer _tmp_3;
+        _tmp_3 = value.isRejected == null ? null : (value.isRejected ? 1 : 0);
+        if (_tmp_3 == null) {
+          stmt.bindNull(88);
+        } else {
+          stmt.bindLong(88, _tmp_3);
+        }
+        final Integer _tmp_4;
+        _tmp_4 = value.isHeader == null ? null : (value.isHeader ? 1 : 0);
+        if (_tmp_4 == null) {
+          stmt.bindNull(89);
+        } else {
+          stmt.bindLong(89, _tmp_4);
+        }
+        if (value.mkaDistrictId == null) {
+          stmt.bindNull(90);
+        } else {
+          stmt.bindLong(90, value.mkaDistrictId);
+        }
+        if (value.mkaDistrictName == null) {
+          stmt.bindNull(91);
+        } else {
+          stmt.bindString(91, value.mkaDistrictName);
+        }
+        if (value.mkaLlgId == null) {
+          stmt.bindNull(92);
+        } else {
+          stmt.bindLong(92, value.mkaLlgId);
+        }
+        if (value.mkaLlgName == null) {
+          stmt.bindNull(93);
+        } else {
+          stmt.bindString(93, value.mkaLlgName);
+        }
+        if (value.mkaWardId == null) {
+          stmt.bindNull(94);
+        } else {
+          stmt.bindLong(94, value.mkaWardId);
+        }
+        if (value.mkaWardName == null) {
+          stmt.bindNull(95);
+        } else {
+          stmt.bindString(95, value.mkaWardName);
+        }
+        if (value.mkaLocationId == null) {
+          stmt.bindNull(96);
+        } else {
+          stmt.bindLong(96, value.mkaLocationId);
+        }
+        if (value.mkaLocationName == null) {
+          stmt.bindNull(97);
+        } else {
+          stmt.bindString(97, value.mkaLocationName);
+        }
+        if (value.mkaClanId == null) {
+          stmt.bindNull(98);
+        } else {
+          stmt.bindLong(98, value.mkaClanId);
+        }
+        if (value.mkaClanName == null) {
+          stmt.bindNull(99);
+        } else {
+          stmt.bindString(99, value.mkaClanName);
+        }
+        if (value.enrollFormType == null) {
+          stmt.bindNull(100);
+        } else {
+          stmt.bindString(100, value.enrollFormType);
+        }
+        if (value.transferOutMkaDistrictId == null) {
+          stmt.bindNull(101);
+        } else {
+          stmt.bindLong(101, value.transferOutMkaDistrictId);
+        }
+        if (value.transferOutMkaLlgId == null) {
+          stmt.bindNull(102);
+        } else {
+          stmt.bindLong(102, value.transferOutMkaLlgId);
+        }
+        if (value.transferOutMkaWardId == null) {
+          stmt.bindNull(103);
+        } else {
+          stmt.bindLong(103, value.transferOutMkaWardId);
+        }
+        if (value.transferOutMkaLocationId == null) {
+          stmt.bindNull(104);
+        } else {
+          stmt.bindLong(104, value.transferOutMkaLocationId);
+        }
+        if (value.transferInMkaDistrictId == null) {
+          stmt.bindNull(105);
+        } else {
+          stmt.bindLong(105, value.transferInMkaDistrictId);
+        }
+        if (value.transferInMkaLlgId == null) {
+          stmt.bindNull(106);
+        } else {
+          stmt.bindLong(106, value.transferInMkaLlgId);
+        }
+        if (value.transferInMkaWardId == null) {
+          stmt.bindNull(107);
+        } else {
+          stmt.bindLong(107, value.transferInMkaWardId);
+        }
+        if (value.transferInMkaLocationId == null) {
+          stmt.bindNull(108);
+        } else {
+          stmt.bindLong(108, value.transferInMkaLocationId);
+        }
+        if (value.clanId == null) {
+          stmt.bindNull(109);
+        } else {
+          stmt.bindLong(109, value.clanId);
+        }
+        if (value.clanName == null) {
+          stmt.bindNull(110);
+        } else {
+          stmt.bindString(110, value.clanName);
+        }
+        if (value.electorId == null) {
+          stmt.bindNull(111);
+        } else {
+          stmt.bindLong(111, value.electorId);
+        }
+      }
+    };
+    this.__preparedStmtOfUpdateDataSyncStatus = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "UPDATE voterslist SET isDataUploaded = 1 WHERE tempElectorId = ?";
+        return _query;
+      }
+    };
+    this.__preparedStmtOfUpdateImageSyncStatus = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "UPDATE voterslist SET isImageUploaded = 1 WHERE tempElectorId = ?";
+        return _query;
+      }
+    };
+    this.__preparedStmtOfUpdateVoterSyncStatus = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "UPDATE voterslist SET isSyncToServer = 1  WHERE electorId = ?";
+        return _query;
+      }
+    };
+    this.__preparedStmtOfUpdateWithErrorMessage = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "UPDATE voterslist SET errorMessage =?  WHERE electorId = ?";
+        return _query;
+      }
+    };
+    this.__preparedStmtOfUpdateVoterSyncStatusAfterAPI = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "UPDATE voterslist SET syncStatus =1  WHERE electorId = ?";
+        return _query;
+      }
+    };
+    this.__preparedStmtOfUpdateVoterSyncStatusWithUpdatedDateTime = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "UPDATE voterslist SET syncDateTime =? WHERE electorId = ?";
+        return _query;
+      }
+    };
+    this.__preparedStmtOfDeleteAll = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "DELETE  FROM voterslist";
+        return _query;
+      }
+    };
+    this.__preparedStmtOfUpdateVoterSyncStatusToUnSync = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "UPDATE voterslist SET isSyncToServer = 0  WHERE electorId = ?";
+        return _query;
+      }
+    };
+    this.__preparedStmtOfUpdateVoterSyncStatusAfterAPIToUnSync = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "UPDATE voterslist SET syncStatus =0  WHERE electorId = ?";
+        return _query;
+      }
+    };
+  }
+
+  @Override
+  public void insert(VotersList transferinvoter) {
+    __db.beginTransaction();
+    try {
+      __insertionAdapterOfVotersList.insert(transferinvoter);
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+    }
+  }
+
+  @Override
+  public void delete(VotersList transferinvoter) {
+    __db.beginTransaction();
+    try {
+      __deletionAdapterOfVotersList.handle(transferinvoter);
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+    }
+  }
+
+  @Override
+  public void update(VotersList transferinvoter) {
+    __db.beginTransaction();
+    try {
+      __updateAdapterOfVotersList.handle(transferinvoter);
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+    }
+  }
+
+  @Override
+  public void updateDataSyncStatus(Integer localVoterId) {
+    final SupportSQLiteStatement _stmt = __preparedStmtOfUpdateDataSyncStatus.acquire();
+    __db.beginTransaction();
+    try {
+      int _argIndex = 1;
+      if (localVoterId == null) {
+        _stmt.bindNull(_argIndex);
+      } else {
+        _stmt.bindLong(_argIndex, localVoterId);
+      }
+      _stmt.executeUpdateDelete();
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+      __preparedStmtOfUpdateDataSyncStatus.release(_stmt);
+    }
+  }
+
+  @Override
+  public void updateImageSyncStatus(Integer localVoterId) {
+    final SupportSQLiteStatement _stmt = __preparedStmtOfUpdateImageSyncStatus.acquire();
+    __db.beginTransaction();
+    try {
+      int _argIndex = 1;
+      if (localVoterId == null) {
+        _stmt.bindNull(_argIndex);
+      } else {
+        _stmt.bindLong(_argIndex, localVoterId);
+      }
+      _stmt.executeUpdateDelete();
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+      __preparedStmtOfUpdateImageSyncStatus.release(_stmt);
+    }
+  }
+
+  @Override
+  public void updateVoterSyncStatus(Long localVoterId) {
+    final SupportSQLiteStatement _stmt = __preparedStmtOfUpdateVoterSyncStatus.acquire();
+    __db.beginTransaction();
+    try {
+      int _argIndex = 1;
+      if (localVoterId == null) {
+        _stmt.bindNull(_argIndex);
+      } else {
+        _stmt.bindLong(_argIndex, localVoterId);
+      }
+      _stmt.executeUpdateDelete();
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+      __preparedStmtOfUpdateVoterSyncStatus.release(_stmt);
+    }
+  }
+
+  @Override
+  public void updateWithErrorMessage(Long localVoterId, String errorMessage) {
+    final SupportSQLiteStatement _stmt = __preparedStmtOfUpdateWithErrorMessage.acquire();
+    __db.beginTransaction();
+    try {
+      int _argIndex = 1;
+      if (errorMessage == null) {
+        _stmt.bindNull(_argIndex);
+      } else {
+        _stmt.bindString(_argIndex, errorMessage);
+      }
+      _argIndex = 2;
+      if (localVoterId == null) {
+        _stmt.bindNull(_argIndex);
+      } else {
+        _stmt.bindLong(_argIndex, localVoterId);
+      }
+      _stmt.executeUpdateDelete();
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+      __preparedStmtOfUpdateWithErrorMessage.release(_stmt);
+    }
+  }
+
+  @Override
+  public void updateVoterSyncStatusAfterAPI(Long localVoterId) {
+    final SupportSQLiteStatement _stmt = __preparedStmtOfUpdateVoterSyncStatusAfterAPI.acquire();
+    __db.beginTransaction();
+    try {
+      int _argIndex = 1;
+      if (localVoterId == null) {
+        _stmt.bindNull(_argIndex);
+      } else {
+        _stmt.bindLong(_argIndex, localVoterId);
+      }
+      _stmt.executeUpdateDelete();
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+      __preparedStmtOfUpdateVoterSyncStatusAfterAPI.release(_stmt);
+    }
+  }
+
+  @Override
+  public void updateVoterSyncStatusWithUpdatedDateTime(Long localVoterId, String syncDateTime) {
+    final SupportSQLiteStatement _stmt = __preparedStmtOfUpdateVoterSyncStatusWithUpdatedDateTime.acquire();
+    __db.beginTransaction();
+    try {
+      int _argIndex = 1;
+      if (syncDateTime == null) {
+        _stmt.bindNull(_argIndex);
+      } else {
+        _stmt.bindString(_argIndex, syncDateTime);
+      }
+      _argIndex = 2;
+      if (localVoterId == null) {
+        _stmt.bindNull(_argIndex);
+      } else {
+        _stmt.bindLong(_argIndex, localVoterId);
+      }
+      _stmt.executeUpdateDelete();
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+      __preparedStmtOfUpdateVoterSyncStatusWithUpdatedDateTime.release(_stmt);
+    }
+  }
+
+  @Override
+  public void deleteAll() {
+    final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteAll.acquire();
+    __db.beginTransaction();
+    try {
+      _stmt.executeUpdateDelete();
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+      __preparedStmtOfDeleteAll.release(_stmt);
+    }
+  }
+
+  @Override
+  public void updateVoterSyncStatusToUnSync(Long electorId) {
+    final SupportSQLiteStatement _stmt = __preparedStmtOfUpdateVoterSyncStatusToUnSync.acquire();
+    __db.beginTransaction();
+    try {
+      int _argIndex = 1;
+      if (electorId == null) {
+        _stmt.bindNull(_argIndex);
+      } else {
+        _stmt.bindLong(_argIndex, electorId);
+      }
+      _stmt.executeUpdateDelete();
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+      __preparedStmtOfUpdateVoterSyncStatusToUnSync.release(_stmt);
+    }
+  }
+
+  @Override
+  public void updateVoterSyncStatusAfterAPIToUnSync(Long localVoterId) {
+    final SupportSQLiteStatement _stmt = __preparedStmtOfUpdateVoterSyncStatusAfterAPIToUnSync.acquire();
+    __db.beginTransaction();
+    try {
+      int _argIndex = 1;
+      if (localVoterId == null) {
+        _stmt.bindNull(_argIndex);
+      } else {
+        _stmt.bindLong(_argIndex, localVoterId);
+      }
+      _stmt.executeUpdateDelete();
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+      __preparedStmtOfUpdateVoterSyncStatusAfterAPIToUnSync.release(_stmt);
+    }
+  }
+
+  @Override
+  public void updateVoterSyncStatusWithUpdatedDateTimeUnSync(Long localVoterId,
+      String syncDateTime) {
+    final SupportSQLiteStatement _stmt = __preparedStmtOfUpdateVoterSyncStatusWithUpdatedDateTime.acquire();
+    __db.beginTransaction();
+    try {
+      int _argIndex = 1;
+      if (syncDateTime == null) {
+        _stmt.bindNull(_argIndex);
+      } else {
+        _stmt.bindString(_argIndex, syncDateTime);
+      }
+      _argIndex = 2;
+      if (localVoterId == null) {
+        _stmt.bindNull(_argIndex);
+      } else {
+        _stmt.bindLong(_argIndex, localVoterId);
+      }
+      _stmt.executeUpdateDelete();
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+      __preparedStmtOfUpdateVoterSyncStatusWithUpdatedDateTime.release(_stmt);
+    }
+  }
+
+  @Override
+  public List<VotersList> getAll() {
+    final String _sql = "SELECT * FROM voterslist";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    final Cursor _cursor = __db.query(_statement);
+    try {
+      final int _cursorIndexOfTempElectorId = _cursor.getColumnIndexOrThrow("tempElectorId");
+      final int _cursorIndexOfElectorId = _cursor.getColumnIndexOrThrow("electorId");
+      final int _cursorIndexOfOldElectorID = _cursor.getColumnIndexOrThrow("oldElectorID");
+      final int _cursorIndexOfLocationId = _cursor.getColumnIndexOrThrow("locationId");
+      final int _cursorIndexOfOldLocationId = _cursor.getColumnIndexOrThrow("OldLocationId");
+      final int _cursorIndexOfLocationName = _cursor.getColumnIndexOrThrow("locationName");
+      final int _cursorIndexOfWardId = _cursor.getColumnIndexOrThrow("wardId");
+      final int _cursorIndexOfWardName = _cursor.getColumnIndexOrThrow("wardName");
+      final int _cursorIndexOfLlgId = _cursor.getColumnIndexOrThrow("llgId");
+      final int _cursorIndexOfLlgName = _cursor.getColumnIndexOrThrow("llgName");
+      final int _cursorIndexOfDistrictId = _cursor.getColumnIndexOrThrow("districtId");
+      final int _cursorIndexOfProvinceId = _cursor.getColumnIndexOrThrow("provinceId");
+      final int _cursorIndexOfRegionId = _cursor.getColumnIndexOrThrow("regionId");
+      final int _cursorIndexOfLName = _cursor.getColumnIndexOrThrow("lName");
+      final int _cursorIndexOfFName = _cursor.getColumnIndexOrThrow("fName");
+      final int _cursorIndexOfVoterName = _cursor.getColumnIndexOrThrow("voterName");
+      final int _cursorIndexOfGender = _cursor.getColumnIndexOrThrow("gender");
+      final int _cursorIndexOfDob = _cursor.getColumnIndexOrThrow("dob");
+      final int _cursorIndexOfIsYOB = _cursor.getColumnIndexOrThrow("isYOB");
+      final int _cursorIndexOfIsProvisional = _cursor.getColumnIndexOrThrow("isProvisional");
+      final int _cursorIndexOfIsPWD = _cursor.getColumnIndexOrThrow("isPWD");
+      final int _cursorIndexOfReligion = _cursor.getColumnIndexOrThrow("religion");
+      final int _cursorIndexOfFatherLName = _cursor.getColumnIndexOrThrow("fatherLName");
+      final int _cursorIndexOfFatherFName = _cursor.getColumnIndexOrThrow("fatherFName");
+      final int _cursorIndexOfMotherLName = _cursor.getColumnIndexOrThrow("motherLName");
+      final int _cursorIndexOfMotherFName = _cursor.getColumnIndexOrThrow("motherFName");
+      final int _cursorIndexOfProvOfBirthFK = _cursor.getColumnIndexOrThrow("provOfBirthFK");
+      final int _cursorIndexOfProvinceOfBirth = _cursor.getColumnIndexOrThrow("provinceOfBirth");
+      final int _cursorIndexOfProvinceName = _cursor.getColumnIndexOrThrow("provinceName");
+      final int _cursorIndexOfDistrictName = _cursor.getColumnIndexOrThrow("districtName");
+      final int _cursorIndexOfPlaceOfBirth = _cursor.getColumnIndexOrThrow("placeOfBirth");
+      final int _cursorIndexOfOccupationFK = _cursor.getColumnIndexOrThrow("occupationFK");
+      final int _cursorIndexOfOccupation = _cursor.getColumnIndexOrThrow("occupation");
+      final int _cursorIndexOfClanFK = _cursor.getColumnIndexOrThrow("clanFK");
+      final int _cursorIndexOfClan = _cursor.getColumnIndexOrThrow("clan");
+      final int _cursorIndexOfSubClan = _cursor.getColumnIndexOrThrow("subClan");
+      final int _cursorIndexOfAddress = _cursor.getColumnIndexOrThrow("address");
+      final int _cursorIndexOfNatID = _cursor.getColumnIndexOrThrow("natID");
+      final int _cursorIndexOfNatIDRecordNo = _cursor.getColumnIndexOrThrow("natIDRecordNo");
+      final int _cursorIndexOfStatus = _cursor.getColumnIndexOrThrow("status");
+      final int _cursorIndexOfHouseFK = _cursor.getColumnIndexOrThrow("houseFK");
+      final int _cursorIndexOfHouseSortOrder = _cursor.getColumnIndexOrThrow("houseSortOrder");
+      final int _cursorIndexOfRestHouse = _cursor.getColumnIndexOrThrow("restHouse");
+      final int _cursorIndexOfSectionNo = _cursor.getColumnIndexOrThrow("sectionNo");
+      final int _cursorIndexOfLotNo = _cursor.getColumnIndexOrThrow("lotNo");
+      final int _cursorIndexOfStreetName = _cursor.getColumnIndexOrThrow("streetName");
+      final int _cursorIndexOfSuburbTownSettlement = _cursor.getColumnIndexOrThrow("suburbTownSettlement");
+      final int _cursorIndexOfFamilyFK = _cursor.getColumnIndexOrThrow("familyFK");
+      final int _cursorIndexOfFamilySortOrder = _cursor.getColumnIndexOrThrow("familySortOrder");
+      final int _cursorIndexOfFamilyNumber = _cursor.getColumnIndexOrThrow("familyNumber");
+      final int _cursorIndexOfFamilyName = _cursor.getColumnIndexOrThrow("familyName");
+      final int _cursorIndexOfDpo = _cursor.getColumnIndexOrThrow("dpo");
+      final int _cursorIndexOfLat = _cursor.getColumnIndexOrThrow("lat");
+      final int _cursorIndexOfLongitude = _cursor.getColumnIndexOrThrow("long");
+      final int _cursorIndexOfPosted = _cursor.getColumnIndexOrThrow("posted");
+      final int _cursorIndexOfUpdatedDate = _cursor.getColumnIndexOrThrow("updatedDate");
+      final int _cursorIndexOfComment = _cursor.getColumnIndexOrThrow("comment");
+      final int _cursorIndexOfElectorProfileImage = _cursor.getColumnIndexOrThrow("electorProfileImage");
+      final int _cursorIndexOfElectorProfileImageUrl = _cursor.getColumnIndexOrThrow("electorProfileImageUrl");
+      final int _cursorIndexOfElectorFormImage = _cursor.getColumnIndexOrThrow("electorFormImage");
+      final int _cursorIndexOfElectorFormImageUrl = _cursor.getColumnIndexOrThrow("electorFormImageUrl");
+      final int _cursorIndexOfElectorProfileImageFile = _cursor.getColumnIndexOrThrow("electorProfileImageFile");
+      final int _cursorIndexOfElectorFormImageFile = _cursor.getColumnIndexOrThrow("electorFormImageFile");
+      final int _cursorIndexOfEnrolmentFormNumber = _cursor.getColumnIndexOrThrow("enrolmentFormNumber");
+      final int _cursorIndexOfCreatedBy = _cursor.getColumnIndexOrThrow("createdBy");
+      final int _cursorIndexOfIsSyncToServer = _cursor.getColumnIndexOrThrow("isSyncToServer");
+      final int _cursorIndexOfIsDataUploaded = _cursor.getColumnIndexOrThrow("isDataUploaded");
+      final int _cursorIndexOfIsImageUploaded = _cursor.getColumnIndexOrThrow("isImageUploaded");
+      final int _cursorIndexOfUpdatedDateTime = _cursor.getColumnIndexOrThrow("updatedDateTime");
+      final int _cursorIndexOfSyncStatus = _cursor.getColumnIndexOrThrow("syncStatus");
+      final int _cursorIndexOfRejectRecordUpdated = _cursor.getColumnIndexOrThrow("rejectRecordUpdated");
+      final int _cursorIndexOfSyncDateTime = _cursor.getColumnIndexOrThrow("syncDateTime");
+      final int _cursorIndexOfDuplicateId = _cursor.getColumnIndexOrThrow("duplicateId");
+      final int _cursorIndexOfTransferOutRegionId = _cursor.getColumnIndexOrThrow("transferOutRegionId");
+      final int _cursorIndexOfTransferOutProvinceId = _cursor.getColumnIndexOrThrow("transferOutProvinceId");
+      final int _cursorIndexOfTransferOutDistrictId = _cursor.getColumnIndexOrThrow("transferOutDistrictId");
+      final int _cursorIndexOfTransferOutLLGId = _cursor.getColumnIndexOrThrow("transferOutLLGId");
+      final int _cursorIndexOfTransferOutWardId = _cursor.getColumnIndexOrThrow("transferOutWardId");
+      final int _cursorIndexOfTransferOutLocationId = _cursor.getColumnIndexOrThrow("transferOutLocationId");
+      final int _cursorIndexOfTransferInRegionId = _cursor.getColumnIndexOrThrow("transferInRegionId");
+      final int _cursorIndexOfTransferInProvinceId = _cursor.getColumnIndexOrThrow("transferInProvinceId");
+      final int _cursorIndexOfTransferInDistrictId = _cursor.getColumnIndexOrThrow("transferInDistrictId");
+      final int _cursorIndexOfTransferInLLGId = _cursor.getColumnIndexOrThrow("transferInLLGId");
+      final int _cursorIndexOfTransferInWardId = _cursor.getColumnIndexOrThrow("transferInWardId");
+      final int _cursorIndexOfTransferInLocationId = _cursor.getColumnIndexOrThrow("transferInLocationId");
+      final int _cursorIndexOfErrorMessage = _cursor.getColumnIndexOrThrow("errorMessage");
+      final int _cursorIndexOfRejectedReason = _cursor.getColumnIndexOrThrow("rejectedReason");
+      final int _cursorIndexOfIsRejected = _cursor.getColumnIndexOrThrow("isRejected");
+      final int _cursorIndexOfIsHeader = _cursor.getColumnIndexOrThrow("isHeader");
+      final int _cursorIndexOfMkaDistrictId = _cursor.getColumnIndexOrThrow("mkaDistrictId");
+      final int _cursorIndexOfMkaDistrictName = _cursor.getColumnIndexOrThrow("mkaDistrictName");
+      final int _cursorIndexOfMkaLlgId = _cursor.getColumnIndexOrThrow("mkallgId");
+      final int _cursorIndexOfMkaLlgName = _cursor.getColumnIndexOrThrow("mkallgName");
+      final int _cursorIndexOfMkaWardId = _cursor.getColumnIndexOrThrow("mkaWardId");
+      final int _cursorIndexOfMkaWardName = _cursor.getColumnIndexOrThrow("mkaWardName");
+      final int _cursorIndexOfMkaLocationId = _cursor.getColumnIndexOrThrow("mkaLocationId");
+      final int _cursorIndexOfMkaLocationName = _cursor.getColumnIndexOrThrow("mkaLocationName");
+      final int _cursorIndexOfMkaClanId = _cursor.getColumnIndexOrThrow("mkaClanId");
+      final int _cursorIndexOfMkaClanName = _cursor.getColumnIndexOrThrow("mkaClanName");
+      final int _cursorIndexOfEnrollFormType = _cursor.getColumnIndexOrThrow("enrollFormType");
+      final int _cursorIndexOfTransferOutMkaDistrictId = _cursor.getColumnIndexOrThrow("transferOutMkaDistrictId");
+      final int _cursorIndexOfTransferOutMkaLlgId = _cursor.getColumnIndexOrThrow("transferOutMkaLlgId");
+      final int _cursorIndexOfTransferOutMkaWardId = _cursor.getColumnIndexOrThrow("transferOutMkaWardId");
+      final int _cursorIndexOfTransferOutMkaLocationId = _cursor.getColumnIndexOrThrow("transferOutMkaLocationId");
+      final int _cursorIndexOfTransferInMkaDistrictId = _cursor.getColumnIndexOrThrow("transferInMkaDistrictId");
+      final int _cursorIndexOfTransferInMkaLlgId = _cursor.getColumnIndexOrThrow("transferInMkaLlgId");
+      final int _cursorIndexOfTransferInMkaWardId = _cursor.getColumnIndexOrThrow("transferInMkaWardId");
+      final int _cursorIndexOfTransferInMkaLocationId = _cursor.getColumnIndexOrThrow("transferInMkaLocationId");
+      final int _cursorIndexOfClanId = _cursor.getColumnIndexOrThrow("clanId");
+      final int _cursorIndexOfClanName = _cursor.getColumnIndexOrThrow("clanName");
+      final List<VotersList> _result = new ArrayList<VotersList>(_cursor.getCount());
+      while(_cursor.moveToNext()) {
+        final VotersList _item;
+        _item = new VotersList();
+        if (_cursor.isNull(_cursorIndexOfTempElectorId)) {
+          _item.tempElectorId = null;
+        } else {
+          _item.tempElectorId = _cursor.getInt(_cursorIndexOfTempElectorId);
+        }
+        if (_cursor.isNull(_cursorIndexOfElectorId)) {
+          _item.electorId = null;
+        } else {
+          _item.electorId = _cursor.getLong(_cursorIndexOfElectorId);
+        }
+        if (_cursor.isNull(_cursorIndexOfOldElectorID)) {
+          _item.oldElectorID = null;
+        } else {
+          _item.oldElectorID = _cursor.getLong(_cursorIndexOfOldElectorID);
+        }
+        if (_cursor.isNull(_cursorIndexOfLocationId)) {
+          _item.locationId = null;
+        } else {
+          _item.locationId = _cursor.getInt(_cursorIndexOfLocationId);
+        }
+        if (_cursor.isNull(_cursorIndexOfOldLocationId)) {
+          _item.oldLocationId = null;
+        } else {
+          _item.oldLocationId = _cursor.getInt(_cursorIndexOfOldLocationId);
+        }
+        _item.locationName = _cursor.getString(_cursorIndexOfLocationName);
+        if (_cursor.isNull(_cursorIndexOfWardId)) {
+          _item.wardId = null;
+        } else {
+          _item.wardId = _cursor.getInt(_cursorIndexOfWardId);
+        }
+        _item.wardName = _cursor.getString(_cursorIndexOfWardName);
+        if (_cursor.isNull(_cursorIndexOfLlgId)) {
+          _item.llgId = null;
+        } else {
+          _item.llgId = _cursor.getInt(_cursorIndexOfLlgId);
+        }
+        _item.llgName = _cursor.getString(_cursorIndexOfLlgName);
+        if (_cursor.isNull(_cursorIndexOfDistrictId)) {
+          _item.districtId = null;
+        } else {
+          _item.districtId = _cursor.getInt(_cursorIndexOfDistrictId);
+        }
+        if (_cursor.isNull(_cursorIndexOfProvinceId)) {
+          _item.provinceId = null;
+        } else {
+          _item.provinceId = _cursor.getInt(_cursorIndexOfProvinceId);
+        }
+        if (_cursor.isNull(_cursorIndexOfRegionId)) {
+          _item.regionId = null;
+        } else {
+          _item.regionId = _cursor.getInt(_cursorIndexOfRegionId);
+        }
+        _item.lName = _cursor.getString(_cursorIndexOfLName);
+        _item.fName = _cursor.getString(_cursorIndexOfFName);
+        _item.voterName = _cursor.getString(_cursorIndexOfVoterName);
+        _item.gender = _cursor.getString(_cursorIndexOfGender);
+        _item.dob = _cursor.getString(_cursorIndexOfDob);
+        final Integer _tmp;
+        if (_cursor.isNull(_cursorIndexOfIsYOB)) {
+          _tmp = null;
+        } else {
+          _tmp = _cursor.getInt(_cursorIndexOfIsYOB);
+        }
+        _item.isYOB = _tmp == null ? null : _tmp != 0;
+        final Integer _tmp_1;
+        if (_cursor.isNull(_cursorIndexOfIsProvisional)) {
+          _tmp_1 = null;
+        } else {
+          _tmp_1 = _cursor.getInt(_cursorIndexOfIsProvisional);
+        }
+        _item.isProvisional = _tmp_1 == null ? null : _tmp_1 != 0;
+        final Integer _tmp_2;
+        if (_cursor.isNull(_cursorIndexOfIsPWD)) {
+          _tmp_2 = null;
+        } else {
+          _tmp_2 = _cursor.getInt(_cursorIndexOfIsPWD);
+        }
+        _item.isPWD = _tmp_2 == null ? null : _tmp_2 != 0;
+        _item.religion = _cursor.getString(_cursorIndexOfReligion);
+        _item.fatherLName = _cursor.getString(_cursorIndexOfFatherLName);
+        _item.fatherFName = _cursor.getString(_cursorIndexOfFatherFName);
+        _item.motherLName = _cursor.getString(_cursorIndexOfMotherLName);
+        _item.motherFName = _cursor.getString(_cursorIndexOfMotherFName);
+        if (_cursor.isNull(_cursorIndexOfProvOfBirthFK)) {
+          _item.provOfBirthFK = null;
+        } else {
+          _item.provOfBirthFK = _cursor.getInt(_cursorIndexOfProvOfBirthFK);
+        }
+        _item.provinceOfBirth = _cursor.getString(_cursorIndexOfProvinceOfBirth);
+        _item.provinceName = _cursor.getString(_cursorIndexOfProvinceName);
+        _item.districtName = _cursor.getString(_cursorIndexOfDistrictName);
+        _item.placeOfBirth = _cursor.getString(_cursorIndexOfPlaceOfBirth);
+        if (_cursor.isNull(_cursorIndexOfOccupationFK)) {
+          _item.occupationFK = null;
+        } else {
+          _item.occupationFK = _cursor.getInt(_cursorIndexOfOccupationFK);
+        }
+        _item.occupation = _cursor.getString(_cursorIndexOfOccupation);
+        if (_cursor.isNull(_cursorIndexOfClanFK)) {
+          _item.clanFK = null;
+        } else {
+          _item.clanFK = _cursor.getInt(_cursorIndexOfClanFK);
+        }
+        _item.clan = _cursor.getString(_cursorIndexOfClan);
+        _item.subClan = _cursor.getString(_cursorIndexOfSubClan);
+        _item.address = _cursor.getString(_cursorIndexOfAddress);
+        _item.natID = _cursor.getString(_cursorIndexOfNatID);
+        _item.natIDRecordNo = _cursor.getString(_cursorIndexOfNatIDRecordNo);
+        _item.status = _cursor.getString(_cursorIndexOfStatus);
+        if (_cursor.isNull(_cursorIndexOfHouseFK)) {
+          _item.houseFK = null;
+        } else {
+          _item.houseFK = _cursor.getInt(_cursorIndexOfHouseFK);
+        }
+        if (_cursor.isNull(_cursorIndexOfHouseSortOrder)) {
+          _item.houseSortOrder = null;
+        } else {
+          _item.houseSortOrder = _cursor.getInt(_cursorIndexOfHouseSortOrder);
+        }
+        _item.restHouse = _cursor.getString(_cursorIndexOfRestHouse);
+        if (_cursor.isNull(_cursorIndexOfSectionNo)) {
+          _item.sectionNo = null;
+        } else {
+          _item.sectionNo = _cursor.getInt(_cursorIndexOfSectionNo);
+        }
+        if (_cursor.isNull(_cursorIndexOfLotNo)) {
+          _item.lotNo = null;
+        } else {
+          _item.lotNo = _cursor.getInt(_cursorIndexOfLotNo);
+        }
+        _item.streetName = _cursor.getString(_cursorIndexOfStreetName);
+        _item.suburbTownSettlement = _cursor.getString(_cursorIndexOfSuburbTownSettlement);
+        if (_cursor.isNull(_cursorIndexOfFamilyFK)) {
+          _item.familyFK = null;
+        } else {
+          _item.familyFK = _cursor.getInt(_cursorIndexOfFamilyFK);
+        }
+        if (_cursor.isNull(_cursorIndexOfFamilySortOrder)) {
+          _item.familySortOrder = null;
+        } else {
+          _item.familySortOrder = _cursor.getInt(_cursorIndexOfFamilySortOrder);
+        }
+        if (_cursor.isNull(_cursorIndexOfFamilyNumber)) {
+          _item.familyNumber = null;
+        } else {
+          _item.familyNumber = _cursor.getInt(_cursorIndexOfFamilyNumber);
+        }
+        _item.familyName = _cursor.getString(_cursorIndexOfFamilyName);
+        _item.dpo = _cursor.getString(_cursorIndexOfDpo);
+        if (_cursor.isNull(_cursorIndexOfLat)) {
+          _item.lat = null;
+        } else {
+          _item.lat = _cursor.getDouble(_cursorIndexOfLat);
+        }
+        if (_cursor.isNull(_cursorIndexOfLongitude)) {
+          _item.longitude = null;
+        } else {
+          _item.longitude = _cursor.getDouble(_cursorIndexOfLongitude);
+        }
+        _item.posted = _cursor.getString(_cursorIndexOfPosted);
+        _item.updatedDate = _cursor.getString(_cursorIndexOfUpdatedDate);
+        _item.comment = _cursor.getString(_cursorIndexOfComment);
+        _item.electorProfileImage = _cursor.getString(_cursorIndexOfElectorProfileImage);
+        _item.electorProfileImageUrl = _cursor.getString(_cursorIndexOfElectorProfileImageUrl);
+        _item.electorFormImage = _cursor.getString(_cursorIndexOfElectorFormImage);
+        _item.electorFormImageUrl = _cursor.getString(_cursorIndexOfElectorFormImageUrl);
+        _item.electorProfileImageFile = _cursor.getString(_cursorIndexOfElectorProfileImageFile);
+        _item.electorFormImageFile = _cursor.getString(_cursorIndexOfElectorFormImageFile);
+        _item.enrolmentFormNumber = _cursor.getString(_cursorIndexOfEnrolmentFormNumber);
+        if (_cursor.isNull(_cursorIndexOfCreatedBy)) {
+          _item.createdBy = null;
+        } else {
+          _item.createdBy = _cursor.getInt(_cursorIndexOfCreatedBy);
+        }
+        if (_cursor.isNull(_cursorIndexOfIsSyncToServer)) {
+          _item.isSyncToServer = null;
+        } else {
+          _item.isSyncToServer = _cursor.getInt(_cursorIndexOfIsSyncToServer);
+        }
+        if (_cursor.isNull(_cursorIndexOfIsDataUploaded)) {
+          _item.isDataUploaded = null;
+        } else {
+          _item.isDataUploaded = _cursor.getInt(_cursorIndexOfIsDataUploaded);
+        }
+        if (_cursor.isNull(_cursorIndexOfIsImageUploaded)) {
+          _item.isImageUploaded = null;
+        } else {
+          _item.isImageUploaded = _cursor.getInt(_cursorIndexOfIsImageUploaded);
+        }
+        if (_cursor.isNull(_cursorIndexOfUpdatedDateTime)) {
+          _item.updatedDateTime = null;
+        } else {
+          _item.updatedDateTime = _cursor.getInt(_cursorIndexOfUpdatedDateTime);
+        }
+        if (_cursor.isNull(_cursorIndexOfSyncStatus)) {
+          _item.syncStatus = null;
+        } else {
+          _item.syncStatus = _cursor.getInt(_cursorIndexOfSyncStatus);
+        }
+        if (_cursor.isNull(_cursorIndexOfRejectRecordUpdated)) {
+          _item.rejectRecordUpdated = null;
+        } else {
+          _item.rejectRecordUpdated = _cursor.getInt(_cursorIndexOfRejectRecordUpdated);
+        }
+        _item.syncDateTime = _cursor.getString(_cursorIndexOfSyncDateTime);
+        if (_cursor.isNull(_cursorIndexOfDuplicateId)) {
+          _item.duplicateId = null;
+        } else {
+          _item.duplicateId = _cursor.getLong(_cursorIndexOfDuplicateId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutRegionId)) {
+          _item.transferOutRegionId = null;
+        } else {
+          _item.transferOutRegionId = _cursor.getInt(_cursorIndexOfTransferOutRegionId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutProvinceId)) {
+          _item.transferOutProvinceId = null;
+        } else {
+          _item.transferOutProvinceId = _cursor.getInt(_cursorIndexOfTransferOutProvinceId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutDistrictId)) {
+          _item.transferOutDistrictId = null;
+        } else {
+          _item.transferOutDistrictId = _cursor.getInt(_cursorIndexOfTransferOutDistrictId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutLLGId)) {
+          _item.transferOutLLGId = null;
+        } else {
+          _item.transferOutLLGId = _cursor.getInt(_cursorIndexOfTransferOutLLGId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutWardId)) {
+          _item.transferOutWardId = null;
+        } else {
+          _item.transferOutWardId = _cursor.getInt(_cursorIndexOfTransferOutWardId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutLocationId)) {
+          _item.transferOutLocationId = null;
+        } else {
+          _item.transferOutLocationId = _cursor.getInt(_cursorIndexOfTransferOutLocationId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInRegionId)) {
+          _item.transferInRegionId = null;
+        } else {
+          _item.transferInRegionId = _cursor.getInt(_cursorIndexOfTransferInRegionId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInProvinceId)) {
+          _item.transferInProvinceId = null;
+        } else {
+          _item.transferInProvinceId = _cursor.getInt(_cursorIndexOfTransferInProvinceId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInDistrictId)) {
+          _item.transferInDistrictId = null;
+        } else {
+          _item.transferInDistrictId = _cursor.getInt(_cursorIndexOfTransferInDistrictId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInLLGId)) {
+          _item.transferInLLGId = null;
+        } else {
+          _item.transferInLLGId = _cursor.getInt(_cursorIndexOfTransferInLLGId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInWardId)) {
+          _item.transferInWardId = null;
+        } else {
+          _item.transferInWardId = _cursor.getInt(_cursorIndexOfTransferInWardId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInLocationId)) {
+          _item.transferInLocationId = null;
+        } else {
+          _item.transferInLocationId = _cursor.getInt(_cursorIndexOfTransferInLocationId);
+        }
+        _item.errorMessage = _cursor.getString(_cursorIndexOfErrorMessage);
+        _item.rejectedReason = _cursor.getString(_cursorIndexOfRejectedReason);
+        final Integer _tmp_3;
+        if (_cursor.isNull(_cursorIndexOfIsRejected)) {
+          _tmp_3 = null;
+        } else {
+          _tmp_3 = _cursor.getInt(_cursorIndexOfIsRejected);
+        }
+        _item.isRejected = _tmp_3 == null ? null : _tmp_3 != 0;
+        final Integer _tmp_4;
+        if (_cursor.isNull(_cursorIndexOfIsHeader)) {
+          _tmp_4 = null;
+        } else {
+          _tmp_4 = _cursor.getInt(_cursorIndexOfIsHeader);
+        }
+        _item.isHeader = _tmp_4 == null ? null : _tmp_4 != 0;
+        if (_cursor.isNull(_cursorIndexOfMkaDistrictId)) {
+          _item.mkaDistrictId = null;
+        } else {
+          _item.mkaDistrictId = _cursor.getInt(_cursorIndexOfMkaDistrictId);
+        }
+        _item.mkaDistrictName = _cursor.getString(_cursorIndexOfMkaDistrictName);
+        if (_cursor.isNull(_cursorIndexOfMkaLlgId)) {
+          _item.mkaLlgId = null;
+        } else {
+          _item.mkaLlgId = _cursor.getInt(_cursorIndexOfMkaLlgId);
+        }
+        _item.mkaLlgName = _cursor.getString(_cursorIndexOfMkaLlgName);
+        if (_cursor.isNull(_cursorIndexOfMkaWardId)) {
+          _item.mkaWardId = null;
+        } else {
+          _item.mkaWardId = _cursor.getInt(_cursorIndexOfMkaWardId);
+        }
+        _item.mkaWardName = _cursor.getString(_cursorIndexOfMkaWardName);
+        if (_cursor.isNull(_cursorIndexOfMkaLocationId)) {
+          _item.mkaLocationId = null;
+        } else {
+          _item.mkaLocationId = _cursor.getInt(_cursorIndexOfMkaLocationId);
+        }
+        _item.mkaLocationName = _cursor.getString(_cursorIndexOfMkaLocationName);
+        if (_cursor.isNull(_cursorIndexOfMkaClanId)) {
+          _item.mkaClanId = null;
+        } else {
+          _item.mkaClanId = _cursor.getInt(_cursorIndexOfMkaClanId);
+        }
+        _item.mkaClanName = _cursor.getString(_cursorIndexOfMkaClanName);
+        _item.enrollFormType = _cursor.getString(_cursorIndexOfEnrollFormType);
+        if (_cursor.isNull(_cursorIndexOfTransferOutMkaDistrictId)) {
+          _item.transferOutMkaDistrictId = null;
+        } else {
+          _item.transferOutMkaDistrictId = _cursor.getInt(_cursorIndexOfTransferOutMkaDistrictId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutMkaLlgId)) {
+          _item.transferOutMkaLlgId = null;
+        } else {
+          _item.transferOutMkaLlgId = _cursor.getInt(_cursorIndexOfTransferOutMkaLlgId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutMkaWardId)) {
+          _item.transferOutMkaWardId = null;
+        } else {
+          _item.transferOutMkaWardId = _cursor.getInt(_cursorIndexOfTransferOutMkaWardId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutMkaLocationId)) {
+          _item.transferOutMkaLocationId = null;
+        } else {
+          _item.transferOutMkaLocationId = _cursor.getInt(_cursorIndexOfTransferOutMkaLocationId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInMkaDistrictId)) {
+          _item.transferInMkaDistrictId = null;
+        } else {
+          _item.transferInMkaDistrictId = _cursor.getInt(_cursorIndexOfTransferInMkaDistrictId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInMkaLlgId)) {
+          _item.transferInMkaLlgId = null;
+        } else {
+          _item.transferInMkaLlgId = _cursor.getInt(_cursorIndexOfTransferInMkaLlgId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInMkaWardId)) {
+          _item.transferInMkaWardId = null;
+        } else {
+          _item.transferInMkaWardId = _cursor.getInt(_cursorIndexOfTransferInMkaWardId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInMkaLocationId)) {
+          _item.transferInMkaLocationId = null;
+        } else {
+          _item.transferInMkaLocationId = _cursor.getInt(_cursorIndexOfTransferInMkaLocationId);
+        }
+        if (_cursor.isNull(_cursorIndexOfClanId)) {
+          _item.clanId = null;
+        } else {
+          _item.clanId = _cursor.getInt(_cursorIndexOfClanId);
+        }
+        _item.clanName = _cursor.getString(_cursorIndexOfClanName);
+        _result.add(_item);
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
+
+  @Override
+  public List<VotersList> getTransferInVotersData(String transferredIn) {
+    final String _sql = "SELECT * FROM voterslist WHERE isSyncToServer = 0 And isDataUploaded = 0 And status = ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (transferredIn == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, transferredIn);
+    }
+    final Cursor _cursor = __db.query(_statement);
+    try {
+      final int _cursorIndexOfTempElectorId = _cursor.getColumnIndexOrThrow("tempElectorId");
+      final int _cursorIndexOfElectorId = _cursor.getColumnIndexOrThrow("electorId");
+      final int _cursorIndexOfOldElectorID = _cursor.getColumnIndexOrThrow("oldElectorID");
+      final int _cursorIndexOfLocationId = _cursor.getColumnIndexOrThrow("locationId");
+      final int _cursorIndexOfOldLocationId = _cursor.getColumnIndexOrThrow("OldLocationId");
+      final int _cursorIndexOfLocationName = _cursor.getColumnIndexOrThrow("locationName");
+      final int _cursorIndexOfWardId = _cursor.getColumnIndexOrThrow("wardId");
+      final int _cursorIndexOfWardName = _cursor.getColumnIndexOrThrow("wardName");
+      final int _cursorIndexOfLlgId = _cursor.getColumnIndexOrThrow("llgId");
+      final int _cursorIndexOfLlgName = _cursor.getColumnIndexOrThrow("llgName");
+      final int _cursorIndexOfDistrictId = _cursor.getColumnIndexOrThrow("districtId");
+      final int _cursorIndexOfProvinceId = _cursor.getColumnIndexOrThrow("provinceId");
+      final int _cursorIndexOfRegionId = _cursor.getColumnIndexOrThrow("regionId");
+      final int _cursorIndexOfLName = _cursor.getColumnIndexOrThrow("lName");
+      final int _cursorIndexOfFName = _cursor.getColumnIndexOrThrow("fName");
+      final int _cursorIndexOfVoterName = _cursor.getColumnIndexOrThrow("voterName");
+      final int _cursorIndexOfGender = _cursor.getColumnIndexOrThrow("gender");
+      final int _cursorIndexOfDob = _cursor.getColumnIndexOrThrow("dob");
+      final int _cursorIndexOfIsYOB = _cursor.getColumnIndexOrThrow("isYOB");
+      final int _cursorIndexOfIsProvisional = _cursor.getColumnIndexOrThrow("isProvisional");
+      final int _cursorIndexOfIsPWD = _cursor.getColumnIndexOrThrow("isPWD");
+      final int _cursorIndexOfReligion = _cursor.getColumnIndexOrThrow("religion");
+      final int _cursorIndexOfFatherLName = _cursor.getColumnIndexOrThrow("fatherLName");
+      final int _cursorIndexOfFatherFName = _cursor.getColumnIndexOrThrow("fatherFName");
+      final int _cursorIndexOfMotherLName = _cursor.getColumnIndexOrThrow("motherLName");
+      final int _cursorIndexOfMotherFName = _cursor.getColumnIndexOrThrow("motherFName");
+      final int _cursorIndexOfProvOfBirthFK = _cursor.getColumnIndexOrThrow("provOfBirthFK");
+      final int _cursorIndexOfProvinceOfBirth = _cursor.getColumnIndexOrThrow("provinceOfBirth");
+      final int _cursorIndexOfProvinceName = _cursor.getColumnIndexOrThrow("provinceName");
+      final int _cursorIndexOfDistrictName = _cursor.getColumnIndexOrThrow("districtName");
+      final int _cursorIndexOfPlaceOfBirth = _cursor.getColumnIndexOrThrow("placeOfBirth");
+      final int _cursorIndexOfOccupationFK = _cursor.getColumnIndexOrThrow("occupationFK");
+      final int _cursorIndexOfOccupation = _cursor.getColumnIndexOrThrow("occupation");
+      final int _cursorIndexOfClanFK = _cursor.getColumnIndexOrThrow("clanFK");
+      final int _cursorIndexOfClan = _cursor.getColumnIndexOrThrow("clan");
+      final int _cursorIndexOfSubClan = _cursor.getColumnIndexOrThrow("subClan");
+      final int _cursorIndexOfAddress = _cursor.getColumnIndexOrThrow("address");
+      final int _cursorIndexOfNatID = _cursor.getColumnIndexOrThrow("natID");
+      final int _cursorIndexOfNatIDRecordNo = _cursor.getColumnIndexOrThrow("natIDRecordNo");
+      final int _cursorIndexOfStatus = _cursor.getColumnIndexOrThrow("status");
+      final int _cursorIndexOfHouseFK = _cursor.getColumnIndexOrThrow("houseFK");
+      final int _cursorIndexOfHouseSortOrder = _cursor.getColumnIndexOrThrow("houseSortOrder");
+      final int _cursorIndexOfRestHouse = _cursor.getColumnIndexOrThrow("restHouse");
+      final int _cursorIndexOfSectionNo = _cursor.getColumnIndexOrThrow("sectionNo");
+      final int _cursorIndexOfLotNo = _cursor.getColumnIndexOrThrow("lotNo");
+      final int _cursorIndexOfStreetName = _cursor.getColumnIndexOrThrow("streetName");
+      final int _cursorIndexOfSuburbTownSettlement = _cursor.getColumnIndexOrThrow("suburbTownSettlement");
+      final int _cursorIndexOfFamilyFK = _cursor.getColumnIndexOrThrow("familyFK");
+      final int _cursorIndexOfFamilySortOrder = _cursor.getColumnIndexOrThrow("familySortOrder");
+      final int _cursorIndexOfFamilyNumber = _cursor.getColumnIndexOrThrow("familyNumber");
+      final int _cursorIndexOfFamilyName = _cursor.getColumnIndexOrThrow("familyName");
+      final int _cursorIndexOfDpo = _cursor.getColumnIndexOrThrow("dpo");
+      final int _cursorIndexOfLat = _cursor.getColumnIndexOrThrow("lat");
+      final int _cursorIndexOfLongitude = _cursor.getColumnIndexOrThrow("long");
+      final int _cursorIndexOfPosted = _cursor.getColumnIndexOrThrow("posted");
+      final int _cursorIndexOfUpdatedDate = _cursor.getColumnIndexOrThrow("updatedDate");
+      final int _cursorIndexOfComment = _cursor.getColumnIndexOrThrow("comment");
+      final int _cursorIndexOfElectorProfileImage = _cursor.getColumnIndexOrThrow("electorProfileImage");
+      final int _cursorIndexOfElectorProfileImageUrl = _cursor.getColumnIndexOrThrow("electorProfileImageUrl");
+      final int _cursorIndexOfElectorFormImage = _cursor.getColumnIndexOrThrow("electorFormImage");
+      final int _cursorIndexOfElectorFormImageUrl = _cursor.getColumnIndexOrThrow("electorFormImageUrl");
+      final int _cursorIndexOfElectorProfileImageFile = _cursor.getColumnIndexOrThrow("electorProfileImageFile");
+      final int _cursorIndexOfElectorFormImageFile = _cursor.getColumnIndexOrThrow("electorFormImageFile");
+      final int _cursorIndexOfEnrolmentFormNumber = _cursor.getColumnIndexOrThrow("enrolmentFormNumber");
+      final int _cursorIndexOfCreatedBy = _cursor.getColumnIndexOrThrow("createdBy");
+      final int _cursorIndexOfIsSyncToServer = _cursor.getColumnIndexOrThrow("isSyncToServer");
+      final int _cursorIndexOfIsDataUploaded = _cursor.getColumnIndexOrThrow("isDataUploaded");
+      final int _cursorIndexOfIsImageUploaded = _cursor.getColumnIndexOrThrow("isImageUploaded");
+      final int _cursorIndexOfUpdatedDateTime = _cursor.getColumnIndexOrThrow("updatedDateTime");
+      final int _cursorIndexOfSyncStatus = _cursor.getColumnIndexOrThrow("syncStatus");
+      final int _cursorIndexOfRejectRecordUpdated = _cursor.getColumnIndexOrThrow("rejectRecordUpdated");
+      final int _cursorIndexOfSyncDateTime = _cursor.getColumnIndexOrThrow("syncDateTime");
+      final int _cursorIndexOfDuplicateId = _cursor.getColumnIndexOrThrow("duplicateId");
+      final int _cursorIndexOfTransferOutRegionId = _cursor.getColumnIndexOrThrow("transferOutRegionId");
+      final int _cursorIndexOfTransferOutProvinceId = _cursor.getColumnIndexOrThrow("transferOutProvinceId");
+      final int _cursorIndexOfTransferOutDistrictId = _cursor.getColumnIndexOrThrow("transferOutDistrictId");
+      final int _cursorIndexOfTransferOutLLGId = _cursor.getColumnIndexOrThrow("transferOutLLGId");
+      final int _cursorIndexOfTransferOutWardId = _cursor.getColumnIndexOrThrow("transferOutWardId");
+      final int _cursorIndexOfTransferOutLocationId = _cursor.getColumnIndexOrThrow("transferOutLocationId");
+      final int _cursorIndexOfTransferInRegionId = _cursor.getColumnIndexOrThrow("transferInRegionId");
+      final int _cursorIndexOfTransferInProvinceId = _cursor.getColumnIndexOrThrow("transferInProvinceId");
+      final int _cursorIndexOfTransferInDistrictId = _cursor.getColumnIndexOrThrow("transferInDistrictId");
+      final int _cursorIndexOfTransferInLLGId = _cursor.getColumnIndexOrThrow("transferInLLGId");
+      final int _cursorIndexOfTransferInWardId = _cursor.getColumnIndexOrThrow("transferInWardId");
+      final int _cursorIndexOfTransferInLocationId = _cursor.getColumnIndexOrThrow("transferInLocationId");
+      final int _cursorIndexOfErrorMessage = _cursor.getColumnIndexOrThrow("errorMessage");
+      final int _cursorIndexOfRejectedReason = _cursor.getColumnIndexOrThrow("rejectedReason");
+      final int _cursorIndexOfIsRejected = _cursor.getColumnIndexOrThrow("isRejected");
+      final int _cursorIndexOfIsHeader = _cursor.getColumnIndexOrThrow("isHeader");
+      final int _cursorIndexOfMkaDistrictId = _cursor.getColumnIndexOrThrow("mkaDistrictId");
+      final int _cursorIndexOfMkaDistrictName = _cursor.getColumnIndexOrThrow("mkaDistrictName");
+      final int _cursorIndexOfMkaLlgId = _cursor.getColumnIndexOrThrow("mkallgId");
+      final int _cursorIndexOfMkaLlgName = _cursor.getColumnIndexOrThrow("mkallgName");
+      final int _cursorIndexOfMkaWardId = _cursor.getColumnIndexOrThrow("mkaWardId");
+      final int _cursorIndexOfMkaWardName = _cursor.getColumnIndexOrThrow("mkaWardName");
+      final int _cursorIndexOfMkaLocationId = _cursor.getColumnIndexOrThrow("mkaLocationId");
+      final int _cursorIndexOfMkaLocationName = _cursor.getColumnIndexOrThrow("mkaLocationName");
+      final int _cursorIndexOfMkaClanId = _cursor.getColumnIndexOrThrow("mkaClanId");
+      final int _cursorIndexOfMkaClanName = _cursor.getColumnIndexOrThrow("mkaClanName");
+      final int _cursorIndexOfEnrollFormType = _cursor.getColumnIndexOrThrow("enrollFormType");
+      final int _cursorIndexOfTransferOutMkaDistrictId = _cursor.getColumnIndexOrThrow("transferOutMkaDistrictId");
+      final int _cursorIndexOfTransferOutMkaLlgId = _cursor.getColumnIndexOrThrow("transferOutMkaLlgId");
+      final int _cursorIndexOfTransferOutMkaWardId = _cursor.getColumnIndexOrThrow("transferOutMkaWardId");
+      final int _cursorIndexOfTransferOutMkaLocationId = _cursor.getColumnIndexOrThrow("transferOutMkaLocationId");
+      final int _cursorIndexOfTransferInMkaDistrictId = _cursor.getColumnIndexOrThrow("transferInMkaDistrictId");
+      final int _cursorIndexOfTransferInMkaLlgId = _cursor.getColumnIndexOrThrow("transferInMkaLlgId");
+      final int _cursorIndexOfTransferInMkaWardId = _cursor.getColumnIndexOrThrow("transferInMkaWardId");
+      final int _cursorIndexOfTransferInMkaLocationId = _cursor.getColumnIndexOrThrow("transferInMkaLocationId");
+      final int _cursorIndexOfClanId = _cursor.getColumnIndexOrThrow("clanId");
+      final int _cursorIndexOfClanName = _cursor.getColumnIndexOrThrow("clanName");
+      final List<VotersList> _result = new ArrayList<VotersList>(_cursor.getCount());
+      while(_cursor.moveToNext()) {
+        final VotersList _item;
+        _item = new VotersList();
+        if (_cursor.isNull(_cursorIndexOfTempElectorId)) {
+          _item.tempElectorId = null;
+        } else {
+          _item.tempElectorId = _cursor.getInt(_cursorIndexOfTempElectorId);
+        }
+        if (_cursor.isNull(_cursorIndexOfElectorId)) {
+          _item.electorId = null;
+        } else {
+          _item.electorId = _cursor.getLong(_cursorIndexOfElectorId);
+        }
+        if (_cursor.isNull(_cursorIndexOfOldElectorID)) {
+          _item.oldElectorID = null;
+        } else {
+          _item.oldElectorID = _cursor.getLong(_cursorIndexOfOldElectorID);
+        }
+        if (_cursor.isNull(_cursorIndexOfLocationId)) {
+          _item.locationId = null;
+        } else {
+          _item.locationId = _cursor.getInt(_cursorIndexOfLocationId);
+        }
+        if (_cursor.isNull(_cursorIndexOfOldLocationId)) {
+          _item.oldLocationId = null;
+        } else {
+          _item.oldLocationId = _cursor.getInt(_cursorIndexOfOldLocationId);
+        }
+        _item.locationName = _cursor.getString(_cursorIndexOfLocationName);
+        if (_cursor.isNull(_cursorIndexOfWardId)) {
+          _item.wardId = null;
+        } else {
+          _item.wardId = _cursor.getInt(_cursorIndexOfWardId);
+        }
+        _item.wardName = _cursor.getString(_cursorIndexOfWardName);
+        if (_cursor.isNull(_cursorIndexOfLlgId)) {
+          _item.llgId = null;
+        } else {
+          _item.llgId = _cursor.getInt(_cursorIndexOfLlgId);
+        }
+        _item.llgName = _cursor.getString(_cursorIndexOfLlgName);
+        if (_cursor.isNull(_cursorIndexOfDistrictId)) {
+          _item.districtId = null;
+        } else {
+          _item.districtId = _cursor.getInt(_cursorIndexOfDistrictId);
+        }
+        if (_cursor.isNull(_cursorIndexOfProvinceId)) {
+          _item.provinceId = null;
+        } else {
+          _item.provinceId = _cursor.getInt(_cursorIndexOfProvinceId);
+        }
+        if (_cursor.isNull(_cursorIndexOfRegionId)) {
+          _item.regionId = null;
+        } else {
+          _item.regionId = _cursor.getInt(_cursorIndexOfRegionId);
+        }
+        _item.lName = _cursor.getString(_cursorIndexOfLName);
+        _item.fName = _cursor.getString(_cursorIndexOfFName);
+        _item.voterName = _cursor.getString(_cursorIndexOfVoterName);
+        _item.gender = _cursor.getString(_cursorIndexOfGender);
+        _item.dob = _cursor.getString(_cursorIndexOfDob);
+        final Integer _tmp;
+        if (_cursor.isNull(_cursorIndexOfIsYOB)) {
+          _tmp = null;
+        } else {
+          _tmp = _cursor.getInt(_cursorIndexOfIsYOB);
+        }
+        _item.isYOB = _tmp == null ? null : _tmp != 0;
+        final Integer _tmp_1;
+        if (_cursor.isNull(_cursorIndexOfIsProvisional)) {
+          _tmp_1 = null;
+        } else {
+          _tmp_1 = _cursor.getInt(_cursorIndexOfIsProvisional);
+        }
+        _item.isProvisional = _tmp_1 == null ? null : _tmp_1 != 0;
+        final Integer _tmp_2;
+        if (_cursor.isNull(_cursorIndexOfIsPWD)) {
+          _tmp_2 = null;
+        } else {
+          _tmp_2 = _cursor.getInt(_cursorIndexOfIsPWD);
+        }
+        _item.isPWD = _tmp_2 == null ? null : _tmp_2 != 0;
+        _item.religion = _cursor.getString(_cursorIndexOfReligion);
+        _item.fatherLName = _cursor.getString(_cursorIndexOfFatherLName);
+        _item.fatherFName = _cursor.getString(_cursorIndexOfFatherFName);
+        _item.motherLName = _cursor.getString(_cursorIndexOfMotherLName);
+        _item.motherFName = _cursor.getString(_cursorIndexOfMotherFName);
+        if (_cursor.isNull(_cursorIndexOfProvOfBirthFK)) {
+          _item.provOfBirthFK = null;
+        } else {
+          _item.provOfBirthFK = _cursor.getInt(_cursorIndexOfProvOfBirthFK);
+        }
+        _item.provinceOfBirth = _cursor.getString(_cursorIndexOfProvinceOfBirth);
+        _item.provinceName = _cursor.getString(_cursorIndexOfProvinceName);
+        _item.districtName = _cursor.getString(_cursorIndexOfDistrictName);
+        _item.placeOfBirth = _cursor.getString(_cursorIndexOfPlaceOfBirth);
+        if (_cursor.isNull(_cursorIndexOfOccupationFK)) {
+          _item.occupationFK = null;
+        } else {
+          _item.occupationFK = _cursor.getInt(_cursorIndexOfOccupationFK);
+        }
+        _item.occupation = _cursor.getString(_cursorIndexOfOccupation);
+        if (_cursor.isNull(_cursorIndexOfClanFK)) {
+          _item.clanFK = null;
+        } else {
+          _item.clanFK = _cursor.getInt(_cursorIndexOfClanFK);
+        }
+        _item.clan = _cursor.getString(_cursorIndexOfClan);
+        _item.subClan = _cursor.getString(_cursorIndexOfSubClan);
+        _item.address = _cursor.getString(_cursorIndexOfAddress);
+        _item.natID = _cursor.getString(_cursorIndexOfNatID);
+        _item.natIDRecordNo = _cursor.getString(_cursorIndexOfNatIDRecordNo);
+        _item.status = _cursor.getString(_cursorIndexOfStatus);
+        if (_cursor.isNull(_cursorIndexOfHouseFK)) {
+          _item.houseFK = null;
+        } else {
+          _item.houseFK = _cursor.getInt(_cursorIndexOfHouseFK);
+        }
+        if (_cursor.isNull(_cursorIndexOfHouseSortOrder)) {
+          _item.houseSortOrder = null;
+        } else {
+          _item.houseSortOrder = _cursor.getInt(_cursorIndexOfHouseSortOrder);
+        }
+        _item.restHouse = _cursor.getString(_cursorIndexOfRestHouse);
+        if (_cursor.isNull(_cursorIndexOfSectionNo)) {
+          _item.sectionNo = null;
+        } else {
+          _item.sectionNo = _cursor.getInt(_cursorIndexOfSectionNo);
+        }
+        if (_cursor.isNull(_cursorIndexOfLotNo)) {
+          _item.lotNo = null;
+        } else {
+          _item.lotNo = _cursor.getInt(_cursorIndexOfLotNo);
+        }
+        _item.streetName = _cursor.getString(_cursorIndexOfStreetName);
+        _item.suburbTownSettlement = _cursor.getString(_cursorIndexOfSuburbTownSettlement);
+        if (_cursor.isNull(_cursorIndexOfFamilyFK)) {
+          _item.familyFK = null;
+        } else {
+          _item.familyFK = _cursor.getInt(_cursorIndexOfFamilyFK);
+        }
+        if (_cursor.isNull(_cursorIndexOfFamilySortOrder)) {
+          _item.familySortOrder = null;
+        } else {
+          _item.familySortOrder = _cursor.getInt(_cursorIndexOfFamilySortOrder);
+        }
+        if (_cursor.isNull(_cursorIndexOfFamilyNumber)) {
+          _item.familyNumber = null;
+        } else {
+          _item.familyNumber = _cursor.getInt(_cursorIndexOfFamilyNumber);
+        }
+        _item.familyName = _cursor.getString(_cursorIndexOfFamilyName);
+        _item.dpo = _cursor.getString(_cursorIndexOfDpo);
+        if (_cursor.isNull(_cursorIndexOfLat)) {
+          _item.lat = null;
+        } else {
+          _item.lat = _cursor.getDouble(_cursorIndexOfLat);
+        }
+        if (_cursor.isNull(_cursorIndexOfLongitude)) {
+          _item.longitude = null;
+        } else {
+          _item.longitude = _cursor.getDouble(_cursorIndexOfLongitude);
+        }
+        _item.posted = _cursor.getString(_cursorIndexOfPosted);
+        _item.updatedDate = _cursor.getString(_cursorIndexOfUpdatedDate);
+        _item.comment = _cursor.getString(_cursorIndexOfComment);
+        _item.electorProfileImage = _cursor.getString(_cursorIndexOfElectorProfileImage);
+        _item.electorProfileImageUrl = _cursor.getString(_cursorIndexOfElectorProfileImageUrl);
+        _item.electorFormImage = _cursor.getString(_cursorIndexOfElectorFormImage);
+        _item.electorFormImageUrl = _cursor.getString(_cursorIndexOfElectorFormImageUrl);
+        _item.electorProfileImageFile = _cursor.getString(_cursorIndexOfElectorProfileImageFile);
+        _item.electorFormImageFile = _cursor.getString(_cursorIndexOfElectorFormImageFile);
+        _item.enrolmentFormNumber = _cursor.getString(_cursorIndexOfEnrolmentFormNumber);
+        if (_cursor.isNull(_cursorIndexOfCreatedBy)) {
+          _item.createdBy = null;
+        } else {
+          _item.createdBy = _cursor.getInt(_cursorIndexOfCreatedBy);
+        }
+        if (_cursor.isNull(_cursorIndexOfIsSyncToServer)) {
+          _item.isSyncToServer = null;
+        } else {
+          _item.isSyncToServer = _cursor.getInt(_cursorIndexOfIsSyncToServer);
+        }
+        if (_cursor.isNull(_cursorIndexOfIsDataUploaded)) {
+          _item.isDataUploaded = null;
+        } else {
+          _item.isDataUploaded = _cursor.getInt(_cursorIndexOfIsDataUploaded);
+        }
+        if (_cursor.isNull(_cursorIndexOfIsImageUploaded)) {
+          _item.isImageUploaded = null;
+        } else {
+          _item.isImageUploaded = _cursor.getInt(_cursorIndexOfIsImageUploaded);
+        }
+        if (_cursor.isNull(_cursorIndexOfUpdatedDateTime)) {
+          _item.updatedDateTime = null;
+        } else {
+          _item.updatedDateTime = _cursor.getInt(_cursorIndexOfUpdatedDateTime);
+        }
+        if (_cursor.isNull(_cursorIndexOfSyncStatus)) {
+          _item.syncStatus = null;
+        } else {
+          _item.syncStatus = _cursor.getInt(_cursorIndexOfSyncStatus);
+        }
+        if (_cursor.isNull(_cursorIndexOfRejectRecordUpdated)) {
+          _item.rejectRecordUpdated = null;
+        } else {
+          _item.rejectRecordUpdated = _cursor.getInt(_cursorIndexOfRejectRecordUpdated);
+        }
+        _item.syncDateTime = _cursor.getString(_cursorIndexOfSyncDateTime);
+        if (_cursor.isNull(_cursorIndexOfDuplicateId)) {
+          _item.duplicateId = null;
+        } else {
+          _item.duplicateId = _cursor.getLong(_cursorIndexOfDuplicateId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutRegionId)) {
+          _item.transferOutRegionId = null;
+        } else {
+          _item.transferOutRegionId = _cursor.getInt(_cursorIndexOfTransferOutRegionId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutProvinceId)) {
+          _item.transferOutProvinceId = null;
+        } else {
+          _item.transferOutProvinceId = _cursor.getInt(_cursorIndexOfTransferOutProvinceId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutDistrictId)) {
+          _item.transferOutDistrictId = null;
+        } else {
+          _item.transferOutDistrictId = _cursor.getInt(_cursorIndexOfTransferOutDistrictId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutLLGId)) {
+          _item.transferOutLLGId = null;
+        } else {
+          _item.transferOutLLGId = _cursor.getInt(_cursorIndexOfTransferOutLLGId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutWardId)) {
+          _item.transferOutWardId = null;
+        } else {
+          _item.transferOutWardId = _cursor.getInt(_cursorIndexOfTransferOutWardId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutLocationId)) {
+          _item.transferOutLocationId = null;
+        } else {
+          _item.transferOutLocationId = _cursor.getInt(_cursorIndexOfTransferOutLocationId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInRegionId)) {
+          _item.transferInRegionId = null;
+        } else {
+          _item.transferInRegionId = _cursor.getInt(_cursorIndexOfTransferInRegionId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInProvinceId)) {
+          _item.transferInProvinceId = null;
+        } else {
+          _item.transferInProvinceId = _cursor.getInt(_cursorIndexOfTransferInProvinceId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInDistrictId)) {
+          _item.transferInDistrictId = null;
+        } else {
+          _item.transferInDistrictId = _cursor.getInt(_cursorIndexOfTransferInDistrictId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInLLGId)) {
+          _item.transferInLLGId = null;
+        } else {
+          _item.transferInLLGId = _cursor.getInt(_cursorIndexOfTransferInLLGId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInWardId)) {
+          _item.transferInWardId = null;
+        } else {
+          _item.transferInWardId = _cursor.getInt(_cursorIndexOfTransferInWardId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInLocationId)) {
+          _item.transferInLocationId = null;
+        } else {
+          _item.transferInLocationId = _cursor.getInt(_cursorIndexOfTransferInLocationId);
+        }
+        _item.errorMessage = _cursor.getString(_cursorIndexOfErrorMessage);
+        _item.rejectedReason = _cursor.getString(_cursorIndexOfRejectedReason);
+        final Integer _tmp_3;
+        if (_cursor.isNull(_cursorIndexOfIsRejected)) {
+          _tmp_3 = null;
+        } else {
+          _tmp_3 = _cursor.getInt(_cursorIndexOfIsRejected);
+        }
+        _item.isRejected = _tmp_3 == null ? null : _tmp_3 != 0;
+        final Integer _tmp_4;
+        if (_cursor.isNull(_cursorIndexOfIsHeader)) {
+          _tmp_4 = null;
+        } else {
+          _tmp_4 = _cursor.getInt(_cursorIndexOfIsHeader);
+        }
+        _item.isHeader = _tmp_4 == null ? null : _tmp_4 != 0;
+        if (_cursor.isNull(_cursorIndexOfMkaDistrictId)) {
+          _item.mkaDistrictId = null;
+        } else {
+          _item.mkaDistrictId = _cursor.getInt(_cursorIndexOfMkaDistrictId);
+        }
+        _item.mkaDistrictName = _cursor.getString(_cursorIndexOfMkaDistrictName);
+        if (_cursor.isNull(_cursorIndexOfMkaLlgId)) {
+          _item.mkaLlgId = null;
+        } else {
+          _item.mkaLlgId = _cursor.getInt(_cursorIndexOfMkaLlgId);
+        }
+        _item.mkaLlgName = _cursor.getString(_cursorIndexOfMkaLlgName);
+        if (_cursor.isNull(_cursorIndexOfMkaWardId)) {
+          _item.mkaWardId = null;
+        } else {
+          _item.mkaWardId = _cursor.getInt(_cursorIndexOfMkaWardId);
+        }
+        _item.mkaWardName = _cursor.getString(_cursorIndexOfMkaWardName);
+        if (_cursor.isNull(_cursorIndexOfMkaLocationId)) {
+          _item.mkaLocationId = null;
+        } else {
+          _item.mkaLocationId = _cursor.getInt(_cursorIndexOfMkaLocationId);
+        }
+        _item.mkaLocationName = _cursor.getString(_cursorIndexOfMkaLocationName);
+        if (_cursor.isNull(_cursorIndexOfMkaClanId)) {
+          _item.mkaClanId = null;
+        } else {
+          _item.mkaClanId = _cursor.getInt(_cursorIndexOfMkaClanId);
+        }
+        _item.mkaClanName = _cursor.getString(_cursorIndexOfMkaClanName);
+        _item.enrollFormType = _cursor.getString(_cursorIndexOfEnrollFormType);
+        if (_cursor.isNull(_cursorIndexOfTransferOutMkaDistrictId)) {
+          _item.transferOutMkaDistrictId = null;
+        } else {
+          _item.transferOutMkaDistrictId = _cursor.getInt(_cursorIndexOfTransferOutMkaDistrictId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutMkaLlgId)) {
+          _item.transferOutMkaLlgId = null;
+        } else {
+          _item.transferOutMkaLlgId = _cursor.getInt(_cursorIndexOfTransferOutMkaLlgId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutMkaWardId)) {
+          _item.transferOutMkaWardId = null;
+        } else {
+          _item.transferOutMkaWardId = _cursor.getInt(_cursorIndexOfTransferOutMkaWardId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutMkaLocationId)) {
+          _item.transferOutMkaLocationId = null;
+        } else {
+          _item.transferOutMkaLocationId = _cursor.getInt(_cursorIndexOfTransferOutMkaLocationId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInMkaDistrictId)) {
+          _item.transferInMkaDistrictId = null;
+        } else {
+          _item.transferInMkaDistrictId = _cursor.getInt(_cursorIndexOfTransferInMkaDistrictId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInMkaLlgId)) {
+          _item.transferInMkaLlgId = null;
+        } else {
+          _item.transferInMkaLlgId = _cursor.getInt(_cursorIndexOfTransferInMkaLlgId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInMkaWardId)) {
+          _item.transferInMkaWardId = null;
+        } else {
+          _item.transferInMkaWardId = _cursor.getInt(_cursorIndexOfTransferInMkaWardId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInMkaLocationId)) {
+          _item.transferInMkaLocationId = null;
+        } else {
+          _item.transferInMkaLocationId = _cursor.getInt(_cursorIndexOfTransferInMkaLocationId);
+        }
+        if (_cursor.isNull(_cursorIndexOfClanId)) {
+          _item.clanId = null;
+        } else {
+          _item.clanId = _cursor.getInt(_cursorIndexOfClanId);
+        }
+        _item.clanName = _cursor.getString(_cursorIndexOfClanName);
+        _result.add(_item);
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
+
+  @Override
+  public List<VotersList> getTransferInVotersImages(String transferredIn) {
+    final String _sql = "SELECT * FROM voterslist WHERE isSyncToServer = 0 And isImageUploaded = 0 And status = ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (transferredIn == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, transferredIn);
+    }
+    final Cursor _cursor = __db.query(_statement);
+    try {
+      final int _cursorIndexOfTempElectorId = _cursor.getColumnIndexOrThrow("tempElectorId");
+      final int _cursorIndexOfElectorId = _cursor.getColumnIndexOrThrow("electorId");
+      final int _cursorIndexOfOldElectorID = _cursor.getColumnIndexOrThrow("oldElectorID");
+      final int _cursorIndexOfLocationId = _cursor.getColumnIndexOrThrow("locationId");
+      final int _cursorIndexOfOldLocationId = _cursor.getColumnIndexOrThrow("OldLocationId");
+      final int _cursorIndexOfLocationName = _cursor.getColumnIndexOrThrow("locationName");
+      final int _cursorIndexOfWardId = _cursor.getColumnIndexOrThrow("wardId");
+      final int _cursorIndexOfWardName = _cursor.getColumnIndexOrThrow("wardName");
+      final int _cursorIndexOfLlgId = _cursor.getColumnIndexOrThrow("llgId");
+      final int _cursorIndexOfLlgName = _cursor.getColumnIndexOrThrow("llgName");
+      final int _cursorIndexOfDistrictId = _cursor.getColumnIndexOrThrow("districtId");
+      final int _cursorIndexOfProvinceId = _cursor.getColumnIndexOrThrow("provinceId");
+      final int _cursorIndexOfRegionId = _cursor.getColumnIndexOrThrow("regionId");
+      final int _cursorIndexOfLName = _cursor.getColumnIndexOrThrow("lName");
+      final int _cursorIndexOfFName = _cursor.getColumnIndexOrThrow("fName");
+      final int _cursorIndexOfVoterName = _cursor.getColumnIndexOrThrow("voterName");
+      final int _cursorIndexOfGender = _cursor.getColumnIndexOrThrow("gender");
+      final int _cursorIndexOfDob = _cursor.getColumnIndexOrThrow("dob");
+      final int _cursorIndexOfIsYOB = _cursor.getColumnIndexOrThrow("isYOB");
+      final int _cursorIndexOfIsProvisional = _cursor.getColumnIndexOrThrow("isProvisional");
+      final int _cursorIndexOfIsPWD = _cursor.getColumnIndexOrThrow("isPWD");
+      final int _cursorIndexOfReligion = _cursor.getColumnIndexOrThrow("religion");
+      final int _cursorIndexOfFatherLName = _cursor.getColumnIndexOrThrow("fatherLName");
+      final int _cursorIndexOfFatherFName = _cursor.getColumnIndexOrThrow("fatherFName");
+      final int _cursorIndexOfMotherLName = _cursor.getColumnIndexOrThrow("motherLName");
+      final int _cursorIndexOfMotherFName = _cursor.getColumnIndexOrThrow("motherFName");
+      final int _cursorIndexOfProvOfBirthFK = _cursor.getColumnIndexOrThrow("provOfBirthFK");
+      final int _cursorIndexOfProvinceOfBirth = _cursor.getColumnIndexOrThrow("provinceOfBirth");
+      final int _cursorIndexOfProvinceName = _cursor.getColumnIndexOrThrow("provinceName");
+      final int _cursorIndexOfDistrictName = _cursor.getColumnIndexOrThrow("districtName");
+      final int _cursorIndexOfPlaceOfBirth = _cursor.getColumnIndexOrThrow("placeOfBirth");
+      final int _cursorIndexOfOccupationFK = _cursor.getColumnIndexOrThrow("occupationFK");
+      final int _cursorIndexOfOccupation = _cursor.getColumnIndexOrThrow("occupation");
+      final int _cursorIndexOfClanFK = _cursor.getColumnIndexOrThrow("clanFK");
+      final int _cursorIndexOfClan = _cursor.getColumnIndexOrThrow("clan");
+      final int _cursorIndexOfSubClan = _cursor.getColumnIndexOrThrow("subClan");
+      final int _cursorIndexOfAddress = _cursor.getColumnIndexOrThrow("address");
+      final int _cursorIndexOfNatID = _cursor.getColumnIndexOrThrow("natID");
+      final int _cursorIndexOfNatIDRecordNo = _cursor.getColumnIndexOrThrow("natIDRecordNo");
+      final int _cursorIndexOfStatus = _cursor.getColumnIndexOrThrow("status");
+      final int _cursorIndexOfHouseFK = _cursor.getColumnIndexOrThrow("houseFK");
+      final int _cursorIndexOfHouseSortOrder = _cursor.getColumnIndexOrThrow("houseSortOrder");
+      final int _cursorIndexOfRestHouse = _cursor.getColumnIndexOrThrow("restHouse");
+      final int _cursorIndexOfSectionNo = _cursor.getColumnIndexOrThrow("sectionNo");
+      final int _cursorIndexOfLotNo = _cursor.getColumnIndexOrThrow("lotNo");
+      final int _cursorIndexOfStreetName = _cursor.getColumnIndexOrThrow("streetName");
+      final int _cursorIndexOfSuburbTownSettlement = _cursor.getColumnIndexOrThrow("suburbTownSettlement");
+      final int _cursorIndexOfFamilyFK = _cursor.getColumnIndexOrThrow("familyFK");
+      final int _cursorIndexOfFamilySortOrder = _cursor.getColumnIndexOrThrow("familySortOrder");
+      final int _cursorIndexOfFamilyNumber = _cursor.getColumnIndexOrThrow("familyNumber");
+      final int _cursorIndexOfFamilyName = _cursor.getColumnIndexOrThrow("familyName");
+      final int _cursorIndexOfDpo = _cursor.getColumnIndexOrThrow("dpo");
+      final int _cursorIndexOfLat = _cursor.getColumnIndexOrThrow("lat");
+      final int _cursorIndexOfLongitude = _cursor.getColumnIndexOrThrow("long");
+      final int _cursorIndexOfPosted = _cursor.getColumnIndexOrThrow("posted");
+      final int _cursorIndexOfUpdatedDate = _cursor.getColumnIndexOrThrow("updatedDate");
+      final int _cursorIndexOfComment = _cursor.getColumnIndexOrThrow("comment");
+      final int _cursorIndexOfElectorProfileImage = _cursor.getColumnIndexOrThrow("electorProfileImage");
+      final int _cursorIndexOfElectorProfileImageUrl = _cursor.getColumnIndexOrThrow("electorProfileImageUrl");
+      final int _cursorIndexOfElectorFormImage = _cursor.getColumnIndexOrThrow("electorFormImage");
+      final int _cursorIndexOfElectorFormImageUrl = _cursor.getColumnIndexOrThrow("electorFormImageUrl");
+      final int _cursorIndexOfElectorProfileImageFile = _cursor.getColumnIndexOrThrow("electorProfileImageFile");
+      final int _cursorIndexOfElectorFormImageFile = _cursor.getColumnIndexOrThrow("electorFormImageFile");
+      final int _cursorIndexOfEnrolmentFormNumber = _cursor.getColumnIndexOrThrow("enrolmentFormNumber");
+      final int _cursorIndexOfCreatedBy = _cursor.getColumnIndexOrThrow("createdBy");
+      final int _cursorIndexOfIsSyncToServer = _cursor.getColumnIndexOrThrow("isSyncToServer");
+      final int _cursorIndexOfIsDataUploaded = _cursor.getColumnIndexOrThrow("isDataUploaded");
+      final int _cursorIndexOfIsImageUploaded = _cursor.getColumnIndexOrThrow("isImageUploaded");
+      final int _cursorIndexOfUpdatedDateTime = _cursor.getColumnIndexOrThrow("updatedDateTime");
+      final int _cursorIndexOfSyncStatus = _cursor.getColumnIndexOrThrow("syncStatus");
+      final int _cursorIndexOfRejectRecordUpdated = _cursor.getColumnIndexOrThrow("rejectRecordUpdated");
+      final int _cursorIndexOfSyncDateTime = _cursor.getColumnIndexOrThrow("syncDateTime");
+      final int _cursorIndexOfDuplicateId = _cursor.getColumnIndexOrThrow("duplicateId");
+      final int _cursorIndexOfTransferOutRegionId = _cursor.getColumnIndexOrThrow("transferOutRegionId");
+      final int _cursorIndexOfTransferOutProvinceId = _cursor.getColumnIndexOrThrow("transferOutProvinceId");
+      final int _cursorIndexOfTransferOutDistrictId = _cursor.getColumnIndexOrThrow("transferOutDistrictId");
+      final int _cursorIndexOfTransferOutLLGId = _cursor.getColumnIndexOrThrow("transferOutLLGId");
+      final int _cursorIndexOfTransferOutWardId = _cursor.getColumnIndexOrThrow("transferOutWardId");
+      final int _cursorIndexOfTransferOutLocationId = _cursor.getColumnIndexOrThrow("transferOutLocationId");
+      final int _cursorIndexOfTransferInRegionId = _cursor.getColumnIndexOrThrow("transferInRegionId");
+      final int _cursorIndexOfTransferInProvinceId = _cursor.getColumnIndexOrThrow("transferInProvinceId");
+      final int _cursorIndexOfTransferInDistrictId = _cursor.getColumnIndexOrThrow("transferInDistrictId");
+      final int _cursorIndexOfTransferInLLGId = _cursor.getColumnIndexOrThrow("transferInLLGId");
+      final int _cursorIndexOfTransferInWardId = _cursor.getColumnIndexOrThrow("transferInWardId");
+      final int _cursorIndexOfTransferInLocationId = _cursor.getColumnIndexOrThrow("transferInLocationId");
+      final int _cursorIndexOfErrorMessage = _cursor.getColumnIndexOrThrow("errorMessage");
+      final int _cursorIndexOfRejectedReason = _cursor.getColumnIndexOrThrow("rejectedReason");
+      final int _cursorIndexOfIsRejected = _cursor.getColumnIndexOrThrow("isRejected");
+      final int _cursorIndexOfIsHeader = _cursor.getColumnIndexOrThrow("isHeader");
+      final int _cursorIndexOfMkaDistrictId = _cursor.getColumnIndexOrThrow("mkaDistrictId");
+      final int _cursorIndexOfMkaDistrictName = _cursor.getColumnIndexOrThrow("mkaDistrictName");
+      final int _cursorIndexOfMkaLlgId = _cursor.getColumnIndexOrThrow("mkallgId");
+      final int _cursorIndexOfMkaLlgName = _cursor.getColumnIndexOrThrow("mkallgName");
+      final int _cursorIndexOfMkaWardId = _cursor.getColumnIndexOrThrow("mkaWardId");
+      final int _cursorIndexOfMkaWardName = _cursor.getColumnIndexOrThrow("mkaWardName");
+      final int _cursorIndexOfMkaLocationId = _cursor.getColumnIndexOrThrow("mkaLocationId");
+      final int _cursorIndexOfMkaLocationName = _cursor.getColumnIndexOrThrow("mkaLocationName");
+      final int _cursorIndexOfMkaClanId = _cursor.getColumnIndexOrThrow("mkaClanId");
+      final int _cursorIndexOfMkaClanName = _cursor.getColumnIndexOrThrow("mkaClanName");
+      final int _cursorIndexOfEnrollFormType = _cursor.getColumnIndexOrThrow("enrollFormType");
+      final int _cursorIndexOfTransferOutMkaDistrictId = _cursor.getColumnIndexOrThrow("transferOutMkaDistrictId");
+      final int _cursorIndexOfTransferOutMkaLlgId = _cursor.getColumnIndexOrThrow("transferOutMkaLlgId");
+      final int _cursorIndexOfTransferOutMkaWardId = _cursor.getColumnIndexOrThrow("transferOutMkaWardId");
+      final int _cursorIndexOfTransferOutMkaLocationId = _cursor.getColumnIndexOrThrow("transferOutMkaLocationId");
+      final int _cursorIndexOfTransferInMkaDistrictId = _cursor.getColumnIndexOrThrow("transferInMkaDistrictId");
+      final int _cursorIndexOfTransferInMkaLlgId = _cursor.getColumnIndexOrThrow("transferInMkaLlgId");
+      final int _cursorIndexOfTransferInMkaWardId = _cursor.getColumnIndexOrThrow("transferInMkaWardId");
+      final int _cursorIndexOfTransferInMkaLocationId = _cursor.getColumnIndexOrThrow("transferInMkaLocationId");
+      final int _cursorIndexOfClanId = _cursor.getColumnIndexOrThrow("clanId");
+      final int _cursorIndexOfClanName = _cursor.getColumnIndexOrThrow("clanName");
+      final List<VotersList> _result = new ArrayList<VotersList>(_cursor.getCount());
+      while(_cursor.moveToNext()) {
+        final VotersList _item;
+        _item = new VotersList();
+        if (_cursor.isNull(_cursorIndexOfTempElectorId)) {
+          _item.tempElectorId = null;
+        } else {
+          _item.tempElectorId = _cursor.getInt(_cursorIndexOfTempElectorId);
+        }
+        if (_cursor.isNull(_cursorIndexOfElectorId)) {
+          _item.electorId = null;
+        } else {
+          _item.electorId = _cursor.getLong(_cursorIndexOfElectorId);
+        }
+        if (_cursor.isNull(_cursorIndexOfOldElectorID)) {
+          _item.oldElectorID = null;
+        } else {
+          _item.oldElectorID = _cursor.getLong(_cursorIndexOfOldElectorID);
+        }
+        if (_cursor.isNull(_cursorIndexOfLocationId)) {
+          _item.locationId = null;
+        } else {
+          _item.locationId = _cursor.getInt(_cursorIndexOfLocationId);
+        }
+        if (_cursor.isNull(_cursorIndexOfOldLocationId)) {
+          _item.oldLocationId = null;
+        } else {
+          _item.oldLocationId = _cursor.getInt(_cursorIndexOfOldLocationId);
+        }
+        _item.locationName = _cursor.getString(_cursorIndexOfLocationName);
+        if (_cursor.isNull(_cursorIndexOfWardId)) {
+          _item.wardId = null;
+        } else {
+          _item.wardId = _cursor.getInt(_cursorIndexOfWardId);
+        }
+        _item.wardName = _cursor.getString(_cursorIndexOfWardName);
+        if (_cursor.isNull(_cursorIndexOfLlgId)) {
+          _item.llgId = null;
+        } else {
+          _item.llgId = _cursor.getInt(_cursorIndexOfLlgId);
+        }
+        _item.llgName = _cursor.getString(_cursorIndexOfLlgName);
+        if (_cursor.isNull(_cursorIndexOfDistrictId)) {
+          _item.districtId = null;
+        } else {
+          _item.districtId = _cursor.getInt(_cursorIndexOfDistrictId);
+        }
+        if (_cursor.isNull(_cursorIndexOfProvinceId)) {
+          _item.provinceId = null;
+        } else {
+          _item.provinceId = _cursor.getInt(_cursorIndexOfProvinceId);
+        }
+        if (_cursor.isNull(_cursorIndexOfRegionId)) {
+          _item.regionId = null;
+        } else {
+          _item.regionId = _cursor.getInt(_cursorIndexOfRegionId);
+        }
+        _item.lName = _cursor.getString(_cursorIndexOfLName);
+        _item.fName = _cursor.getString(_cursorIndexOfFName);
+        _item.voterName = _cursor.getString(_cursorIndexOfVoterName);
+        _item.gender = _cursor.getString(_cursorIndexOfGender);
+        _item.dob = _cursor.getString(_cursorIndexOfDob);
+        final Integer _tmp;
+        if (_cursor.isNull(_cursorIndexOfIsYOB)) {
+          _tmp = null;
+        } else {
+          _tmp = _cursor.getInt(_cursorIndexOfIsYOB);
+        }
+        _item.isYOB = _tmp == null ? null : _tmp != 0;
+        final Integer _tmp_1;
+        if (_cursor.isNull(_cursorIndexOfIsProvisional)) {
+          _tmp_1 = null;
+        } else {
+          _tmp_1 = _cursor.getInt(_cursorIndexOfIsProvisional);
+        }
+        _item.isProvisional = _tmp_1 == null ? null : _tmp_1 != 0;
+        final Integer _tmp_2;
+        if (_cursor.isNull(_cursorIndexOfIsPWD)) {
+          _tmp_2 = null;
+        } else {
+          _tmp_2 = _cursor.getInt(_cursorIndexOfIsPWD);
+        }
+        _item.isPWD = _tmp_2 == null ? null : _tmp_2 != 0;
+        _item.religion = _cursor.getString(_cursorIndexOfReligion);
+        _item.fatherLName = _cursor.getString(_cursorIndexOfFatherLName);
+        _item.fatherFName = _cursor.getString(_cursorIndexOfFatherFName);
+        _item.motherLName = _cursor.getString(_cursorIndexOfMotherLName);
+        _item.motherFName = _cursor.getString(_cursorIndexOfMotherFName);
+        if (_cursor.isNull(_cursorIndexOfProvOfBirthFK)) {
+          _item.provOfBirthFK = null;
+        } else {
+          _item.provOfBirthFK = _cursor.getInt(_cursorIndexOfProvOfBirthFK);
+        }
+        _item.provinceOfBirth = _cursor.getString(_cursorIndexOfProvinceOfBirth);
+        _item.provinceName = _cursor.getString(_cursorIndexOfProvinceName);
+        _item.districtName = _cursor.getString(_cursorIndexOfDistrictName);
+        _item.placeOfBirth = _cursor.getString(_cursorIndexOfPlaceOfBirth);
+        if (_cursor.isNull(_cursorIndexOfOccupationFK)) {
+          _item.occupationFK = null;
+        } else {
+          _item.occupationFK = _cursor.getInt(_cursorIndexOfOccupationFK);
+        }
+        _item.occupation = _cursor.getString(_cursorIndexOfOccupation);
+        if (_cursor.isNull(_cursorIndexOfClanFK)) {
+          _item.clanFK = null;
+        } else {
+          _item.clanFK = _cursor.getInt(_cursorIndexOfClanFK);
+        }
+        _item.clan = _cursor.getString(_cursorIndexOfClan);
+        _item.subClan = _cursor.getString(_cursorIndexOfSubClan);
+        _item.address = _cursor.getString(_cursorIndexOfAddress);
+        _item.natID = _cursor.getString(_cursorIndexOfNatID);
+        _item.natIDRecordNo = _cursor.getString(_cursorIndexOfNatIDRecordNo);
+        _item.status = _cursor.getString(_cursorIndexOfStatus);
+        if (_cursor.isNull(_cursorIndexOfHouseFK)) {
+          _item.houseFK = null;
+        } else {
+          _item.houseFK = _cursor.getInt(_cursorIndexOfHouseFK);
+        }
+        if (_cursor.isNull(_cursorIndexOfHouseSortOrder)) {
+          _item.houseSortOrder = null;
+        } else {
+          _item.houseSortOrder = _cursor.getInt(_cursorIndexOfHouseSortOrder);
+        }
+        _item.restHouse = _cursor.getString(_cursorIndexOfRestHouse);
+        if (_cursor.isNull(_cursorIndexOfSectionNo)) {
+          _item.sectionNo = null;
+        } else {
+          _item.sectionNo = _cursor.getInt(_cursorIndexOfSectionNo);
+        }
+        if (_cursor.isNull(_cursorIndexOfLotNo)) {
+          _item.lotNo = null;
+        } else {
+          _item.lotNo = _cursor.getInt(_cursorIndexOfLotNo);
+        }
+        _item.streetName = _cursor.getString(_cursorIndexOfStreetName);
+        _item.suburbTownSettlement = _cursor.getString(_cursorIndexOfSuburbTownSettlement);
+        if (_cursor.isNull(_cursorIndexOfFamilyFK)) {
+          _item.familyFK = null;
+        } else {
+          _item.familyFK = _cursor.getInt(_cursorIndexOfFamilyFK);
+        }
+        if (_cursor.isNull(_cursorIndexOfFamilySortOrder)) {
+          _item.familySortOrder = null;
+        } else {
+          _item.familySortOrder = _cursor.getInt(_cursorIndexOfFamilySortOrder);
+        }
+        if (_cursor.isNull(_cursorIndexOfFamilyNumber)) {
+          _item.familyNumber = null;
+        } else {
+          _item.familyNumber = _cursor.getInt(_cursorIndexOfFamilyNumber);
+        }
+        _item.familyName = _cursor.getString(_cursorIndexOfFamilyName);
+        _item.dpo = _cursor.getString(_cursorIndexOfDpo);
+        if (_cursor.isNull(_cursorIndexOfLat)) {
+          _item.lat = null;
+        } else {
+          _item.lat = _cursor.getDouble(_cursorIndexOfLat);
+        }
+        if (_cursor.isNull(_cursorIndexOfLongitude)) {
+          _item.longitude = null;
+        } else {
+          _item.longitude = _cursor.getDouble(_cursorIndexOfLongitude);
+        }
+        _item.posted = _cursor.getString(_cursorIndexOfPosted);
+        _item.updatedDate = _cursor.getString(_cursorIndexOfUpdatedDate);
+        _item.comment = _cursor.getString(_cursorIndexOfComment);
+        _item.electorProfileImage = _cursor.getString(_cursorIndexOfElectorProfileImage);
+        _item.electorProfileImageUrl = _cursor.getString(_cursorIndexOfElectorProfileImageUrl);
+        _item.electorFormImage = _cursor.getString(_cursorIndexOfElectorFormImage);
+        _item.electorFormImageUrl = _cursor.getString(_cursorIndexOfElectorFormImageUrl);
+        _item.electorProfileImageFile = _cursor.getString(_cursorIndexOfElectorProfileImageFile);
+        _item.electorFormImageFile = _cursor.getString(_cursorIndexOfElectorFormImageFile);
+        _item.enrolmentFormNumber = _cursor.getString(_cursorIndexOfEnrolmentFormNumber);
+        if (_cursor.isNull(_cursorIndexOfCreatedBy)) {
+          _item.createdBy = null;
+        } else {
+          _item.createdBy = _cursor.getInt(_cursorIndexOfCreatedBy);
+        }
+        if (_cursor.isNull(_cursorIndexOfIsSyncToServer)) {
+          _item.isSyncToServer = null;
+        } else {
+          _item.isSyncToServer = _cursor.getInt(_cursorIndexOfIsSyncToServer);
+        }
+        if (_cursor.isNull(_cursorIndexOfIsDataUploaded)) {
+          _item.isDataUploaded = null;
+        } else {
+          _item.isDataUploaded = _cursor.getInt(_cursorIndexOfIsDataUploaded);
+        }
+        if (_cursor.isNull(_cursorIndexOfIsImageUploaded)) {
+          _item.isImageUploaded = null;
+        } else {
+          _item.isImageUploaded = _cursor.getInt(_cursorIndexOfIsImageUploaded);
+        }
+        if (_cursor.isNull(_cursorIndexOfUpdatedDateTime)) {
+          _item.updatedDateTime = null;
+        } else {
+          _item.updatedDateTime = _cursor.getInt(_cursorIndexOfUpdatedDateTime);
+        }
+        if (_cursor.isNull(_cursorIndexOfSyncStatus)) {
+          _item.syncStatus = null;
+        } else {
+          _item.syncStatus = _cursor.getInt(_cursorIndexOfSyncStatus);
+        }
+        if (_cursor.isNull(_cursorIndexOfRejectRecordUpdated)) {
+          _item.rejectRecordUpdated = null;
+        } else {
+          _item.rejectRecordUpdated = _cursor.getInt(_cursorIndexOfRejectRecordUpdated);
+        }
+        _item.syncDateTime = _cursor.getString(_cursorIndexOfSyncDateTime);
+        if (_cursor.isNull(_cursorIndexOfDuplicateId)) {
+          _item.duplicateId = null;
+        } else {
+          _item.duplicateId = _cursor.getLong(_cursorIndexOfDuplicateId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutRegionId)) {
+          _item.transferOutRegionId = null;
+        } else {
+          _item.transferOutRegionId = _cursor.getInt(_cursorIndexOfTransferOutRegionId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutProvinceId)) {
+          _item.transferOutProvinceId = null;
+        } else {
+          _item.transferOutProvinceId = _cursor.getInt(_cursorIndexOfTransferOutProvinceId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutDistrictId)) {
+          _item.transferOutDistrictId = null;
+        } else {
+          _item.transferOutDistrictId = _cursor.getInt(_cursorIndexOfTransferOutDistrictId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutLLGId)) {
+          _item.transferOutLLGId = null;
+        } else {
+          _item.transferOutLLGId = _cursor.getInt(_cursorIndexOfTransferOutLLGId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutWardId)) {
+          _item.transferOutWardId = null;
+        } else {
+          _item.transferOutWardId = _cursor.getInt(_cursorIndexOfTransferOutWardId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutLocationId)) {
+          _item.transferOutLocationId = null;
+        } else {
+          _item.transferOutLocationId = _cursor.getInt(_cursorIndexOfTransferOutLocationId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInRegionId)) {
+          _item.transferInRegionId = null;
+        } else {
+          _item.transferInRegionId = _cursor.getInt(_cursorIndexOfTransferInRegionId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInProvinceId)) {
+          _item.transferInProvinceId = null;
+        } else {
+          _item.transferInProvinceId = _cursor.getInt(_cursorIndexOfTransferInProvinceId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInDistrictId)) {
+          _item.transferInDistrictId = null;
+        } else {
+          _item.transferInDistrictId = _cursor.getInt(_cursorIndexOfTransferInDistrictId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInLLGId)) {
+          _item.transferInLLGId = null;
+        } else {
+          _item.transferInLLGId = _cursor.getInt(_cursorIndexOfTransferInLLGId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInWardId)) {
+          _item.transferInWardId = null;
+        } else {
+          _item.transferInWardId = _cursor.getInt(_cursorIndexOfTransferInWardId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInLocationId)) {
+          _item.transferInLocationId = null;
+        } else {
+          _item.transferInLocationId = _cursor.getInt(_cursorIndexOfTransferInLocationId);
+        }
+        _item.errorMessage = _cursor.getString(_cursorIndexOfErrorMessage);
+        _item.rejectedReason = _cursor.getString(_cursorIndexOfRejectedReason);
+        final Integer _tmp_3;
+        if (_cursor.isNull(_cursorIndexOfIsRejected)) {
+          _tmp_3 = null;
+        } else {
+          _tmp_3 = _cursor.getInt(_cursorIndexOfIsRejected);
+        }
+        _item.isRejected = _tmp_3 == null ? null : _tmp_3 != 0;
+        final Integer _tmp_4;
+        if (_cursor.isNull(_cursorIndexOfIsHeader)) {
+          _tmp_4 = null;
+        } else {
+          _tmp_4 = _cursor.getInt(_cursorIndexOfIsHeader);
+        }
+        _item.isHeader = _tmp_4 == null ? null : _tmp_4 != 0;
+        if (_cursor.isNull(_cursorIndexOfMkaDistrictId)) {
+          _item.mkaDistrictId = null;
+        } else {
+          _item.mkaDistrictId = _cursor.getInt(_cursorIndexOfMkaDistrictId);
+        }
+        _item.mkaDistrictName = _cursor.getString(_cursorIndexOfMkaDistrictName);
+        if (_cursor.isNull(_cursorIndexOfMkaLlgId)) {
+          _item.mkaLlgId = null;
+        } else {
+          _item.mkaLlgId = _cursor.getInt(_cursorIndexOfMkaLlgId);
+        }
+        _item.mkaLlgName = _cursor.getString(_cursorIndexOfMkaLlgName);
+        if (_cursor.isNull(_cursorIndexOfMkaWardId)) {
+          _item.mkaWardId = null;
+        } else {
+          _item.mkaWardId = _cursor.getInt(_cursorIndexOfMkaWardId);
+        }
+        _item.mkaWardName = _cursor.getString(_cursorIndexOfMkaWardName);
+        if (_cursor.isNull(_cursorIndexOfMkaLocationId)) {
+          _item.mkaLocationId = null;
+        } else {
+          _item.mkaLocationId = _cursor.getInt(_cursorIndexOfMkaLocationId);
+        }
+        _item.mkaLocationName = _cursor.getString(_cursorIndexOfMkaLocationName);
+        if (_cursor.isNull(_cursorIndexOfMkaClanId)) {
+          _item.mkaClanId = null;
+        } else {
+          _item.mkaClanId = _cursor.getInt(_cursorIndexOfMkaClanId);
+        }
+        _item.mkaClanName = _cursor.getString(_cursorIndexOfMkaClanName);
+        _item.enrollFormType = _cursor.getString(_cursorIndexOfEnrollFormType);
+        if (_cursor.isNull(_cursorIndexOfTransferOutMkaDistrictId)) {
+          _item.transferOutMkaDistrictId = null;
+        } else {
+          _item.transferOutMkaDistrictId = _cursor.getInt(_cursorIndexOfTransferOutMkaDistrictId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutMkaLlgId)) {
+          _item.transferOutMkaLlgId = null;
+        } else {
+          _item.transferOutMkaLlgId = _cursor.getInt(_cursorIndexOfTransferOutMkaLlgId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutMkaWardId)) {
+          _item.transferOutMkaWardId = null;
+        } else {
+          _item.transferOutMkaWardId = _cursor.getInt(_cursorIndexOfTransferOutMkaWardId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutMkaLocationId)) {
+          _item.transferOutMkaLocationId = null;
+        } else {
+          _item.transferOutMkaLocationId = _cursor.getInt(_cursorIndexOfTransferOutMkaLocationId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInMkaDistrictId)) {
+          _item.transferInMkaDistrictId = null;
+        } else {
+          _item.transferInMkaDistrictId = _cursor.getInt(_cursorIndexOfTransferInMkaDistrictId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInMkaLlgId)) {
+          _item.transferInMkaLlgId = null;
+        } else {
+          _item.transferInMkaLlgId = _cursor.getInt(_cursorIndexOfTransferInMkaLlgId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInMkaWardId)) {
+          _item.transferInMkaWardId = null;
+        } else {
+          _item.transferInMkaWardId = _cursor.getInt(_cursorIndexOfTransferInMkaWardId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInMkaLocationId)) {
+          _item.transferInMkaLocationId = null;
+        } else {
+          _item.transferInMkaLocationId = _cursor.getInt(_cursorIndexOfTransferInMkaLocationId);
+        }
+        if (_cursor.isNull(_cursorIndexOfClanId)) {
+          _item.clanId = null;
+        } else {
+          _item.clanId = _cursor.getInt(_cursorIndexOfClanId);
+        }
+        _item.clanName = _cursor.getString(_cursorIndexOfClanName);
+        _result.add(_item);
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
+
+  @Override
+  public VotersList checkEnrolmentFormNumber(String enrolmentFormNumber) {
+    final String _sql = "SELECT * FROM voterslist WHERE enrolmentFormNumber = ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (enrolmentFormNumber == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, enrolmentFormNumber);
+    }
+    final Cursor _cursor = __db.query(_statement);
+    try {
+      final int _cursorIndexOfTempElectorId = _cursor.getColumnIndexOrThrow("tempElectorId");
+      final int _cursorIndexOfElectorId = _cursor.getColumnIndexOrThrow("electorId");
+      final int _cursorIndexOfOldElectorID = _cursor.getColumnIndexOrThrow("oldElectorID");
+      final int _cursorIndexOfLocationId = _cursor.getColumnIndexOrThrow("locationId");
+      final int _cursorIndexOfOldLocationId = _cursor.getColumnIndexOrThrow("OldLocationId");
+      final int _cursorIndexOfLocationName = _cursor.getColumnIndexOrThrow("locationName");
+      final int _cursorIndexOfWardId = _cursor.getColumnIndexOrThrow("wardId");
+      final int _cursorIndexOfWardName = _cursor.getColumnIndexOrThrow("wardName");
+      final int _cursorIndexOfLlgId = _cursor.getColumnIndexOrThrow("llgId");
+      final int _cursorIndexOfLlgName = _cursor.getColumnIndexOrThrow("llgName");
+      final int _cursorIndexOfDistrictId = _cursor.getColumnIndexOrThrow("districtId");
+      final int _cursorIndexOfProvinceId = _cursor.getColumnIndexOrThrow("provinceId");
+      final int _cursorIndexOfRegionId = _cursor.getColumnIndexOrThrow("regionId");
+      final int _cursorIndexOfLName = _cursor.getColumnIndexOrThrow("lName");
+      final int _cursorIndexOfFName = _cursor.getColumnIndexOrThrow("fName");
+      final int _cursorIndexOfVoterName = _cursor.getColumnIndexOrThrow("voterName");
+      final int _cursorIndexOfGender = _cursor.getColumnIndexOrThrow("gender");
+      final int _cursorIndexOfDob = _cursor.getColumnIndexOrThrow("dob");
+      final int _cursorIndexOfIsYOB = _cursor.getColumnIndexOrThrow("isYOB");
+      final int _cursorIndexOfIsProvisional = _cursor.getColumnIndexOrThrow("isProvisional");
+      final int _cursorIndexOfIsPWD = _cursor.getColumnIndexOrThrow("isPWD");
+      final int _cursorIndexOfReligion = _cursor.getColumnIndexOrThrow("religion");
+      final int _cursorIndexOfFatherLName = _cursor.getColumnIndexOrThrow("fatherLName");
+      final int _cursorIndexOfFatherFName = _cursor.getColumnIndexOrThrow("fatherFName");
+      final int _cursorIndexOfMotherLName = _cursor.getColumnIndexOrThrow("motherLName");
+      final int _cursorIndexOfMotherFName = _cursor.getColumnIndexOrThrow("motherFName");
+      final int _cursorIndexOfProvOfBirthFK = _cursor.getColumnIndexOrThrow("provOfBirthFK");
+      final int _cursorIndexOfProvinceOfBirth = _cursor.getColumnIndexOrThrow("provinceOfBirth");
+      final int _cursorIndexOfProvinceName = _cursor.getColumnIndexOrThrow("provinceName");
+      final int _cursorIndexOfDistrictName = _cursor.getColumnIndexOrThrow("districtName");
+      final int _cursorIndexOfPlaceOfBirth = _cursor.getColumnIndexOrThrow("placeOfBirth");
+      final int _cursorIndexOfOccupationFK = _cursor.getColumnIndexOrThrow("occupationFK");
+      final int _cursorIndexOfOccupation = _cursor.getColumnIndexOrThrow("occupation");
+      final int _cursorIndexOfClanFK = _cursor.getColumnIndexOrThrow("clanFK");
+      final int _cursorIndexOfClan = _cursor.getColumnIndexOrThrow("clan");
+      final int _cursorIndexOfSubClan = _cursor.getColumnIndexOrThrow("subClan");
+      final int _cursorIndexOfAddress = _cursor.getColumnIndexOrThrow("address");
+      final int _cursorIndexOfNatID = _cursor.getColumnIndexOrThrow("natID");
+      final int _cursorIndexOfNatIDRecordNo = _cursor.getColumnIndexOrThrow("natIDRecordNo");
+      final int _cursorIndexOfStatus = _cursor.getColumnIndexOrThrow("status");
+      final int _cursorIndexOfHouseFK = _cursor.getColumnIndexOrThrow("houseFK");
+      final int _cursorIndexOfHouseSortOrder = _cursor.getColumnIndexOrThrow("houseSortOrder");
+      final int _cursorIndexOfRestHouse = _cursor.getColumnIndexOrThrow("restHouse");
+      final int _cursorIndexOfSectionNo = _cursor.getColumnIndexOrThrow("sectionNo");
+      final int _cursorIndexOfLotNo = _cursor.getColumnIndexOrThrow("lotNo");
+      final int _cursorIndexOfStreetName = _cursor.getColumnIndexOrThrow("streetName");
+      final int _cursorIndexOfSuburbTownSettlement = _cursor.getColumnIndexOrThrow("suburbTownSettlement");
+      final int _cursorIndexOfFamilyFK = _cursor.getColumnIndexOrThrow("familyFK");
+      final int _cursorIndexOfFamilySortOrder = _cursor.getColumnIndexOrThrow("familySortOrder");
+      final int _cursorIndexOfFamilyNumber = _cursor.getColumnIndexOrThrow("familyNumber");
+      final int _cursorIndexOfFamilyName = _cursor.getColumnIndexOrThrow("familyName");
+      final int _cursorIndexOfDpo = _cursor.getColumnIndexOrThrow("dpo");
+      final int _cursorIndexOfLat = _cursor.getColumnIndexOrThrow("lat");
+      final int _cursorIndexOfLongitude = _cursor.getColumnIndexOrThrow("long");
+      final int _cursorIndexOfPosted = _cursor.getColumnIndexOrThrow("posted");
+      final int _cursorIndexOfUpdatedDate = _cursor.getColumnIndexOrThrow("updatedDate");
+      final int _cursorIndexOfComment = _cursor.getColumnIndexOrThrow("comment");
+      final int _cursorIndexOfElectorProfileImage = _cursor.getColumnIndexOrThrow("electorProfileImage");
+      final int _cursorIndexOfElectorProfileImageUrl = _cursor.getColumnIndexOrThrow("electorProfileImageUrl");
+      final int _cursorIndexOfElectorFormImage = _cursor.getColumnIndexOrThrow("electorFormImage");
+      final int _cursorIndexOfElectorFormImageUrl = _cursor.getColumnIndexOrThrow("electorFormImageUrl");
+      final int _cursorIndexOfElectorProfileImageFile = _cursor.getColumnIndexOrThrow("electorProfileImageFile");
+      final int _cursorIndexOfElectorFormImageFile = _cursor.getColumnIndexOrThrow("electorFormImageFile");
+      final int _cursorIndexOfEnrolmentFormNumber = _cursor.getColumnIndexOrThrow("enrolmentFormNumber");
+      final int _cursorIndexOfCreatedBy = _cursor.getColumnIndexOrThrow("createdBy");
+      final int _cursorIndexOfIsSyncToServer = _cursor.getColumnIndexOrThrow("isSyncToServer");
+      final int _cursorIndexOfIsDataUploaded = _cursor.getColumnIndexOrThrow("isDataUploaded");
+      final int _cursorIndexOfIsImageUploaded = _cursor.getColumnIndexOrThrow("isImageUploaded");
+      final int _cursorIndexOfUpdatedDateTime = _cursor.getColumnIndexOrThrow("updatedDateTime");
+      final int _cursorIndexOfSyncStatus = _cursor.getColumnIndexOrThrow("syncStatus");
+      final int _cursorIndexOfRejectRecordUpdated = _cursor.getColumnIndexOrThrow("rejectRecordUpdated");
+      final int _cursorIndexOfSyncDateTime = _cursor.getColumnIndexOrThrow("syncDateTime");
+      final int _cursorIndexOfDuplicateId = _cursor.getColumnIndexOrThrow("duplicateId");
+      final int _cursorIndexOfTransferOutRegionId = _cursor.getColumnIndexOrThrow("transferOutRegionId");
+      final int _cursorIndexOfTransferOutProvinceId = _cursor.getColumnIndexOrThrow("transferOutProvinceId");
+      final int _cursorIndexOfTransferOutDistrictId = _cursor.getColumnIndexOrThrow("transferOutDistrictId");
+      final int _cursorIndexOfTransferOutLLGId = _cursor.getColumnIndexOrThrow("transferOutLLGId");
+      final int _cursorIndexOfTransferOutWardId = _cursor.getColumnIndexOrThrow("transferOutWardId");
+      final int _cursorIndexOfTransferOutLocationId = _cursor.getColumnIndexOrThrow("transferOutLocationId");
+      final int _cursorIndexOfTransferInRegionId = _cursor.getColumnIndexOrThrow("transferInRegionId");
+      final int _cursorIndexOfTransferInProvinceId = _cursor.getColumnIndexOrThrow("transferInProvinceId");
+      final int _cursorIndexOfTransferInDistrictId = _cursor.getColumnIndexOrThrow("transferInDistrictId");
+      final int _cursorIndexOfTransferInLLGId = _cursor.getColumnIndexOrThrow("transferInLLGId");
+      final int _cursorIndexOfTransferInWardId = _cursor.getColumnIndexOrThrow("transferInWardId");
+      final int _cursorIndexOfTransferInLocationId = _cursor.getColumnIndexOrThrow("transferInLocationId");
+      final int _cursorIndexOfErrorMessage = _cursor.getColumnIndexOrThrow("errorMessage");
+      final int _cursorIndexOfRejectedReason = _cursor.getColumnIndexOrThrow("rejectedReason");
+      final int _cursorIndexOfIsRejected = _cursor.getColumnIndexOrThrow("isRejected");
+      final int _cursorIndexOfIsHeader = _cursor.getColumnIndexOrThrow("isHeader");
+      final int _cursorIndexOfMkaDistrictId = _cursor.getColumnIndexOrThrow("mkaDistrictId");
+      final int _cursorIndexOfMkaDistrictName = _cursor.getColumnIndexOrThrow("mkaDistrictName");
+      final int _cursorIndexOfMkaLlgId = _cursor.getColumnIndexOrThrow("mkallgId");
+      final int _cursorIndexOfMkaLlgName = _cursor.getColumnIndexOrThrow("mkallgName");
+      final int _cursorIndexOfMkaWardId = _cursor.getColumnIndexOrThrow("mkaWardId");
+      final int _cursorIndexOfMkaWardName = _cursor.getColumnIndexOrThrow("mkaWardName");
+      final int _cursorIndexOfMkaLocationId = _cursor.getColumnIndexOrThrow("mkaLocationId");
+      final int _cursorIndexOfMkaLocationName = _cursor.getColumnIndexOrThrow("mkaLocationName");
+      final int _cursorIndexOfMkaClanId = _cursor.getColumnIndexOrThrow("mkaClanId");
+      final int _cursorIndexOfMkaClanName = _cursor.getColumnIndexOrThrow("mkaClanName");
+      final int _cursorIndexOfEnrollFormType = _cursor.getColumnIndexOrThrow("enrollFormType");
+      final int _cursorIndexOfTransferOutMkaDistrictId = _cursor.getColumnIndexOrThrow("transferOutMkaDistrictId");
+      final int _cursorIndexOfTransferOutMkaLlgId = _cursor.getColumnIndexOrThrow("transferOutMkaLlgId");
+      final int _cursorIndexOfTransferOutMkaWardId = _cursor.getColumnIndexOrThrow("transferOutMkaWardId");
+      final int _cursorIndexOfTransferOutMkaLocationId = _cursor.getColumnIndexOrThrow("transferOutMkaLocationId");
+      final int _cursorIndexOfTransferInMkaDistrictId = _cursor.getColumnIndexOrThrow("transferInMkaDistrictId");
+      final int _cursorIndexOfTransferInMkaLlgId = _cursor.getColumnIndexOrThrow("transferInMkaLlgId");
+      final int _cursorIndexOfTransferInMkaWardId = _cursor.getColumnIndexOrThrow("transferInMkaWardId");
+      final int _cursorIndexOfTransferInMkaLocationId = _cursor.getColumnIndexOrThrow("transferInMkaLocationId");
+      final int _cursorIndexOfClanId = _cursor.getColumnIndexOrThrow("clanId");
+      final int _cursorIndexOfClanName = _cursor.getColumnIndexOrThrow("clanName");
+      final VotersList _result;
+      if(_cursor.moveToFirst()) {
+        _result = new VotersList();
+        if (_cursor.isNull(_cursorIndexOfTempElectorId)) {
+          _result.tempElectorId = null;
+        } else {
+          _result.tempElectorId = _cursor.getInt(_cursorIndexOfTempElectorId);
+        }
+        if (_cursor.isNull(_cursorIndexOfElectorId)) {
+          _result.electorId = null;
+        } else {
+          _result.electorId = _cursor.getLong(_cursorIndexOfElectorId);
+        }
+        if (_cursor.isNull(_cursorIndexOfOldElectorID)) {
+          _result.oldElectorID = null;
+        } else {
+          _result.oldElectorID = _cursor.getLong(_cursorIndexOfOldElectorID);
+        }
+        if (_cursor.isNull(_cursorIndexOfLocationId)) {
+          _result.locationId = null;
+        } else {
+          _result.locationId = _cursor.getInt(_cursorIndexOfLocationId);
+        }
+        if (_cursor.isNull(_cursorIndexOfOldLocationId)) {
+          _result.oldLocationId = null;
+        } else {
+          _result.oldLocationId = _cursor.getInt(_cursorIndexOfOldLocationId);
+        }
+        _result.locationName = _cursor.getString(_cursorIndexOfLocationName);
+        if (_cursor.isNull(_cursorIndexOfWardId)) {
+          _result.wardId = null;
+        } else {
+          _result.wardId = _cursor.getInt(_cursorIndexOfWardId);
+        }
+        _result.wardName = _cursor.getString(_cursorIndexOfWardName);
+        if (_cursor.isNull(_cursorIndexOfLlgId)) {
+          _result.llgId = null;
+        } else {
+          _result.llgId = _cursor.getInt(_cursorIndexOfLlgId);
+        }
+        _result.llgName = _cursor.getString(_cursorIndexOfLlgName);
+        if (_cursor.isNull(_cursorIndexOfDistrictId)) {
+          _result.districtId = null;
+        } else {
+          _result.districtId = _cursor.getInt(_cursorIndexOfDistrictId);
+        }
+        if (_cursor.isNull(_cursorIndexOfProvinceId)) {
+          _result.provinceId = null;
+        } else {
+          _result.provinceId = _cursor.getInt(_cursorIndexOfProvinceId);
+        }
+        if (_cursor.isNull(_cursorIndexOfRegionId)) {
+          _result.regionId = null;
+        } else {
+          _result.regionId = _cursor.getInt(_cursorIndexOfRegionId);
+        }
+        _result.lName = _cursor.getString(_cursorIndexOfLName);
+        _result.fName = _cursor.getString(_cursorIndexOfFName);
+        _result.voterName = _cursor.getString(_cursorIndexOfVoterName);
+        _result.gender = _cursor.getString(_cursorIndexOfGender);
+        _result.dob = _cursor.getString(_cursorIndexOfDob);
+        final Integer _tmp;
+        if (_cursor.isNull(_cursorIndexOfIsYOB)) {
+          _tmp = null;
+        } else {
+          _tmp = _cursor.getInt(_cursorIndexOfIsYOB);
+        }
+        _result.isYOB = _tmp == null ? null : _tmp != 0;
+        final Integer _tmp_1;
+        if (_cursor.isNull(_cursorIndexOfIsProvisional)) {
+          _tmp_1 = null;
+        } else {
+          _tmp_1 = _cursor.getInt(_cursorIndexOfIsProvisional);
+        }
+        _result.isProvisional = _tmp_1 == null ? null : _tmp_1 != 0;
+        final Integer _tmp_2;
+        if (_cursor.isNull(_cursorIndexOfIsPWD)) {
+          _tmp_2 = null;
+        } else {
+          _tmp_2 = _cursor.getInt(_cursorIndexOfIsPWD);
+        }
+        _result.isPWD = _tmp_2 == null ? null : _tmp_2 != 0;
+        _result.religion = _cursor.getString(_cursorIndexOfReligion);
+        _result.fatherLName = _cursor.getString(_cursorIndexOfFatherLName);
+        _result.fatherFName = _cursor.getString(_cursorIndexOfFatherFName);
+        _result.motherLName = _cursor.getString(_cursorIndexOfMotherLName);
+        _result.motherFName = _cursor.getString(_cursorIndexOfMotherFName);
+        if (_cursor.isNull(_cursorIndexOfProvOfBirthFK)) {
+          _result.provOfBirthFK = null;
+        } else {
+          _result.provOfBirthFK = _cursor.getInt(_cursorIndexOfProvOfBirthFK);
+        }
+        _result.provinceOfBirth = _cursor.getString(_cursorIndexOfProvinceOfBirth);
+        _result.provinceName = _cursor.getString(_cursorIndexOfProvinceName);
+        _result.districtName = _cursor.getString(_cursorIndexOfDistrictName);
+        _result.placeOfBirth = _cursor.getString(_cursorIndexOfPlaceOfBirth);
+        if (_cursor.isNull(_cursorIndexOfOccupationFK)) {
+          _result.occupationFK = null;
+        } else {
+          _result.occupationFK = _cursor.getInt(_cursorIndexOfOccupationFK);
+        }
+        _result.occupation = _cursor.getString(_cursorIndexOfOccupation);
+        if (_cursor.isNull(_cursorIndexOfClanFK)) {
+          _result.clanFK = null;
+        } else {
+          _result.clanFK = _cursor.getInt(_cursorIndexOfClanFK);
+        }
+        _result.clan = _cursor.getString(_cursorIndexOfClan);
+        _result.subClan = _cursor.getString(_cursorIndexOfSubClan);
+        _result.address = _cursor.getString(_cursorIndexOfAddress);
+        _result.natID = _cursor.getString(_cursorIndexOfNatID);
+        _result.natIDRecordNo = _cursor.getString(_cursorIndexOfNatIDRecordNo);
+        _result.status = _cursor.getString(_cursorIndexOfStatus);
+        if (_cursor.isNull(_cursorIndexOfHouseFK)) {
+          _result.houseFK = null;
+        } else {
+          _result.houseFK = _cursor.getInt(_cursorIndexOfHouseFK);
+        }
+        if (_cursor.isNull(_cursorIndexOfHouseSortOrder)) {
+          _result.houseSortOrder = null;
+        } else {
+          _result.houseSortOrder = _cursor.getInt(_cursorIndexOfHouseSortOrder);
+        }
+        _result.restHouse = _cursor.getString(_cursorIndexOfRestHouse);
+        if (_cursor.isNull(_cursorIndexOfSectionNo)) {
+          _result.sectionNo = null;
+        } else {
+          _result.sectionNo = _cursor.getInt(_cursorIndexOfSectionNo);
+        }
+        if (_cursor.isNull(_cursorIndexOfLotNo)) {
+          _result.lotNo = null;
+        } else {
+          _result.lotNo = _cursor.getInt(_cursorIndexOfLotNo);
+        }
+        _result.streetName = _cursor.getString(_cursorIndexOfStreetName);
+        _result.suburbTownSettlement = _cursor.getString(_cursorIndexOfSuburbTownSettlement);
+        if (_cursor.isNull(_cursorIndexOfFamilyFK)) {
+          _result.familyFK = null;
+        } else {
+          _result.familyFK = _cursor.getInt(_cursorIndexOfFamilyFK);
+        }
+        if (_cursor.isNull(_cursorIndexOfFamilySortOrder)) {
+          _result.familySortOrder = null;
+        } else {
+          _result.familySortOrder = _cursor.getInt(_cursorIndexOfFamilySortOrder);
+        }
+        if (_cursor.isNull(_cursorIndexOfFamilyNumber)) {
+          _result.familyNumber = null;
+        } else {
+          _result.familyNumber = _cursor.getInt(_cursorIndexOfFamilyNumber);
+        }
+        _result.familyName = _cursor.getString(_cursorIndexOfFamilyName);
+        _result.dpo = _cursor.getString(_cursorIndexOfDpo);
+        if (_cursor.isNull(_cursorIndexOfLat)) {
+          _result.lat = null;
+        } else {
+          _result.lat = _cursor.getDouble(_cursorIndexOfLat);
+        }
+        if (_cursor.isNull(_cursorIndexOfLongitude)) {
+          _result.longitude = null;
+        } else {
+          _result.longitude = _cursor.getDouble(_cursorIndexOfLongitude);
+        }
+        _result.posted = _cursor.getString(_cursorIndexOfPosted);
+        _result.updatedDate = _cursor.getString(_cursorIndexOfUpdatedDate);
+        _result.comment = _cursor.getString(_cursorIndexOfComment);
+        _result.electorProfileImage = _cursor.getString(_cursorIndexOfElectorProfileImage);
+        _result.electorProfileImageUrl = _cursor.getString(_cursorIndexOfElectorProfileImageUrl);
+        _result.electorFormImage = _cursor.getString(_cursorIndexOfElectorFormImage);
+        _result.electorFormImageUrl = _cursor.getString(_cursorIndexOfElectorFormImageUrl);
+        _result.electorProfileImageFile = _cursor.getString(_cursorIndexOfElectorProfileImageFile);
+        _result.electorFormImageFile = _cursor.getString(_cursorIndexOfElectorFormImageFile);
+        _result.enrolmentFormNumber = _cursor.getString(_cursorIndexOfEnrolmentFormNumber);
+        if (_cursor.isNull(_cursorIndexOfCreatedBy)) {
+          _result.createdBy = null;
+        } else {
+          _result.createdBy = _cursor.getInt(_cursorIndexOfCreatedBy);
+        }
+        if (_cursor.isNull(_cursorIndexOfIsSyncToServer)) {
+          _result.isSyncToServer = null;
+        } else {
+          _result.isSyncToServer = _cursor.getInt(_cursorIndexOfIsSyncToServer);
+        }
+        if (_cursor.isNull(_cursorIndexOfIsDataUploaded)) {
+          _result.isDataUploaded = null;
+        } else {
+          _result.isDataUploaded = _cursor.getInt(_cursorIndexOfIsDataUploaded);
+        }
+        if (_cursor.isNull(_cursorIndexOfIsImageUploaded)) {
+          _result.isImageUploaded = null;
+        } else {
+          _result.isImageUploaded = _cursor.getInt(_cursorIndexOfIsImageUploaded);
+        }
+        if (_cursor.isNull(_cursorIndexOfUpdatedDateTime)) {
+          _result.updatedDateTime = null;
+        } else {
+          _result.updatedDateTime = _cursor.getInt(_cursorIndexOfUpdatedDateTime);
+        }
+        if (_cursor.isNull(_cursorIndexOfSyncStatus)) {
+          _result.syncStatus = null;
+        } else {
+          _result.syncStatus = _cursor.getInt(_cursorIndexOfSyncStatus);
+        }
+        if (_cursor.isNull(_cursorIndexOfRejectRecordUpdated)) {
+          _result.rejectRecordUpdated = null;
+        } else {
+          _result.rejectRecordUpdated = _cursor.getInt(_cursorIndexOfRejectRecordUpdated);
+        }
+        _result.syncDateTime = _cursor.getString(_cursorIndexOfSyncDateTime);
+        if (_cursor.isNull(_cursorIndexOfDuplicateId)) {
+          _result.duplicateId = null;
+        } else {
+          _result.duplicateId = _cursor.getLong(_cursorIndexOfDuplicateId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutRegionId)) {
+          _result.transferOutRegionId = null;
+        } else {
+          _result.transferOutRegionId = _cursor.getInt(_cursorIndexOfTransferOutRegionId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutProvinceId)) {
+          _result.transferOutProvinceId = null;
+        } else {
+          _result.transferOutProvinceId = _cursor.getInt(_cursorIndexOfTransferOutProvinceId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutDistrictId)) {
+          _result.transferOutDistrictId = null;
+        } else {
+          _result.transferOutDistrictId = _cursor.getInt(_cursorIndexOfTransferOutDistrictId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutLLGId)) {
+          _result.transferOutLLGId = null;
+        } else {
+          _result.transferOutLLGId = _cursor.getInt(_cursorIndexOfTransferOutLLGId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutWardId)) {
+          _result.transferOutWardId = null;
+        } else {
+          _result.transferOutWardId = _cursor.getInt(_cursorIndexOfTransferOutWardId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutLocationId)) {
+          _result.transferOutLocationId = null;
+        } else {
+          _result.transferOutLocationId = _cursor.getInt(_cursorIndexOfTransferOutLocationId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInRegionId)) {
+          _result.transferInRegionId = null;
+        } else {
+          _result.transferInRegionId = _cursor.getInt(_cursorIndexOfTransferInRegionId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInProvinceId)) {
+          _result.transferInProvinceId = null;
+        } else {
+          _result.transferInProvinceId = _cursor.getInt(_cursorIndexOfTransferInProvinceId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInDistrictId)) {
+          _result.transferInDistrictId = null;
+        } else {
+          _result.transferInDistrictId = _cursor.getInt(_cursorIndexOfTransferInDistrictId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInLLGId)) {
+          _result.transferInLLGId = null;
+        } else {
+          _result.transferInLLGId = _cursor.getInt(_cursorIndexOfTransferInLLGId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInWardId)) {
+          _result.transferInWardId = null;
+        } else {
+          _result.transferInWardId = _cursor.getInt(_cursorIndexOfTransferInWardId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInLocationId)) {
+          _result.transferInLocationId = null;
+        } else {
+          _result.transferInLocationId = _cursor.getInt(_cursorIndexOfTransferInLocationId);
+        }
+        _result.errorMessage = _cursor.getString(_cursorIndexOfErrorMessage);
+        _result.rejectedReason = _cursor.getString(_cursorIndexOfRejectedReason);
+        final Integer _tmp_3;
+        if (_cursor.isNull(_cursorIndexOfIsRejected)) {
+          _tmp_3 = null;
+        } else {
+          _tmp_3 = _cursor.getInt(_cursorIndexOfIsRejected);
+        }
+        _result.isRejected = _tmp_3 == null ? null : _tmp_3 != 0;
+        final Integer _tmp_4;
+        if (_cursor.isNull(_cursorIndexOfIsHeader)) {
+          _tmp_4 = null;
+        } else {
+          _tmp_4 = _cursor.getInt(_cursorIndexOfIsHeader);
+        }
+        _result.isHeader = _tmp_4 == null ? null : _tmp_4 != 0;
+        if (_cursor.isNull(_cursorIndexOfMkaDistrictId)) {
+          _result.mkaDistrictId = null;
+        } else {
+          _result.mkaDistrictId = _cursor.getInt(_cursorIndexOfMkaDistrictId);
+        }
+        _result.mkaDistrictName = _cursor.getString(_cursorIndexOfMkaDistrictName);
+        if (_cursor.isNull(_cursorIndexOfMkaLlgId)) {
+          _result.mkaLlgId = null;
+        } else {
+          _result.mkaLlgId = _cursor.getInt(_cursorIndexOfMkaLlgId);
+        }
+        _result.mkaLlgName = _cursor.getString(_cursorIndexOfMkaLlgName);
+        if (_cursor.isNull(_cursorIndexOfMkaWardId)) {
+          _result.mkaWardId = null;
+        } else {
+          _result.mkaWardId = _cursor.getInt(_cursorIndexOfMkaWardId);
+        }
+        _result.mkaWardName = _cursor.getString(_cursorIndexOfMkaWardName);
+        if (_cursor.isNull(_cursorIndexOfMkaLocationId)) {
+          _result.mkaLocationId = null;
+        } else {
+          _result.mkaLocationId = _cursor.getInt(_cursorIndexOfMkaLocationId);
+        }
+        _result.mkaLocationName = _cursor.getString(_cursorIndexOfMkaLocationName);
+        if (_cursor.isNull(_cursorIndexOfMkaClanId)) {
+          _result.mkaClanId = null;
+        } else {
+          _result.mkaClanId = _cursor.getInt(_cursorIndexOfMkaClanId);
+        }
+        _result.mkaClanName = _cursor.getString(_cursorIndexOfMkaClanName);
+        _result.enrollFormType = _cursor.getString(_cursorIndexOfEnrollFormType);
+        if (_cursor.isNull(_cursorIndexOfTransferOutMkaDistrictId)) {
+          _result.transferOutMkaDistrictId = null;
+        } else {
+          _result.transferOutMkaDistrictId = _cursor.getInt(_cursorIndexOfTransferOutMkaDistrictId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutMkaLlgId)) {
+          _result.transferOutMkaLlgId = null;
+        } else {
+          _result.transferOutMkaLlgId = _cursor.getInt(_cursorIndexOfTransferOutMkaLlgId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutMkaWardId)) {
+          _result.transferOutMkaWardId = null;
+        } else {
+          _result.transferOutMkaWardId = _cursor.getInt(_cursorIndexOfTransferOutMkaWardId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferOutMkaLocationId)) {
+          _result.transferOutMkaLocationId = null;
+        } else {
+          _result.transferOutMkaLocationId = _cursor.getInt(_cursorIndexOfTransferOutMkaLocationId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInMkaDistrictId)) {
+          _result.transferInMkaDistrictId = null;
+        } else {
+          _result.transferInMkaDistrictId = _cursor.getInt(_cursorIndexOfTransferInMkaDistrictId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInMkaLlgId)) {
+          _result.transferInMkaLlgId = null;
+        } else {
+          _result.transferInMkaLlgId = _cursor.getInt(_cursorIndexOfTransferInMkaLlgId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInMkaWardId)) {
+          _result.transferInMkaWardId = null;
+        } else {
+          _result.transferInMkaWardId = _cursor.getInt(_cursorIndexOfTransferInMkaWardId);
+        }
+        if (_cursor.isNull(_cursorIndexOfTransferInMkaLocationId)) {
+          _result.transferInMkaLocationId = null;
+        } else {
+          _result.transferInMkaLocationId = _cursor.getInt(_cursorIndexOfTransferInMkaLocationId);
+        }
+        if (_cursor.isNull(_cursorIndexOfClanId)) {
+          _result.clanId = null;
+        } else {
+          _result.clanId = _cursor.getInt(_cursorIndexOfClanId);
+        }
+        _result.clanName = _cursor.getString(_cursorIndexOfClanName);
+      } else {
+        _result = null;
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
+}

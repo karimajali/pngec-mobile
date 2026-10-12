@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <NumberPicker
+            android:id="@+id/yearPicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/_30ssp"
+            android:layout_marginEnd="@dimen/_30ssp"
+            android:calendarViewShown="false" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/yearPicker"
+            android:layout_marginStart="@dimen/_5ssp"
+            android:layout_marginEnd="@dimen/_5ssp"
+            android:layout_marginBottom="@dimen/_5ssp"
+            android:paddingBottom="@dimen/_5ssp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvOk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_25ssp"
+                android:fontFamily="@font/poppins_regular"
+                android:padding="@dimen/_5ssp"
+                android:text="@string/ok"
+                android:textAllCaps="true"
+                android:textColor="@color/buttonColor"
+                android:textSize="@dimen/_14ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_15ssp"
+                android:layout_toStartOf="@+id/tvOk"
+                android:fontFamily="@font/poppins_regular"
+                android:padding="@dimen/_5ssp"
+                android:text="@string/cancel"
+                android:textAllCaps="true"
+                android:textColor="@color/buttonColor"
+                android:textSize="@dimen/_14ssp" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>

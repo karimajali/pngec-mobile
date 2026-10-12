@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="newEnrolmentFormViewModel"
+            type="com.pngelectoral.ui.viewModel.NewEnrolmentFormViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/loginBackground">
+
+        <RelativeLayout
+            android:id="@+id/rlHeader"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50ssp"
+            android:background="@color/colorPrimary">
+
+            <!--            <androidx.appcompat.widget.AppCompatButton-->
+            <!--                android:id="@+id/btnBack"-->
+            <!--                style="@style/back_button"-->
+            <!--                 />-->
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnBack"
+                style="@style/back_button_image" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toStartOf="@id/btnHome"
+                android:layout_toEndOf="@id/btnBack"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center_horizontal"
+                android:text="@string/new_enrolment"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_18ssp"
+                android:textStyle="bold" />
+
+            <!--            <androidx.appcompat.widget.AppCompatImageView-->
+            <!--                android:id="@+id/btnHome"-->
+            <!--                style="@style/home_button"-->
+            <!--                android:layout_alignParentEnd="true" />-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnHome"
+                style="@style/home_button_image"
+                android:layout_alignParentEnd="true" />
+
+
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/btnSubmit"
+            android:layout_below="@id/rlHeader">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10ssp"
+                android:layout_marginTop="@dimen/_15ssp"
+                android:layout_marginEnd="@dimen/_10ssp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivVoterImage"
+                        android:layout_width="@dimen/_60ssp"
+                        android:layout_height="@dimen/_60ssp"
+                        android:src="@drawable/e_user" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvVoterName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_toStartOf="@+id/ivViewForm11"
+                        android:layout_toEndOf="@id/ivVoterImage"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@color/color_22_22_22"
+                        android:textSize="@dimen/_18ssp"
+                        android:textStyle="bold"
+                        android:visibility="invisible"
+                        tools:text="Beverly Jones" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivViewForm11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_5ssp"
+                        android:layout_marginTop="@dimen/_5ssp"
+                        android:src="@drawable/ic_form11" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/llMandatryDataFields"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20ssp"
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5ssp"
+                    android:visibility="visible">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvMandatoryDataFields"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5ssp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="@string/common_fields"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_15ssp" />
+
+
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/last_name" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etLastName"
+                            style="@style/form_new_edit_text_fields"
+                            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ '"
+                            android:hint="@string/last_name"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapSentences" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/given_name" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etGivenName"
+                            style="@style/form_new_edit_text_fields"
+                            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ '"
+                            android:hint="@string/given_name"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapSentences" />
+
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/cbDOBIsYear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10ssp"
+                        android:button="@null"
+                        android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/is_year"
+                        android:textSize="@dimen/_16ssp" />
+
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/date_of_birth" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/etDateOfBirth"
+                            style="@style/form_new_edit_text_selection_fields"
+                            android:hint="@string/date_of_birth" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/place_of_birth" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etPlaceOfBirth"
+                            style="@style/form_new_edit_text_fields"
+                            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:hint="@string/place_of_birth"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapSentences" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/province_of_birth" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/etProvinceOfBirth"
+                            style="@style/form_new_edit_text_selection_fields"
+                            android:hint="@string/province_of_birth" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/gender" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/etGender"
+                            style="@style/form_new_edit_text_selection_fields"
+                            android:hint="@string/gender" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/occupation" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/etOccupation"
+                            style="@style/form_new_edit_text_selection_fields"
+                            android:hint="@string/occupation" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/location_village" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/etLocationOrVillage"
+                            style="@style/form_new_edit_text_selection_fields"
+                            android:hint="@string/location_village" />
+
+
+                    </LinearLayout>
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/clan" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/etClan"
+                            style="@style/form_new_edit_text_selection_fields"
+                            android:hint="@string/clan" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/status" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/etStatus"
+                            style="@style/form_text_views_with_background"
+                            android:hint="@string/status"
+                            android:text="@string/new_status" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/comment" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etComment"
+                            style="@style/form_new_edit_text_fields"
+                            android:hint="@string/comment"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapSentences" />
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlPPHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15ssp"
+                    android:background="@drawable/voter_details_header_bg"
+                    android:padding="@dimen/_5ssp">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPPTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/personal_particulars"
+                        android:textColor="@color/voter_details_header_text"
+                        android:textSize="@dimen/_16ssp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/tvPPArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_5ssp"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:src="@drawable/voter_details_header_arrow" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/llPersonalParticulars"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5ssp"
+                    android:visibility="visible">
+
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/family_number" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etFamilyNumber"
+                            style="@style/form_new_edit_text_fields"
+                            android:digits="0123456789"
+                            android:hint="@string/family_number"
+                            android:imeOptions="actionNext"
+                            android:inputType="number|textNoSuggestions" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/family_name" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etFamilyName"
+                            style="@style/form_new_edit_text_fields"
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:hint="@string/family_name"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapSentences" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/family_order_no" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etFamilyOrderNo"
+                            style="@style/form_new_edit_text_fields"
+                            android:digits="0123456789"
+                            android:hint="@string/family_order_no"
+                            android:imeOptions="actionNext"
+                            android:inputType="number|textNoSuggestions" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/national_id_card_number" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etNationalIDCardNumber"
+                            style="@style/form_new_edit_text_fields"
+                            android:digits="0123456789"
+                            android:maxLength="10"
+                            android:hint="@string/national_id_card_number"
+                            android:imeOptions="actionNext"
+                            android:inputType="number|textNoSuggestions" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/person_with_disability" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/etPersonWithDisability"
+                            style="@style/form_new_edit_text_selection_fields"
+                            android:hint="@string/person_with_disability" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/religion" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etReligion"
+                            style="@style/form_new_edit_text_fields"
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:hint="@string/religion"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapSentences" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/father_s_first_name" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etFathersFirstName"
+                            style="@style/form_new_edit_text_fields"
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:hint="@string/father_s_first_name"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapSentences" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/father_s_last_name" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etFathersLastName"
+                            style="@style/form_new_edit_text_fields"
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:hint="@string/father_s_last_name"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapSentences" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/mother_s_first_name" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etMothersFirstName"
+                            style="@style/form_new_edit_text_fields"
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:hint="@string/mother_s_first_name"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapSentences" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/form_text_views_layout">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:text="@string/mother_s_last_name" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etMothersLastName"
+                            style="@style/form_new_edit_text_fields"
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:hint="@string/mother_s_last_name"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapSentences" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15ssp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/rlPRHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvPRTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_10ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/place_of_residence"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_16ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/tvPRArrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llPlaceOfResidence"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:id="@+id/llProvince"
+                            style="@style/form_text_views_layout">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/form_text_views_key"
+                                android:text="@string/province" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/etProvince"
+                                style="@style/form_text_views_with_background"
+                                android:hint="@string/province" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/form_text_views_layout">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/form_text_views_key"
+                                android:text="@string/open_electorate" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/etOpenElectorate"
+                                style="@style/form_text_views_with_background"
+                                android:hint="@string/open_electorate" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/form_text_views_layout">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/form_text_views_key"
+                                android:text="@string/llg" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/etLLG"
+                                style="@style/form_text_views_with_background"
+                                android:hint="@string/llg" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/form_text_views_layout">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/form_text_views_key"
+                                android:text="@string/ward_no_name" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/etWardNoAndName"
+                                style="@style/form_text_views_with_background"
+                                android:hint="@string/ward_no_name" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15ssp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/rlRuralHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvRuralTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_10ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/rural"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_16ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/tvRuralArrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llRural"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="visible">
+
+
+
+                        <LinearLayout style="@style/form_text_views_layout">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/form_text_views_key"
+                                android:text="@string/sub_clan" />
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/etSubClan"
+                                style="@style/form_new_edit_text_fields"
+                                android:hint="@string/sub_clan"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapSentences"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout style="@style/form_text_views_layout">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/form_text_views_key"
+                                android:text="@string/rest_house" />
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/etRestHouse"
+                                style="@style/form_new_edit_text_fields"
+                                android:hint="@string/rest_house"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapSentences"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15ssp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/rlUrbanHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvUrbanTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_10ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/urban"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_16ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/tvUrbanArrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llUrban"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="visible">
+
+                        <LinearLayout style="@style/form_text_views_layout">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/form_text_views_key"
+                                android:text="@string/section_no" />
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/etSectionNo"
+                                style="@style/form_new_edit_text_fields"
+                                android:digits="0123456789"
+                                android:hint="@string/section_no"
+                                android:imeOptions="actionNext"
+                                android:inputType="number|textNoSuggestions" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout style="@style/form_text_views_layout">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/form_text_views_key"
+                                android:text="@string/lot_no" />
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/etLotNo"
+                                style="@style/form_new_edit_text_fields"
+                                android:digits="0123456789"
+                                android:hint="@string/lot_no"
+                                android:imeOptions="actionNext"
+                                android:inputType="number|textNoSuggestions" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/form_text_views_layout">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/form_text_views_key"
+                                android:text="@string/street_name" />
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/etStreetName"
+                                style="@style/form_new_edit_text_fields"
+                                android:hint="@string/street_name"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapSentences" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/form_text_views_layout">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/form_text_views_key"
+                                android:text="@string/suburb_town_settlement" />
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/etSuburb"
+                                style="@style/form_new_edit_text_fields"
+                                android:hint="@string/suburb_town_settlement"
+                                android:imeOptions="actionDone"
+                                android:inputType="textCapSentences" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_15ssp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/rlKMABioHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/voter_details_header_bg"
+                        android:padding="@dimen/_5ssp">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvKMABioTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_10ssp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="@string/mkaBio"
+                            android:textColor="@color/voter_details_header_text"
+                            android:textSize="@dimen/_16ssp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/tvKMABioArrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5ssp"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/voter_details_header_arrow" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llKMABio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_5ssp"
+                        android:visibility="visible">
+
+                        <LinearLayout style="@style/form_text_views_layout">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/form_text_views_key"
+                                android:layout_height="wrap_content"
+                                android:text="@string/mkaDistrict" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/etMKADistrict"
+                                style="@style/form_new_edit_text_selection_fields"
+                                android:hint="@string/mkaDistrict" />
+
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/form_text_views_layout">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/form_text_views_key"
+                                android:layout_height="wrap_content"
+                                android:text="@string/mkaLlg" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/etMKALlg"
+                                style="@style/form_new_edit_text_selection_fields"
+                                android:hint="@string/mkaLlg" />
+
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/form_text_views_layout">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/form_text_views_key"
+                                android:layout_height="wrap_content"
+                                android:text="@string/mkaWard" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/etMKAWard"
+                                style="@style/form_new_edit_text_selection_fields"
+                                android:hint="@string/mkaWard" />
+
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/form_text_views_layout">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/form_text_views_key"
+                                android:layout_height="wrap_content"
+                                android:text="@string/mkaLocation" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/etMKALocation"
+                                style="@style/form_new_edit_text_selection_fields"
+                                android:hint="@string/mkaLocation" />
+
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/form_text_views_layout">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/form_text_views_key"
+                                android:layout_height="wrap_content"
+                                android:text="@string/mkaClan" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/etMKAClan"
+                                style="@style/form_new_edit_text_selection_fields"
+                                android:hint="@string/mkaClan" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/_25ssp"
+            android:layout_marginTop="@dimen/_10ssp"
+            android:layout_marginEnd="@dimen/_25ssp"
+            android:layout_marginBottom="@dimen/_10ssp"
+            android:background="@color/buttonColor"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/submit"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_16ssp"
+            tools:ignore="TextContrastCheck" />
+
+        <RelativeLayout
+            android:id="@+id/rlBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/_5ssp"
+            android:visibility="gone">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBottomData"
+                style="@style/bottom_data_text_view" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>

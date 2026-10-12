@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="wardRollViewModel"
+            type="com.pngelectoral.ui.viewModel.WardRollViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/loginBackground"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rlHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnHome"
+                style="@style/home_button_image" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/btnGenderSplitReport"
+                android:layout_toEndOf="@id/btnHome"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center_horizontal"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnPhotoSplitReport"
+                style="@style/photo_button_image"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="32dp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnGenderSplitReport"
+                style="@style/gender_button_image"
+                android:layout_marginEnd="30dp"
+                android:layout_toStartOf="@+id/btnFilter" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnFilter"
+                style="@style/filter_button_image"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rlHeader"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15ssp"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_2ssp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/edit_text_background"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_25ssp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_5ssp"
+                        android:layout_marginTop="@dimen/_5ssp"
+                        android:layout_marginBottom="@dimen/_5ssp"
+                        android:src="@drawable/search_ic" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etLastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40ssp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@null"
+                        android:fontFamily="@font/poppins_light"
+                        android:gravity="center_vertical"
+                        android:hint="@string/last_name"
+                        android:imeOptions="actionSearch"
+                        android:inputType="textCapSentences"
+                        android:paddingStart="@dimen/_5ssp"
+                        android:paddingEnd="@dimen/_5ssp"
+                        android:singleLine="true"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_2ssp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/edit_text_background"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_25ssp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_5ssp"
+                        android:layout_marginTop="@dimen/_5ssp"
+                        android:layout_marginBottom="@dimen/_5ssp"
+                        android:src="@drawable/search_ic" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etFirstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40ssp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@null"
+                        android:fontFamily="@font/poppins_light"
+                        android:gravity="center_vertical"
+                        android:hint="@string/first_name"
+                        android:imeOptions="actionSearch"
+                        android:inputType="textCapSentences"
+                        android:paddingStart="@dimen/_5ssp"
+                        android:paddingEnd="@dimen/_5ssp"
+                        android:singleLine="true"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5ssp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_2ssp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/edit_text_background"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_25ssp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_5ssp"
+                        android:layout_marginTop="@dimen/_5ssp"
+                        android:layout_marginBottom="@dimen/_5ssp"
+                        android:src="@drawable/search_ic" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etElectorId"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40ssp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@null"
+                        android:fontFamily="@font/poppins_light"
+                        android:gravity="center_vertical"
+                        android:hint="@string/elector_id"
+                        android:imeOptions="actionSearch"
+                        android:inputType="textCapSentences"
+                        android:paddingStart="@dimen/_5ssp"
+                        android:paddingEnd="@dimen/_5ssp"
+                        android:singleLine="true"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rlGender"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_2ssp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/edit_text_background"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_2ssp">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/etGender"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40ssp"
+                        android:layout_toStartOf="@+id/ivGender"
+                        android:background="@null"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:gravity="center_vertical"
+                        android:hint="@string/gender"
+                        android:imeOptions="actionNext"
+                        android:paddingStart="@dimen/_10ssp"
+                        android:paddingEnd="@dimen/_10ssp"
+                        android:singleLine="true"
+                        android:textColor="@color/color_22_22_22"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivGender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:src="@drawable/dropdown_arrow_h"
+                        android:tint="@color/color_22_22_22" />
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/rlBottom"
+            android:layout_below="@+id/llSearch"
+            android:layout_marginTop="@dimen/_10ssp"
+            android:layout_marginBottom="@dimen/_10ssp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvWardRollVotersList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_10ssp"
+                android:layout_marginEnd="@dimen/_10ssp"
+                android:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNoVoters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/_20ssp"
+                android:layout_marginEnd="@dimen/_20ssp"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center_horizontal"
+                android:text="@string/no_voters_found"
+                android:textColor="@color/color_59_59_59"
+                android:textSize="@dimen/_16ssp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/_5ssp"
+            android:visibility="gone">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBottomData"
+                style="@style/bottom_data_text_view" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</layout>

@@ -1,0 +1,848 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.pngelectoral"
+4    android:versionCode="21"
+5    android:versionName="2026.6.02" >
+6
+7    <uses-sdk
+7-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:16:5-18:62
+8        android:minSdkVersion="19"
+8-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:16:5-18:62
+9        android:targetSdkVersion="30" />
+9-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:16:5-18:62
+10
+11    <queries>
+11-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:6:5-14:15
+12        <intent>
+12-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:7:9-9:18
+13            <action android:name="android.media.action.IMAGE_CAPTURE" />
+13-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:8:13-73
+13-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:8:21-70
+14        </intent>
+15        <intent>
+15-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:10:9-13:18
+16            <action android:name="android.intent.action.PICK" />
+16-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:11:13-65
+16-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:11:21-62
+17
+18            <data android:mimeType="vnd.android.cursor.dir/image" />
+18-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:12:13-69
+18-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:12:19-66
+19        </intent>
+20    </queries>
+21
+22    <uses-feature android:name="android.hardware.camera" />
+22-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:20:5-60
+22-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:20:19-57
+23
+24    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+24-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:22:5-79
+24-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:22:22-76
+25    <uses-permission android:name="android.permission.CAMERA" />
+25-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:23:5-65
+25-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:23:22-62
+26    <uses-permission android:name="android.permission.INTERNET" />
+26-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:24:5-67
+26-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:24:22-64
+27    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+27-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:25:5-80
+27-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:25:22-77
+28    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+28-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:26:5-81
+28-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:26:22-78
+29    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+29-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:27:5-82
+29-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:27:22-79
+30    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+30-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:28:5-79
+30-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:28:22-76
+31    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+31-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:29:5-81
+31-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:29:22-78
+32    <uses-permission android:name="android.permission.WAKE_LOCK" />
+32-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:30:5-68
+32-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:30:22-65
+33    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+33-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:31:5-77
+33-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:31:22-74
+34    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+34-->[com.tonyodev.fetch2:fetch2:3.0.12] C:\Users\qfn\.gradle\caches\transforms-3\9a28441274ac65cfb90c72042a0725d9\transformed\jetified-fetch2-3.0.12\AndroidManifest.xml:12:5-76
+34-->[com.tonyodev.fetch2:fetch2:3.0.12] C:\Users\qfn\.gradle\caches\transforms-3\9a28441274ac65cfb90c72042a0725d9\transformed\jetified-fetch2-3.0.12\AndroidManifest.xml:12:22-73
+35
+36    <uses-feature
+36-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:28:5-30:36
+37        android:name="android.hardware.camera.front"
+37-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:29:9-53
+38        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+38-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:30:9-33
+39    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+40    <uses-feature
+40-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:33:5-35:36
+41        android:name="android.hardware.camera.autofocus"
+41-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:34:9-57
+42        android:required="false" />
+42-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:35:9-33
+43    <uses-feature
+43-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:36:5-38:36
+44        android:name="android.hardware.camera.flash"
+44-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:37:9-53
+45        android:required="false" />
+45-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:38:9-33
+46    <uses-feature
+46-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:39:5-41:36
+47        android:name="android.hardware.screen.landscape"
+47-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:40:9-57
+48        android:required="false" />
+48-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:41:9-33
+49    <uses-feature
+49-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:42:5-44:36
+50        android:name="android.hardware.wifi"
+50-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:43:9-45
+51        android:required="false" />
+51-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:44:9-33
+52
+53    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+53-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\8fe993e3b9d2e3aa5e3449a85cc17ca6\transformed\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:26:5-110
+53-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\8fe993e3b9d2e3aa5e3449a85cc17ca6\transformed\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:26:22-107
+54
+55    <application
+55-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:33:5-384:19
+56        android:name="com.pngelectoral.base.MainApplication"
+56-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:34:9-45
+57        android:allowBackup="false"
+57-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:35:9-36
+58        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+58-->[androidx.core:core:1.6.0] C:\Users\qfn\.gradle\caches\transforms-3\7c344fe4a9176ca1c5a58c97f870e687\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
+59        android:debuggable="true"
+60        android:hardwareAccelerated="false"
+60-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:36:9-44
+61        android:icon="@mipmap/ic_launcher"
+61-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:37:9-43
+62        android:label="@string/app_name"
+62-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:38:9-41
+63        android:largeHeap="true"
+63-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:39:9-33
+64        android:preserveLegacyExternalStorage="true"
+64-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:40:9-53
+65        android:requestLegacyExternalStorage="true"
+65-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:41:9-52
+66        android:roundIcon="@mipmap/ic_launcher_round"
+66-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:42:9-54
+67        android:supportsRtl="true"
+67-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:43:9-35
+68        android:theme="@style/AppTheme"
+68-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:44:9-40
+69        android:usesCleartextTraffic="true" >
+69-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:45:9-44
+70        <meta-data
+70-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:49:9-51:69
+71            android:name="com.google.android.gms.version"
+71-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:50:13-58
+72            android:value="@integer/google_play_services_version" />
+72-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:51:13-66
+73
+74        <uses-library
+74-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:53:9-55:40
+75            android:name="org.apache.http.legacy"
+75-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:54:13-50
+76            android:required="false" />
+76-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:55:13-37
+77
+78        <activity
+78-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:57:9-65:20
+79            android:name="com.pngelectoral.ui.activity.SplashActivity"
+79-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:58:13-55
+80            android:exported="true" >
+80-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:59:13-36
+81            <intent-filter>
+81-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:60:13-64:29
+82                <action android:name="android.intent.action.MAIN" />
+82-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:61:17-69
+82-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:61:25-66
+83
+84                <category android:name="android.intent.category.LAUNCHER" />
+84-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:63:17-77
+84-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:63:27-74
+85            </intent-filter>
+86        </activity>
+87        <activity
+87-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:67:9-71:56
+88            android:name="com.pngelectoral.ui.activity.LoginActivity"
+88-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:68:13-54
+89            android:screenOrientation="portrait"
+89-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:69:13-49
+90            android:windowSoftInputMode="adjustPan" />
+90-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:70:13-52
+91        <activity
+91-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:74:9-78:56
+92            android:name="com.pngelectoral.ui.activity.VoterDetailsActivity"
+92-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:75:13-61
+93            android:screenOrientation="portrait"
+93-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:76:13-49
+94            android:windowSoftInputMode="adjustPan" />
+94-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:77:13-52
+95        <activity
+95-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:80:9-84:56
+96            android:name="com.pngelectoral.ui.activity.EditVoterDetailsActivity"
+96-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:81:13-65
+97            android:screenOrientation="portrait"
+97-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:82:13-49
+98            android:windowSoftInputMode="adjustPan" />
+98-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:83:13-52
+99        <activity
+99-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:86:9-90:56
+100            android:name="com.pngelectoral.ui.activity.Form11ImageCaptureActivity"
+100-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:87:13-67
+101            android:screenOrientation="portrait"
+101-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:88:13-49
+102            android:windowSoftInputMode="adjustPan" />
+102-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:89:13-52
+103        <activity
+103-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:93:9-97:56
+104            android:name="com.pngelectoral.ui.activity.ImageDisplayActivity"
+104-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:94:13-61
+105            android:screenOrientation="portrait"
+105-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:95:13-49
+106            android:windowSoftInputMode="adjustPan" />
+106-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:96:13-52
+107        <activity
+107-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:99:9-103:56
+108            android:name="com.pngelectoral.ui.activity.ProvisionalEnrolmentFormActivity"
+108-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:100:13-73
+109            android:screenOrientation="portrait"
+109-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:101:13-49
+110            android:windowSoftInputMode="adjustPan" />
+110-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:102:13-52
+111        <activity
+111-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:105:9-107:59
+112            android:name="com.pngelectoral.cropper.CropImageActivity"
+112-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:106:13-54
+113            android:theme="@style/Base.Theme.AppCompat" />
+113-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:107:13-56
+114        <activity
+114-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:109:9-113:56
+115            android:name="com.pngelectoral.ui.activity.TransferInScanActivity"
+115-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:110:13-63
+116            android:screenOrientation="portrait"
+116-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:111:13-49
+117            android:windowSoftInputMode="adjustPan" />
+117-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:112:13-52
+118        <activity
+118-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:114:9-118:56
+119            android:name="com.pngelectoral.ui.activity.TransferInVoterDetailsActivity"
+119-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:115:13-71
+120            android:screenOrientation="portrait"
+120-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:116:13-49
+121            android:windowSoftInputMode="adjustPan" />
+121-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:117:13-52
+122        <activity
+122-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:120:9-124:56
+123            android:name="com.pngelectoral.ui.activity.ProvisionalEnrolmentScanActivity"
+123-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:121:13-73
+124            android:screenOrientation="portrait"
+124-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:122:13-49
+125            android:windowSoftInputMode="adjustPan" />
+125-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:123:13-52
+126        <activity
+126-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:126:9-130:56
+127            android:name="com.pngelectoral.ui.activity.WardRollVoterListActivity"
+127-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:127:13-66
+128            android:screenOrientation="portrait"
+128-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:128:13-49
+129            android:windowSoftInputMode="adjustPan" />
+129-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:129:13-52
+130        <activity
+130-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:133:9-137:56
+131            android:name="com.pngelectoral.ui.activity.TransferInActivity"
+131-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:134:13-59
+132            android:screenOrientation="portrait"
+132-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:135:13-49
+133            android:windowSoftInputMode="adjustPan" />
+133-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:136:13-52
+134        <activity
+134-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:139:9-143:56
+135            android:name="com.pngelectoral.ui.activity.NewEnrolmentScanActivity"
+135-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:140:13-65
+136            android:screenOrientation="portrait"
+136-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:141:13-49
+137            android:windowSoftInputMode="adjustPan" />
+137-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:142:13-52
+138        <activity
+138-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:145:9-149:56
+139            android:name="com.pngelectoral.ui.activity.NewEnrolmentFormActivity"
+139-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:146:13-65
+140            android:screenOrientation="portrait"
+140-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:147:13-49
+141            android:windowSoftInputMode="adjustPan" />
+141-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:148:13-52
+142        <activity
+142-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:151:9-155:56
+143            android:name="com.pngelectoral.ui.activity.TransferInVotersListActivity"
+143-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:152:13-69
+144            android:screenOrientation="portrait"
+144-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:153:13-49
+145            android:windowSoftInputMode="adjustPan" />
+145-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:154:13-52
+146        <activity
+146-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:157:9-161:56
+147            android:name="com.pngelectoral.ui.activity.SettingsActivity"
+147-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:158:13-57
+148            android:screenOrientation="portrait"
+148-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:159:13-49
+149            android:windowSoftInputMode="adjustPan" />
+149-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:160:13-52
+150
+151        <!-- <activity -->
+152        <!-- android:name=".ui.activity.SyncVotersListActivity" -->
+153        <!-- android:screenOrientation="portrait" -->
+154        <!-- android:windowSoftInputMode="adjustPan" -->
+155        <!-- tools:ignore="LockedOrientationActivity" /> -->
+156
+157        <activity
+157-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:169:9-173:56
+158            android:name="com.pngelectoral.ui.activity.VotersSyncActivity"
+158-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:170:13-59
+159            android:screenOrientation="portrait"
+159-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:171:13-49
+160            android:windowSoftInputMode="adjustPan" />
+160-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:172:13-52
+161        <activity
+161-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:175:9-179:56
+162            android:name="com.pngelectoral.ui.activity.RejectedVoterListActivity"
+162-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:176:13-66
+163            android:screenOrientation="portrait"
+163-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:177:13-49
+164            android:windowSoftInputMode="adjustPan" />
+164-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:178:13-52
+165        <activity
+165-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:182:9-186:56
+166            android:name="com.pngelectoral.ui.activity.TransferInChunksOfflineVotersListActivity"
+166-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:183:13-82
+167            android:screenOrientation="portrait"
+167-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:184:13-49
+168            android:windowSoftInputMode="adjustPan" />
+168-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:185:13-52
+169        <activity
+169-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:189:9-193:56
+170            android:name="com.pngelectoral.ui.activity.NewRegWardSelectionActivity"
+170-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:190:13-68
+171            android:screenOrientation="portrait"
+171-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:191:13-49
+172            android:windowSoftInputMode="adjustPan" />
+172-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:192:13-52
+173        <activity
+173-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:195:9-199:56
+174            android:name="com.pngelectoral.ui.activity.ProvisionalRegWardSelectionActivity"
+174-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:196:13-76
+175            android:screenOrientation="portrait"
+175-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:197:13-49
+176            android:windowSoftInputMode="adjustPan" />
+176-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:198:13-52
+177        <activity
+177-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:201:9-205:56
+178            android:name="com.pngelectoral.ui.activity.TransferInWardSelectionActivity"
+178-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:202:13-72
+179            android:screenOrientation="portrait"
+179-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:203:13-49
+180            android:windowSoftInputMode="adjustPan" />
+180-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:204:13-52
+181        <activity
+181-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:206:9-210:56
+182            android:name="com.pngelectoral.ui.activity.RollLookUpActivity"
+182-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:207:13-59
+183            android:screenOrientation="portrait"
+183-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:208:13-49
+184            android:windowSoftInputMode="adjustPan" />
+184-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:209:13-52
+185        <activity
+185-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:211:9-215:56
+186            android:name="com.pngelectoral.ui.activity.RollLookUpVotersListActivity"
+186-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:212:13-69
+187            android:screenOrientation="portrait"
+187-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:213:13-49
+188            android:windowSoftInputMode="adjustPan" />
+188-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:214:13-52
+189        <activity
+189-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:216:9-220:56
+190            android:name="com.pngelectoral.ui.activity.RollLookUpChunksOfflineVotersListActivity"
+190-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:217:13-82
+191            android:screenOrientation="portrait"
+191-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:218:13-49
+192            android:windowSoftInputMode="adjustPan" />
+192-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:219:13-52
+193        <activity
+193-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:221:9-225:56
+194            android:name="com.pngelectoral.ui.activity.RollLookUpVoterDetailsActivity"
+194-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:222:13-71
+195            android:screenOrientation="portrait"
+195-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:223:13-49
+196            android:windowSoftInputMode="adjustPan" />
+196-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:224:13-52
+197        <activity
+197-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:226:9-230:56
+198            android:name="com.pngelectoral.ui.activity.RejectedVoterEditDetailsActivity"
+198-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:227:13-73
+199            android:screenOrientation="portrait"
+199-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:228:13-49
+200            android:windowSoftInputMode="adjustPan" />
+200-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:229:13-52
+201        <activity
+201-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:231:9-235:56
+202            android:name="com.pngelectoral.ui.activity.UpdatedVotersListActivity"
+202-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:232:13-66
+203            android:screenOrientation="portrait"
+203-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:233:13-49
+204            android:windowSoftInputMode="adjustPan" />
+204-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:234:13-52
+205        <activity
+205-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:236:9-240:56
+206            android:name="com.pngelectoral.ui.activity.DeviceOperatorReportSelectionActivity"
+206-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:237:13-78
+207            android:screenOrientation="portrait"
+207-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:238:13-49
+208            android:windowSoftInputMode="adjustPan" />
+208-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:239:13-52
+209        <activity
+209-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:242:9-246:56
+210            android:name="com.pngelectoral.ui.activity.LocalDeviceOperatorReportActivity"
+210-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:243:13-74
+211            android:screenOrientation="portrait"
+211-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:244:13-49
+212            android:windowSoftInputMode="adjustPan" />
+212-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:245:13-52
+213        <activity
+213-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:248:9-252:56
+214            android:name="com.pngelectoral.ui.activity.FaceDetectionActivity"
+214-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:249:13-62
+215            android:screenOrientation="portrait"
+215-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:250:13-49
+216            android:windowSoftInputMode="adjustPan" />
+216-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:251:13-52
+217        <activity
+217-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:254:9-258:56
+218            android:name="com.pngelectoral.ui.activity.StagingDeviceOperatorReportActivity"
+218-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:255:13-76
+219            android:screenOrientation="portrait"
+219-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:256:13-49
+220            android:windowSoftInputMode="adjustPan" />
+220-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:257:13-52
+221        <activity
+221-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:260:9-264:56
+222            android:name="com.pngelectoral.ui.activity.VoterUpdateFaceDetectionActivity"
+222-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:261:13-73
+223            android:screenOrientation="portrait"
+223-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:262:13-49
+224            android:windowSoftInputMode="adjustPan" />
+224-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:263:13-52
+225        <activity
+225-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:266:9-270:56
+226            android:name="com.pngelectoral.ui.activity.FieldTallySummarySheetReportSelectionActivity"
+226-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:267:13-86
+227            android:screenOrientation="portrait"
+227-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:268:13-49
+228            android:windowSoftInputMode="adjustPan" />
+228-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:269:13-52
+229        <activity
+229-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:272:9-276:56
+230            android:name="com.pngelectoral.ui.activity.FieldTallySummarySheetReportActivity"
+230-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:273:13-77
+231            android:screenOrientation="portrait"
+231-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:274:13-49
+232            android:windowSoftInputMode="adjustPan" />
+232-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:275:13-52
+233        <activity
+233-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:279:9-283:56
+234            android:name="com.pngelectoral.ui.activity.HomeActivity"
+234-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:280:13-53
+235            android:screenOrientation="portrait"
+235-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:281:13-49
+236            android:windowSoftInputMode="adjustPan" />
+236-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:282:13-52
+237        <activity
+237-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:285:9-289:56
+238            android:name="com.pngelectoral.ui.activity.WorkingRollUpdateStatusActivity"
+238-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:286:13-72
+239            android:screenOrientation="portrait"
+239-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:287:13-49
+240            android:windowSoftInputMode="adjustPan" />
+240-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:288:13-52
+241        <activity
+241-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:291:9-295:56
+242            android:name="com.pngelectoral.ui.activity.StatusDiscrepancyReportSelectionActivity"
+242-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:292:13-81
+243            android:screenOrientation="portrait"
+243-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:293:13-49
+244            android:windowSoftInputMode="adjustPan" />
+244-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:294:13-52
+245        <activity
+245-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:297:9-301:56
+246            android:name="com.pngelectoral.ui.activity.StatusDiscrepancyReportActivity"
+246-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:298:13-72
+247            android:screenOrientation="portrait"
+247-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:299:13-49
+248            android:windowSoftInputMode="adjustPan" />
+248-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:300:13-52
+249        <activity
+249-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:303:9-307:56
+250            android:name="com.pngelectoral.ui.activity.FailedVoterEditDetailsActivity"
+250-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:304:13-71
+251            android:screenOrientation="portrait"
+251-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:305:13-49
+252            android:windowSoftInputMode="adjustPan" />
+252-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:306:13-52
+253        <activity
+253-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:309:9-313:56
+254            android:name="com.pngelectoral.ui.activity.FailedEnrolmentScanActivity"
+254-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:310:13-68
+255            android:screenOrientation="portrait"
+255-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:311:13-49
+256            android:windowSoftInputMode="adjustPan" />
+256-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:312:13-52
+257        <activity
+257-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:314:9-318:56
+258            android:name="com.pngelectoral.ui.activity.FailedForm11ImageCaptureActivity"
+258-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:315:13-73
+259            android:screenOrientation="portrait"
+259-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:316:13-49
+260            android:windowSoftInputMode="adjustPan" />
+260-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:317:13-52
+261        <activity
+261-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:320:9-324:56
+262            android:name="com.pngelectoral.ui.activity.GenderLessVoterListReportActivity"
+262-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:321:13-74
+263            android:screenOrientation="portrait"
+263-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:322:13-49
+264            android:windowSoftInputMode="adjustPan" />
+264-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:323:13-52
+265        <activity
+265-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:325:9-329:56
+266            android:name="com.pngelectoral.ui.activity.GenderLessVotersListSelectionActivity"
+266-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:326:13-78
+267            android:screenOrientation="portrait"
+267-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:327:13-49
+268            android:windowSoftInputMode="adjustPan" />
+268-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:328:13-52
+269        <activity
+269-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:330:9-334:56
+270            android:name="com.pngelectoral.ui.activity.NewDownloadActivity"
+270-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:331:13-60
+271            android:screenOrientation="portrait"
+271-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:332:13-49
+272            android:windowSoftInputMode="adjustPan" />
+272-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:333:13-52
+273        <activity
+273-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:335:9-339:56
+274            android:name="com.pngelectoral.ui.activity.SyncedVotersListingActivity"
+274-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:336:13-68
+275            android:screenOrientation="portrait"
+275-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:337:13-49
+276            android:windowSoftInputMode="adjustPan" />
+276-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:338:13-52
+277        <activity
+277-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:340:9-344:56
+278            android:name="com.pngelectoral.ui.activity.VotersDataOnlySyncActivity"
+278-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:341:13-67
+279            android:screenOrientation="portrait"
+279-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:342:13-49
+280            android:windowSoftInputMode="adjustPan" />
+280-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:343:13-52
+281        <activity
+281-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:345:9-349:56
+282            android:name="com.pngelectoral.ui.activity.VotersSyncWithDataAndImageActivity"
+282-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:346:13-75
+283            android:screenOrientation="portrait"
+283-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:347:13-49
+284            android:windowSoftInputMode="adjustPan" />
+284-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:348:13-52
+285        <activity
+285-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:350:9-354:56
+286            android:name="com.pngelectoral.ui.activity.ReverseSyncActivity"
+286-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:351:13-60
+287            android:screenOrientation="portrait"
+287-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:352:13-49
+288            android:windowSoftInputMode="adjustPan" />
+288-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:353:13-52
+289
+290        <provider
+291            android:name="androidx.core.content.FileProvider"
+291-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:360:13-62
+292            android:authorities="com.pngelectoral.fileProvider"
+292-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:361:13-64
+293            android:exported="false"
+293-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:362:13-37
+294            android:grantUriPermissions="true" >
+294-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:363:13-47
+295            <meta-data
+295-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:365:13-368:52
+296                android:name="android.support.FILE_PROVIDER_PATHS"
+296-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:366:17-67
+297                android:resource="@xml/provider_paths" />
+297-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:367:17-55
+298        </provider>
+299        <provider
+300            android:name="androidx.core.content.FileProvider"
+300-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:360:13-62
+301            android:authorities="com.pngelectoral.fileProvider"
+301-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:361:13-64
+302            android:exported="false"
+302-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:362:13-37
+303            android:grantUriPermissions="true" >
+303-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:363:13-47
+304            <meta-data
+304-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:365:13-368:52
+305                android:name="android.support.FILE_PROVIDER_PATHS"
+305-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:366:17-67
+306                android:resource="@xml/file_paths" />
+306-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:367:17-55
+307        </provider>
+308
+309        <service android:name="com.pngelectoral.datasync.DownloadPreliminaryRollSyncService" />
+309-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:381:9-80
+309-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:381:18-77
+310        <service android:name="com.pngelectoral.datasync.DownloadGeoStructureDataSyncService" />
+310-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:382:9-81
+310-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:382:18-78
+311        <service android:name="com.pngelectoral.datasync.DownloadNewVotersSyncService" />
+311-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:383:9-74
+311-->C:\Users\qfn\Desktop\shahbaz\png_mobile\app\src\main\AndroidManifest.xml:383:18-71
+312
+313        <activity
+313-->[com.github.pankaj89:SampleDIProject:1.0.6] C:\Users\qfn\.gradle\caches\transforms-3\5b25474c4d1fd89cc971ddf60edca1ce\transformed\jetified-SampleDIProject-1.0.6\AndroidManifest.xml:12:9-15:49
+314            android:name="com.yalantis.ucrop.UCropActivity"
+314-->[com.github.pankaj89:SampleDIProject:1.0.6] C:\Users\qfn\.gradle\caches\transforms-3\5b25474c4d1fd89cc971ddf60edca1ce\transformed\jetified-SampleDIProject-1.0.6\AndroidManifest.xml:13:13-60
+315            android:screenOrientation="portrait"
+315-->[com.github.pankaj89:SampleDIProject:1.0.6] C:\Users\qfn\.gradle\caches\transforms-3\5b25474c4d1fd89cc971ddf60edca1ce\transformed\jetified-SampleDIProject-1.0.6\AndroidManifest.xml:14:13-49
+316            android:theme="@style/UCROPTheme" />
+316-->[com.github.pankaj89:SampleDIProject:1.0.6] C:\Users\qfn\.gradle\caches\transforms-3\5b25474c4d1fd89cc971ddf60edca1ce\transformed\jetified-SampleDIProject-1.0.6\AndroidManifest.xml:15:13-46
+317        <activity
+317-->[com.github.pankaj89:SampleDIProject:1.0.6] C:\Users\qfn\.gradle\caches\transforms-3\5b25474c4d1fd89cc971ddf60edca1ce\transformed\jetified-SampleDIProject-1.0.6\AndroidManifest.xml:16:9-19:61
+318            android:name="com.master.basediproject.utils.imageviewer.ImagePreviewActivity"
+318-->[com.github.pankaj89:SampleDIProject:1.0.6] C:\Users\qfn\.gradle\caches\transforms-3\5b25474c4d1fd89cc971ddf60edca1ce\transformed\jetified-SampleDIProject-1.0.6\AndroidManifest.xml:17:13-91
+319            android:screenOrientation="portrait"
+319-->[com.github.pankaj89:SampleDIProject:1.0.6] C:\Users\qfn\.gradle\caches\transforms-3\5b25474c4d1fd89cc971ddf60edca1ce\transformed\jetified-SampleDIProject-1.0.6\AndroidManifest.xml:18:13-49
+320            android:theme="@style/ImagePreviewFullScreen" />
+320-->[com.github.pankaj89:SampleDIProject:1.0.6] C:\Users\qfn\.gradle\caches\transforms-3\5b25474c4d1fd89cc971ddf60edca1ce\transformed\jetified-SampleDIProject-1.0.6\AndroidManifest.xml:19:13-58
+321        <activity
+321-->[com.github.pankaj89:SampleDIProject:1.0.6] C:\Users\qfn\.gradle\caches\transforms-3\5b25474c4d1fd89cc971ddf60edca1ce\transformed\jetified-SampleDIProject-1.0.6\AndroidManifest.xml:20:9-22:52
+322            android:name="com.master.basediproject.utils.filepicker.FilePickerActivity"
+322-->[com.github.pankaj89:SampleDIProject:1.0.6] C:\Users\qfn\.gradle\caches\transforms-3\5b25474c4d1fd89cc971ddf60edca1ce\transformed\jetified-SampleDIProject-1.0.6\AndroidManifest.xml:21:13-88
+323            android:screenOrientation="portrait" />
+323-->[com.github.pankaj89:SampleDIProject:1.0.6] C:\Users\qfn\.gradle\caches\transforms-3\5b25474c4d1fd89cc971ddf60edca1ce\transformed\jetified-SampleDIProject-1.0.6\AndroidManifest.xml:22:13-49
+324
+325        <service
+325-->[com.google.firebase:firebase-crashlytics-ktx:17.3.0] C:\Users\qfn\.gradle\caches\transforms-3\840cb78a38d506d75397340fec966aee\transformed\jetified-firebase-crashlytics-ktx-17.3.0\AndroidManifest.xml:24:9-30:19
+326            android:name="com.google.firebase.components.ComponentDiscoveryService"
+326-->[com.google.firebase:firebase-crashlytics-ktx:17.3.0] C:\Users\qfn\.gradle\caches\transforms-3\840cb78a38d506d75397340fec966aee\transformed\jetified-firebase-crashlytics-ktx-17.3.0\AndroidManifest.xml:25:13-84
+327            android:directBootAware="true"
+327-->[com.google.firebase:firebase-common:19.4.0] C:\Users\qfn\.gradle\caches\transforms-3\268646789d9c36979b5123e25e0b2c2a\transformed\jetified-firebase-common-19.4.0\AndroidManifest.xml:35:13-43
+328            android:exported="false" >
+328-->[com.google.firebase:firebase-crashlytics-ktx:17.3.0] C:\Users\qfn\.gradle\caches\transforms-3\840cb78a38d506d75397340fec966aee\transformed\jetified-firebase-crashlytics-ktx-17.3.0\AndroidManifest.xml:26:13-37
+329            <meta-data
+329-->[com.google.firebase:firebase-crashlytics-ktx:17.3.0] C:\Users\qfn\.gradle\caches\transforms-3\840cb78a38d506d75397340fec966aee\transformed\jetified-firebase-crashlytics-ktx-17.3.0\AndroidManifest.xml:27:13-29:85
+330                android:name="com.google.firebase.components:com.google.firebase.crashlytics.ktx.FirebaseCrashlyticsKtxRegistrar"
+330-->[com.google.firebase:firebase-crashlytics-ktx:17.3.0] C:\Users\qfn\.gradle\caches\transforms-3\840cb78a38d506d75397340fec966aee\transformed\jetified-firebase-crashlytics-ktx-17.3.0\AndroidManifest.xml:28:17-130
+331                android:value="com.google.firebase.components.ComponentRegistrar" />
+331-->[com.google.firebase:firebase-crashlytics-ktx:17.3.0] C:\Users\qfn\.gradle\caches\transforms-3\840cb78a38d506d75397340fec966aee\transformed\jetified-firebase-crashlytics-ktx-17.3.0\AndroidManifest.xml:29:17-82
+332            <meta-data
+332-->[com.google.firebase:firebase-analytics-ktx:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\28000bfef3661f0ce7e486d0a1049cde\transformed\jetified-firebase-analytics-ktx-18.0.0\AndroidManifest.xml:11:13-13:85
+333                android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar"
+333-->[com.google.firebase:firebase-analytics-ktx:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\28000bfef3661f0ce7e486d0a1049cde\transformed\jetified-firebase-analytics-ktx-18.0.0\AndroidManifest.xml:12:17-126
+334                android:value="com.google.firebase.components.ComponentRegistrar" />
+334-->[com.google.firebase:firebase-analytics-ktx:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\28000bfef3661f0ce7e486d0a1049cde\transformed\jetified-firebase-analytics-ktx-18.0.0\AndroidManifest.xml:13:17-82
+335            <meta-data
+335-->[com.google.firebase:firebase-common-ktx:19.4.0] C:\Users\qfn\.gradle\caches\transforms-3\a21178e634eb79f68c80c45580d44e36\transformed\jetified-firebase-common-ktx-19.4.0\AndroidManifest.xml:15:13-17:85
+336                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+336-->[com.google.firebase:firebase-common-ktx:19.4.0] C:\Users\qfn\.gradle\caches\transforms-3\a21178e634eb79f68c80c45580d44e36\transformed\jetified-firebase-common-ktx-19.4.0\AndroidManifest.xml:16:17-113
+337                android:value="com.google.firebase.components.ComponentRegistrar" />
+337-->[com.google.firebase:firebase-common-ktx:19.4.0] C:\Users\qfn\.gradle\caches\transforms-3\a21178e634eb79f68c80c45580d44e36\transformed\jetified-firebase-common-ktx-19.4.0\AndroidManifest.xml:17:17-82
+338            <meta-data
+338-->[com.google.firebase:firebase-crashlytics:17.3.0] C:\Users\qfn\.gradle\caches\transforms-3\d494bb1def1393f3fd456c5ce2f08e56\transformed\jetified-firebase-crashlytics-17.3.0\AndroidManifest.xml:18:13-20:85
+339                android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar"
+339-->[com.google.firebase:firebase-crashlytics:17.3.0] C:\Users\qfn\.gradle\caches\transforms-3\d494bb1def1393f3fd456c5ce2f08e56\transformed\jetified-firebase-crashlytics-17.3.0\AndroidManifest.xml:19:17-115
+340                android:value="com.google.firebase.components.ComponentRegistrar" />
+340-->[com.google.firebase:firebase-crashlytics:17.3.0] C:\Users\qfn\.gradle\caches\transforms-3\d494bb1def1393f3fd456c5ce2f08e56\transformed\jetified-firebase-crashlytics-17.3.0\AndroidManifest.xml:20:17-82
+341            <meta-data
+341-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\f230bf9158f5c7cebf9b37d0c0223196\transformed\jetified-play-services-measurement-api-18.0.0\AndroidManifest.xml:30:13-32:85
+342                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+342-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\f230bf9158f5c7cebf9b37d0c0223196\transformed\jetified-play-services-measurement-api-18.0.0\AndroidManifest.xml:31:17-139
+343                android:value="com.google.firebase.components.ComponentRegistrar" />
+343-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\f230bf9158f5c7cebf9b37d0c0223196\transformed\jetified-play-services-measurement-api-18.0.0\AndroidManifest.xml:32:17-82
+344            <meta-data
+344-->[com.google.firebase:firebase-installations:16.3.4] C:\Users\qfn\.gradle\caches\transforms-3\aa47feb085236c4306decc351a1d688c\transformed\jetified-firebase-installations-16.3.4\AndroidManifest.xml:18:13-20:85
+345                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+345-->[com.google.firebase:firebase-installations:16.3.4] C:\Users\qfn\.gradle\caches\transforms-3\aa47feb085236c4306decc351a1d688c\transformed\jetified-firebase-installations-16.3.4\AndroidManifest.xml:19:17-127
+346                android:value="com.google.firebase.components.ComponentRegistrar" />
+346-->[com.google.firebase:firebase-installations:16.3.4] C:\Users\qfn\.gradle\caches\transforms-3\aa47feb085236c4306decc351a1d688c\transformed\jetified-firebase-installations-16.3.4\AndroidManifest.xml:20:17-82
+347        </service>
+348
+349        <activity
+349-->[com.karumi:dexter:6.0.2] C:\Users\qfn\.gradle\caches\transforms-3\52fec74c99b5431e25158f344b7aea97\transformed\jetified-dexter-6.0.2\AndroidManifest.xml:27:9-29:72
+350            android:name="com.karumi.dexter.DexterActivity"
+350-->[com.karumi:dexter:6.0.2] C:\Users\qfn\.gradle\caches\transforms-3\52fec74c99b5431e25158f344b7aea97\transformed\jetified-dexter-6.0.2\AndroidManifest.xml:28:13-60
+351            android:theme="@style/Dexter.Internal.Theme.Transparent" />
+351-->[com.karumi:dexter:6.0.2] C:\Users\qfn\.gradle\caches\transforms-3\52fec74c99b5431e25158f344b7aea97\transformed\jetified-dexter-6.0.2\AndroidManifest.xml:29:13-69
+352        <activity
+352-->[com.master.android:mediapicker:1.2] C:\Users\qfn\.gradle\caches\transforms-3\59983cef4075393bc1a3aa01ab028ba0\transformed\jetified-mediapicker-1.2\AndroidManifest.xml:16:9-19:66
+353            android:name="net.alhazmy13.mediapicker.Image.ImageActivity"
+353-->[com.master.android:mediapicker:1.2] C:\Users\qfn\.gradle\caches\transforms-3\59983cef4075393bc1a3aa01ab028ba0\transformed\jetified-mediapicker-1.2\AndroidManifest.xml:17:13-73
+354            android:screenOrientation="fullSensor"
+354-->[com.master.android:mediapicker:1.2] C:\Users\qfn\.gradle\caches\transforms-3\59983cef4075393bc1a3aa01ab028ba0\transformed\jetified-mediapicker-1.2\AndroidManifest.xml:18:13-51
+355            android:theme="@style/Theme.AppCompat.Translucent" />
+355-->[com.master.android:mediapicker:1.2] C:\Users\qfn\.gradle\caches\transforms-3\59983cef4075393bc1a3aa01ab028ba0\transformed\jetified-mediapicker-1.2\AndroidManifest.xml:19:13-63
+356        <activity
+356-->[com.master.android:mediapicker:1.2] C:\Users\qfn\.gradle\caches\transforms-3\59983cef4075393bc1a3aa01ab028ba0\transformed\jetified-mediapicker-1.2\AndroidManifest.xml:20:9-23:66
+357            android:name="net.alhazmy13.mediapicker.Video.VideoActivity"
+357-->[com.master.android:mediapicker:1.2] C:\Users\qfn\.gradle\caches\transforms-3\59983cef4075393bc1a3aa01ab028ba0\transformed\jetified-mediapicker-1.2\AndroidManifest.xml:21:13-73
+358            android:screenOrientation="fullSensor"
+358-->[com.master.android:mediapicker:1.2] C:\Users\qfn\.gradle\caches\transforms-3\59983cef4075393bc1a3aa01ab028ba0\transformed\jetified-mediapicker-1.2\AndroidManifest.xml:22:13-51
+359            android:theme="@style/Theme.AppCompat.Translucent" />
+359-->[com.master.android:mediapicker:1.2] C:\Users\qfn\.gradle\caches\transforms-3\59983cef4075393bc1a3aa01ab028ba0\transformed\jetified-mediapicker-1.2\AndroidManifest.xml:23:13-63
+360        <activity
+360-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:47:9-53:63
+361            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+361-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:48:13-74
+362            android:clearTaskOnLaunch="true"
+362-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:49:13-45
+363            android:screenOrientation="sensorLandscape"
+363-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:50:13-56
+364            android:stateNotNeeded="true"
+364-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:51:13-42
+365            android:theme="@style/zxing_CaptureTheme"
+365-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:52:13-54
+366            android:windowSoftInputMode="stateAlwaysHidden" />
+366-->[com.journeyapps:zxing-android-embedded:3.6.0] C:\Users\qfn\.gradle\caches\transforms-3\55656ad866d4c943476ab67fb3c32682\transformed\jetified-zxing-android-embedded-3.6.0\AndroidManifest.xml:53:13-60
+367
+368        <service
+368-->[com.google.android.gms:play-services-mlkit-face-detection:16.2.0] C:\Users\qfn\.gradle\caches\transforms-3\389e160b66913d0ae807a4f563e02d59\transformed\jetified-play-services-mlkit-face-detection-16.2.0\AndroidManifest.xml:9:9-15:19
+369            android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
+369-->[com.google.android.gms:play-services-mlkit-face-detection:16.2.0] C:\Users\qfn\.gradle\caches\transforms-3\389e160b66913d0ae807a4f563e02d59\transformed\jetified-play-services-mlkit-face-detection-16.2.0\AndroidManifest.xml:10:13-91
+370            android:directBootAware="true"
+370-->[com.google.mlkit:common:17.2.0] C:\Users\qfn\.gradle\caches\transforms-3\0cc03a84f08cc9d016f1aba24e1ce83d\transformed\jetified-common-17.2.0\AndroidManifest.xml:17:13-43
+371            android:exported="false" >
+371-->[com.google.android.gms:play-services-mlkit-face-detection:16.2.0] C:\Users\qfn\.gradle\caches\transforms-3\389e160b66913d0ae807a4f563e02d59\transformed\jetified-play-services-mlkit-face-detection-16.2.0\AndroidManifest.xml:11:13-37
+372            <meta-data
+372-->[com.google.android.gms:play-services-mlkit-face-detection:16.2.0] C:\Users\qfn\.gradle\caches\transforms-3\389e160b66913d0ae807a4f563e02d59\transformed\jetified-play-services-mlkit-face-detection-16.2.0\AndroidManifest.xml:12:13-14:85
+373                android:name="com.google.firebase.components:com.google.mlkit.vision.face.internal.FaceRegistrar"
+373-->[com.google.android.gms:play-services-mlkit-face-detection:16.2.0] C:\Users\qfn\.gradle\caches\transforms-3\389e160b66913d0ae807a4f563e02d59\transformed\jetified-play-services-mlkit-face-detection-16.2.0\AndroidManifest.xml:13:17-114
+374                android:value="com.google.firebase.components.ComponentRegistrar" />
+374-->[com.google.android.gms:play-services-mlkit-face-detection:16.2.0] C:\Users\qfn\.gradle\caches\transforms-3\389e160b66913d0ae807a4f563e02d59\transformed\jetified-play-services-mlkit-face-detection-16.2.0\AndroidManifest.xml:14:17-82
+375            <meta-data
+375-->[com.google.mlkit:vision-common:16.5.0] C:\Users\qfn\.gradle\caches\transforms-3\b256ec85bfdb6b630d8c8574018cb85e\transformed\jetified-vision-common-16.5.0\AndroidManifest.xml:12:13-14:85
+376                android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar"
+376-->[com.google.mlkit:vision-common:16.5.0] C:\Users\qfn\.gradle\caches\transforms-3\b256ec85bfdb6b630d8c8574018cb85e\transformed\jetified-vision-common-16.5.0\AndroidManifest.xml:13:17-124
+377                android:value="com.google.firebase.components.ComponentRegistrar" />
+377-->[com.google.mlkit:vision-common:16.5.0] C:\Users\qfn\.gradle\caches\transforms-3\b256ec85bfdb6b630d8c8574018cb85e\transformed\jetified-vision-common-16.5.0\AndroidManifest.xml:14:17-82
+378            <meta-data
+378-->[com.google.mlkit:common:17.2.0] C:\Users\qfn\.gradle\caches\transforms-3\0cc03a84f08cc9d016f1aba24e1ce83d\transformed\jetified-common-17.2.0\AndroidManifest.xml:20:13-22:85
+379                android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar"
+379-->[com.google.mlkit:common:17.2.0] C:\Users\qfn\.gradle\caches\transforms-3\0cc03a84f08cc9d016f1aba24e1ce83d\transformed\jetified-common-17.2.0\AndroidManifest.xml:21:17-120
+380                android:value="com.google.firebase.components.ComponentRegistrar" />
+380-->[com.google.mlkit:common:17.2.0] C:\Users\qfn\.gradle\caches\transforms-3\0cc03a84f08cc9d016f1aba24e1ce83d\transformed\jetified-common-17.2.0\AndroidManifest.xml:22:17-82
+381        </service>
+382
+383        <provider
+383-->[com.google.mlkit:common:17.2.0] C:\Users\qfn\.gradle\caches\transforms-3\0cc03a84f08cc9d016f1aba24e1ce83d\transformed\jetified-common-17.2.0\AndroidManifest.xml:9:9-13:38
+384            android:name="com.google.mlkit.common.internal.MlKitInitProvider"
+384-->[com.google.mlkit:common:17.2.0] C:\Users\qfn\.gradle\caches\transforms-3\0cc03a84f08cc9d016f1aba24e1ce83d\transformed\jetified-common-17.2.0\AndroidManifest.xml:10:13-78
+385            android:authorities="com.pngelectoral.mlkitinitprovider"
+385-->[com.google.mlkit:common:17.2.0] C:\Users\qfn\.gradle\caches\transforms-3\0cc03a84f08cc9d016f1aba24e1ce83d\transformed\jetified-common-17.2.0\AndroidManifest.xml:11:13-69
+386            android:exported="false"
+386-->[com.google.mlkit:common:17.2.0] C:\Users\qfn\.gradle\caches\transforms-3\0cc03a84f08cc9d016f1aba24e1ce83d\transformed\jetified-common-17.2.0\AndroidManifest.xml:12:13-37
+387            android:initOrder="99" />
+387-->[com.google.mlkit:common:17.2.0] C:\Users\qfn\.gradle\caches\transforms-3\0cc03a84f08cc9d016f1aba24e1ce83d\transformed\jetified-common-17.2.0\AndroidManifest.xml:13:13-35
+388
+389        <service
+389-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\qfn\.gradle\caches\transforms-3\3ba4ea537a5b33e7bc10a31a817264a5\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:29:9-35:19
+390            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+390-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\qfn\.gradle\caches\transforms-3\3ba4ea537a5b33e7bc10a31a817264a5\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:30:13-103
+391            android:exported="false" >
+391-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\qfn\.gradle\caches\transforms-3\3ba4ea537a5b33e7bc10a31a817264a5\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:31:13-37
+392            <meta-data
+392-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\qfn\.gradle\caches\transforms-3\3ba4ea537a5b33e7bc10a31a817264a5\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:32:13-34:39
+393                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+393-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\qfn\.gradle\caches\transforms-3\3ba4ea537a5b33e7bc10a31a817264a5\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:33:17-94
+394                android:value="cct" />
+394-->[com.google.android.datatransport:transport-backend-cct:2.3.3] C:\Users\qfn\.gradle\caches\transforms-3\3ba4ea537a5b33e7bc10a31a817264a5\transformed\jetified-transport-backend-cct-2.3.3\AndroidManifest.xml:34:17-36
+395        </service>
+396
+397        <provider
+397-->[com.google.firebase:firebase-common:19.4.0] C:\Users\qfn\.gradle\caches\transforms-3\268646789d9c36979b5123e25e0b2c2a\transformed\jetified-firebase-common-19.4.0\AndroidManifest.xml:26:9-31:39
+398            android:name="com.google.firebase.provider.FirebaseInitProvider"
+398-->[com.google.firebase:firebase-common:19.4.0] C:\Users\qfn\.gradle\caches\transforms-3\268646789d9c36979b5123e25e0b2c2a\transformed\jetified-firebase-common-19.4.0\AndroidManifest.xml:27:13-77
+399            android:authorities="com.pngelectoral.firebaseinitprovider"
+399-->[com.google.firebase:firebase-common:19.4.0] C:\Users\qfn\.gradle\caches\transforms-3\268646789d9c36979b5123e25e0b2c2a\transformed\jetified-firebase-common-19.4.0\AndroidManifest.xml:28:13-72
+400            android:directBootAware="true"
+400-->[com.google.firebase:firebase-common:19.4.0] C:\Users\qfn\.gradle\caches\transforms-3\268646789d9c36979b5123e25e0b2c2a\transformed\jetified-firebase-common-19.4.0\AndroidManifest.xml:29:13-43
+401            android:exported="false"
+401-->[com.google.firebase:firebase-common:19.4.0] C:\Users\qfn\.gradle\caches\transforms-3\268646789d9c36979b5123e25e0b2c2a\transformed\jetified-firebase-common-19.4.0\AndroidManifest.xml:30:13-37
+402            android:initOrder="100" />
+402-->[com.google.firebase:firebase-common:19.4.0] C:\Users\qfn\.gradle\caches\transforms-3\268646789d9c36979b5123e25e0b2c2a\transformed\jetified-firebase-common-19.4.0\AndroidManifest.xml:31:13-36
+403
+404        <activity
+404-->[com.google.android.gms:play-services-base:17.6.0] C:\Users\qfn\.gradle\caches\transforms-3\554d22b044403126a921d32d1cccdde6\transformed\jetified-play-services-base-17.6.0\AndroidManifest.xml:23:9-26:75
+405            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+405-->[com.google.android.gms:play-services-base:17.6.0] C:\Users\qfn\.gradle\caches\transforms-3\554d22b044403126a921d32d1cccdde6\transformed\jetified-play-services-base-17.6.0\AndroidManifest.xml:24:13-79
+406            android:exported="false"
+406-->[com.google.android.gms:play-services-base:17.6.0] C:\Users\qfn\.gradle\caches\transforms-3\554d22b044403126a921d32d1cccdde6\transformed\jetified-play-services-base-17.6.0\AndroidManifest.xml:25:13-37
+407            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+407-->[com.google.android.gms:play-services-base:17.6.0] C:\Users\qfn\.gradle\caches\transforms-3\554d22b044403126a921d32d1cccdde6\transformed\jetified-play-services-base-17.6.0\AndroidManifest.xml:26:13-72
+408
+409        <receiver
+409-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\8fe993e3b9d2e3aa5e3449a85cc17ca6\transformed\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:29:9-33:20
+410            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+410-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\8fe993e3b9d2e3aa5e3449a85cc17ca6\transformed\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:30:13-85
+411            android:enabled="true"
+411-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\8fe993e3b9d2e3aa5e3449a85cc17ca6\transformed\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:31:13-35
+412            android:exported="false" >
+412-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\8fe993e3b9d2e3aa5e3449a85cc17ca6\transformed\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:32:13-37
+413        </receiver>
+414
+415        <service
+415-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\8fe993e3b9d2e3aa5e3449a85cc17ca6\transformed\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:35:9-38:40
+416            android:name="com.google.android.gms.measurement.AppMeasurementService"
+416-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\8fe993e3b9d2e3aa5e3449a85cc17ca6\transformed\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:36:13-84
+417            android:enabled="true"
+417-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\8fe993e3b9d2e3aa5e3449a85cc17ca6\transformed\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:37:13-35
+418            android:exported="false" />
+418-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\8fe993e3b9d2e3aa5e3449a85cc17ca6\transformed\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:38:13-37
+419        <service
+419-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\8fe993e3b9d2e3aa5e3449a85cc17ca6\transformed\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:39:9-43:72
+420            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+420-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\8fe993e3b9d2e3aa5e3449a85cc17ca6\transformed\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:40:13-87
+421            android:enabled="true"
+421-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\8fe993e3b9d2e3aa5e3449a85cc17ca6\transformed\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:41:13-35
+422            android:exported="false"
+422-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\8fe993e3b9d2e3aa5e3449a85cc17ca6\transformed\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:42:13-37
+423            android:permission="android.permission.BIND_JOB_SERVICE" />
+423-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\qfn\.gradle\caches\transforms-3\8fe993e3b9d2e3aa5e3449a85cc17ca6\transformed\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:43:13-69
+424
+425        <provider
+425-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\qfn\.gradle\caches\transforms-3\7203bd0a1310d68f3a08bcc2f36e9f32\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+426            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+426-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\qfn\.gradle\caches\transforms-3\7203bd0a1310d68f3a08bcc2f36e9f32\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+427            android:authorities="com.pngelectoral.lifecycle-process"
+427-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\qfn\.gradle\caches\transforms-3\7203bd0a1310d68f3a08bcc2f36e9f32\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+428            android:exported="false"
+428-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\qfn\.gradle\caches\transforms-3\7203bd0a1310d68f3a08bcc2f36e9f32\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+429            android:multiprocess="true" />
+429-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\qfn\.gradle\caches\transforms-3\7203bd0a1310d68f3a08bcc2f36e9f32\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+430
+431        <service
+431-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\qfn\.gradle\caches\transforms-3\32243f16c042028a31df16e1b3bb3788\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:26:9-30:19
+432            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+432-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\qfn\.gradle\caches\transforms-3\32243f16c042028a31df16e1b3bb3788\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:27:13-117
+433            android:exported="false"
+433-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\qfn\.gradle\caches\transforms-3\32243f16c042028a31df16e1b3bb3788\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:28:13-37
+434            android:permission="android.permission.BIND_JOB_SERVICE" >
+434-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\qfn\.gradle\caches\transforms-3\32243f16c042028a31df16e1b3bb3788\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:29:13-69
+435        </service>
+436
+437        <receiver
+437-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\qfn\.gradle\caches\transforms-3\32243f16c042028a31df16e1b3bb3788\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:32:9-34:40
+438            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+438-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\qfn\.gradle\caches\transforms-3\32243f16c042028a31df16e1b3bb3788\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:33:13-132
+439            android:exported="false" />
+439-->[com.google.android.datatransport:transport-runtime:2.2.6] C:\Users\qfn\.gradle\caches\transforms-3\32243f16c042028a31df16e1b3bb3788\transformed\jetified-transport-runtime-2.2.6\AndroidManifest.xml:34:13-37
+440    </application>
+441
+442</manifest>

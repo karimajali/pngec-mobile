@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rootRL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/semi_transparent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@color/colorWhite"
+            android:orientation="vertical"
+            android:padding="@dimen/_5ssp">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_20ssp"
+                android:indeterminateTint="@color/colorPrimary"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDownloadMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/_20ssp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center_horizontal"
+                android:text="@string/downloading_the_voters_data_file"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_16ssp" />
+
+            <ProgressBar
+                android:id="@+id/downloadProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10ssp"
+                android:scaleY="5" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDownloadPercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10ssp"
+                android:layout_marginBottom="@dimen/_10ssp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/colorBlack"
+                android:text="@string/downloaded_0"
+                android:textSize="@dimen/_14ssp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>
