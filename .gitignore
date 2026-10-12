@@ -1,0 +1,23 @@
+*.iml
+.gradle/
+**/.gradle/
+local.properties
+**/local.properties
+.idea/
+**/.idea/
+.DS_Store
+build/
+**/build/
+captures/
+.externalNativeBuild/
+.cxx/
+*.log
+
+# Keystores & Passwords (Confidential)
+*.jks
+*.keystore
+keypassword
+**/keypassword*
+google-services.json
+uploads/
+

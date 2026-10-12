@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="syncVotersListViewModel"
+            type="com.pngelectoral.ui.viewModel.SyncVotersListViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/loginBackground"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rlHeader"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50ssp"
+            android:background="@color/colorPrimary">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnBack"
+                style="@style/back_button_image"
+                android:padding="@dimen/_10ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/poppins_bold"
+                android:text="@string/synced_voters"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_18ssp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnFilter"
+                style="@style/filter_button_image"
+                android:layout_alignParentEnd="true" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlMainContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rlHeader">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/cardSync"
+                android:layout_marginTop="@dimen/_5ssp"
+                android:layout_marginBottom="@dimen/_5ssp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/cbSelectAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_margin="@dimen/_10ssp"
+                    android:button="@null"
+                    android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/select_all"
+                    android:textSize="@dimen/_16ssp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSyncVotersList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_5ssp"
+                    android:layout_marginEnd="@dimen/_5ssp" />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cardSync"
+                style="@style/MainButtonStyle"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/_35ssp"
+                android:layout_marginEnd="@dimen/_35ssp"
+                android:layout_marginBottom="@dimen/_10ssp"
+                android:letterSpacing="0"
+                android:padding="@dimen/_5ssp"
+                android:text="@string/un_sync"
+                android:textColor="@color/colorWhite"
+                android:theme="@style/MatButtonPrimary"
+                app:cardBackgroundColor="@color/buttonColor"
+                app:cornerRadius="@dimen/_20ssp"
+                app:rippleColor="@color/colorWhite"
+                app:strokeColor="@color/buttonColor" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlNoContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rlHeader"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/no_synced_voters_found"
+                android:textColor="@color/color_22_22_22"
+                android:textSize="@dimen/_16ssp" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</layout>

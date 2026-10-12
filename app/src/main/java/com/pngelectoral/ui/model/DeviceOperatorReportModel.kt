@@ -1,0 +1,28 @@
+package com.pngelectoral.ui.model
+
+import com.google.gson.annotations.SerializedName
+import java.io.Serializable
+
+data class DeviceOperatorReportModel(
+
+    @SerializedName("message")
+    var message: String? = "",
+
+    @SerializedName("status")
+    var status: Boolean? = false,
+
+    @SerializedName("data")
+    var data: DeviceOperatorReportData? = null
+
+
+) : Serializable
+
+data class DeviceOperatorReportData(
+
+    @SerializedName("result")
+    var votersList: ArrayList<VotersList>? = ArrayList(),
+
+    @SerializedName("total")
+    var total: Int = 0
+
+) : Serializable

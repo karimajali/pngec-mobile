@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCapturedImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/rlBottomView"
+            android:layout_margin="@dimen/_1ssp"
+            android:scaleType="fitCenter" />
+
+        <RelativeLayout
+            android:id="@+id/rlBottomView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60ssp"
+            android:layout_alignParentBottom="true"
+            android:background="#323234"
+            android:padding="@dimen/_10ssp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/_10ssp"
+                android:background="@color/buttonColor"
+                android:fontFamily="@font/poppins_semibold"
+                android:padding="@dimen/_5ssp"
+                android:text="@string/save"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_16ssp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnReCapture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="@dimen/_10ssp"
+                android:background="@color/buttonColor"
+                android:fontFamily="@font/poppins_semibold"
+                android:padding="@dimen/_5ssp"
+                android:text="@string/recapture"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_16ssp" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</layout>

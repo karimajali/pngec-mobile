@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="registrationViewModel"
+            type="com.pngelectoral.ui.viewModel.RegistrationViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/loginBackground">
+
+        <RelativeLayout
+            android:id="@+id/rlTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50ssp"
+            android:background="@color/colorPrimary">
+
+            <!--            <androidx.appcompat.widget.AppCompatButton-->
+            <!--                android:id="@+id/btnBack"-->
+            <!--                style="@style/back_button"-->
+            <!--                 />-->
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnBack"
+                style="@style/back_button_image" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toStartOf="@id/btnHome"
+                android:layout_toEndOf="@id/btnBack"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center_horizontal"
+                android:text="@string/dob_and_status_discrepancy_report"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_9ssp"
+                android:textStyle="bold" />
+
+            <!--            <androidx.appcompat.widget.AppCompatImageView-->
+            <!--                android:id="@+id/btnHome"-->
+            <!--                style="@style/home_button"-->
+            <!--                android:layout_alignParentEnd="true" />-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnHome"
+                style="@style/home_button_image"
+                android:layout_alignParentEnd="true" />
+
+
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/btnProceed"
+            android:layout_below="@+id/rlTopBar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/_15ssp">
+
+
+                <LinearLayout
+                    android:id="@+id/llProvince"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_10ssp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/province"
+                        android:textAllCaps="true"
+                        android:textColor="@color/color_59_59_59"
+                        android:textSize="@dimen/_9ssp" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlProvince"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5ssp"
+                        android:layout_marginTop="@dimen/_5ssp"
+                        android:layout_marginEnd="@dimen/_5ssp"
+                        android:layout_marginBottom="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_edit_text_background">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/etProvince"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35ssp"
+                            android:layout_toStartOf="@+id/ivProvince"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:hint="@string/province"
+                            android:imeOptions="actionDone"
+                            android:paddingStart="@dimen/_10ssp"
+                            android:paddingEnd="@dimen/_10ssp"
+                            android:singleLine="true"
+                            android:textColor="@color/color_22_22_22"
+                            android:textSize="@dimen/_9ssp" />
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivProvince"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/dropdown_arrow_h"
+                            android:tint="@color/color_22_22_22"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_10ssp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/district"
+                        android:textAllCaps="true"
+                        android:textColor="@color/color_59_59_59"
+                        android:textSize="@dimen/_9ssp" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlDistrict"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5ssp"
+                        android:layout_marginTop="@dimen/_5ssp"
+                        android:layout_marginEnd="@dimen/_5ssp"
+                        android:layout_marginBottom="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_edit_text_background">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/etDistrict"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35ssp"
+                            android:layout_toStartOf="@+id/ivDistrict"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:hint="@string/district"
+                            android:imeOptions="actionDone"
+                            android:paddingStart="@dimen/_10ssp"
+                            android:paddingEnd="@dimen/_10ssp"
+                            android:singleLine="true"
+                            android:textColor="@color/color_22_22_22"
+                            android:textSize="@dimen/_9ssp" />
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivDistrict"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/dropdown_arrow_h"
+                            android:tint="@color/color_22_22_22"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_10ssp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/llg"
+                        android:textAllCaps="true"
+                        android:textColor="@color/color_59_59_59"
+                        android:textSize="@dimen/_9ssp" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlLLG"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5ssp"
+                        android:layout_marginTop="@dimen/_5ssp"
+                        android:layout_marginEnd="@dimen/_5ssp"
+                        android:layout_marginBottom="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_edit_text_background">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/etLLG"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35ssp"
+                            android:layout_toStartOf="@+id/ivLLG"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:hint="@string/llg"
+                            android:imeOptions="actionDone"
+                            android:paddingStart="@dimen/_10ssp"
+                            android:paddingEnd="@dimen/_10ssp"
+                            android:singleLine="true"
+                            android:textColor="@color/color_22_22_22"
+                            android:textSize="@dimen/_9ssp" />
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivLLG"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/dropdown_arrow_h"
+                            android:tint="@color/color_22_22_22" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_10ssp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/ward_name"
+                        android:textAllCaps="true"
+                        android:textColor="@color/color_59_59_59"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlWardName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5ssp"
+                        android:layout_marginTop="@dimen/_5ssp"
+                        android:layout_marginEnd="@dimen/_5ssp"
+                        android:layout_marginBottom="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_edit_text_background">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/etWardName"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35ssp"
+                            android:layout_toStartOf="@+id/ivWardName"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:hint="@string/ward_name"
+                            android:imeOptions="actionDone"
+                            android:paddingStart="@dimen/_10ssp"
+                            android:paddingEnd="@dimen/_10ssp"
+                            android:singleLine="true"
+                            android:textColor="@color/color_22_22_22"
+                            android:textSize="@dimen/_14ssp" />
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivWardName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/dropdown_arrow_h"
+                            android:tint="@color/color_22_22_22" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10ssp"
+                        android:layout_marginTop="@dimen/_10ssp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/location"
+                        android:textAllCaps="true"
+                        android:textColor="@color/color_59_59_59"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5ssp"
+                        android:layout_marginTop="@dimen/_5ssp"
+                        android:layout_marginEnd="@dimen/_5ssp"
+                        android:layout_marginBottom="@dimen/_10ssp"
+                        android:background="@drawable/voter_details_edit_text_background">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/etLocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35ssp"
+                            android:layout_toStartOf="@+id/ivLocation"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:hint="@string/location"
+                            android:imeOptions="actionDone"
+                            android:paddingStart="@dimen/_10ssp"
+                            android:paddingEnd="@dimen/_10ssp"
+                            android:singleLine="true"
+                            android:textColor="@color/color_22_22_22"
+                            android:textSize="@dimen/_14ssp" />
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivLocation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/_10ssp"
+                            android:src="@drawable/dropdown_arrow_h"
+                            android:tint="@color/color_22_22_22" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnProceed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/_20ssp"
+            android:background="@color/buttonColor"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/proceed"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_16ssp" />
+
+        <RelativeLayout
+            android:id="@+id/rlBottom"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/_5ssp">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBottomData"
+                style="@style/bottom_data_text_view" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="home_button_image">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/home_h</item>
+        <item name="android:backgroundTint">@color/colorWhite</item>
+        <item name="android:padding">@dimen/_5ssp</item>
+        <item name="android:layout_marginStart">@dimen/_5ssp</item>
+        <item name="android:layout_marginEnd">@dimen/_5ssp</item>
+    </style>
+
+    <style name="form11_button_image">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/ic_form11</item>
+        <item name="android:tint">@color/colorWhite</item>
+        <item name="android:padding">@dimen/_5ssp</item>
+        <item name="android:layout_marginStart">@dimen/_5ssp</item>
+        <item name="android:layout_marginEnd">@dimen/_5ssp</item>
+    </style>
+
+    <style name="filter_button_image">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/filter_s_4</item>
+        <item name="android:backgroundTint">@color/colorWhite</item>
+        <item name="android:padding">@dimen/_5ssp</item>
+        <item name="android:layout_marginStart">@dimen/_5ssp</item>
+        <item name="android:layout_marginEnd">@dimen/_5ssp</item>
+    </style>
+
+    <style name="gender_button_image">
+        <item name="android:layout_width">@dimen/_40ssp</item>
+        <item name="android:layout_height">@dimen/_40ssp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/gender</item>
+        <item name="android:backgroundTint">@color/colorWhite</item>
+        <item name="android:padding">@dimen/_5ssp</item>
+        <item name="android:layout_marginStart">@dimen/_5ssp</item>
+        <item name="android:layout_marginEnd">@dimen/_5ssp</item>
+    </style>
+
+    <style name="photo_button_image">
+        <item name="android:layout_width">@dimen/_40ssp</item>
+        <item name="android:layout_height">@dimen/_40ssp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/photo_report</item>
+        <item name="android:backgroundTint">@color/colorWhite</item>
+        <item name="android:padding">@dimen/_5ssp</item>
+        <item name="android:layout_marginStart">@dimen/_20ssp</item>
+        <item name="android:layout_marginEnd">@dimen/_20ssp</item>
+    </style>
+
+    <style name="back_button_image">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/back_arrew</item>
+        <item name="android:backgroundTint">@color/colorWhite</item>
+        <item name="android:padding">@dimen/_5ssp</item>
+        <item name="android:layout_marginStart">@dimen/_5ssp</item>
+        <item name="android:layout_marginEnd">@dimen/_5ssp</item>
+    </style>
+
+</resources>

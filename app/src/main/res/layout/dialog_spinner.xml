@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/loginBackground"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/llSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10ssp"
+            android:background="@drawable/edit_text_background"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_10ssp"
+                android:layout_marginTop="@dimen/_5ssp"
+                android:layout_marginBottom="@dimen/_5ssp"
+                android:src="@drawable/search_ic" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40ssp"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center_vertical"
+                android:hint="@string/search_occupation"
+                android:imeOptions="actionSearch"
+                android:inputType="textNoSuggestions"
+                android:paddingStart="@dimen/_10ssp"
+                android:paddingEnd="@dimen/_10ssp"
+                android:singleLine="true"
+                android:textSize="@dimen/_14ssp" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10ssp" />
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,249 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="TextInputLayoutSize" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:textColor">#AFB0B2</item>
+        <item name="android:fontFamily">@font/poppins_light</item>
+        <item name="android:color">#AFB0B2</item>
+    </style>
+
+    <style name="MainButtonStyle" parent="Widget.MaterialComponents.Button.Icon">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="MatButtonPrimary" parent="Theme.MaterialComponents">
+        <item name="colorPrimary">@color/buttonColor</item>
+        <item name="colorPrimaryDark">@color/buttonColor</item>
+        <item name="colorAccent">@color/buttonColor</item>
+    </style>
+
+    <style name="full_screen_dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+
+    <style name="full_screen_dialog_1" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+
+    <style name="form_edit_text_fields">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/_35ssp</item>
+        <item name="android:background">@null</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">@dimen/_10ssp</item>
+        <item name="android:paddingEnd">@dimen/_10ssp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/color_22_22_22</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+    <style name="home_button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/_35ssp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@color/colorBlue</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:layout_marginStart">@dimen/_5ssp</item>
+        <item name="android:layout_marginEnd">@dimen/_5ssp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:text">@string/home</item>
+    </style>
+
+    <style name="home_button_image">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/home_h</item>
+        <item name="android:tint">@color/colorWhite</item>
+        <item name="android:padding">@dimen/_5ssp</item>
+        <item name="android:layout_marginStart">@dimen/_5ssp</item>
+        <item name="android:layout_marginEnd">@dimen/_5ssp</item>
+    </style>
+
+    <style name="form11_button_image">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/ic_form11</item>
+        <item name="android:tint">@color/colorWhite</item>
+        <item name="android:padding">@dimen/_5ssp</item>
+        <item name="android:layout_marginStart">@dimen/_5ssp</item>
+        <item name="android:layout_marginEnd">@dimen/_5ssp</item>
+    </style>
+
+    <style name="filter_button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/_35ssp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@color/filterButtonColor</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:layout_marginStart">@dimen/_5ssp</item>
+        <item name="android:layout_marginEnd">@dimen/_5ssp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:text">@string/filter</item>
+    </style>
+
+    <style name="filter_button_image">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/filter_s_4</item>
+        <item name="android:tint">@color/colorWhite</item>
+        <item name="android:padding">@dimen/_5ssp</item>
+        <item name="android:layout_marginStart">@dimen/_5ssp</item>
+        <item name="android:layout_marginEnd">@dimen/_5ssp</item>
+    </style>
+
+    <style name="gender_button_image">
+        <item name="android:layout_width">@dimen/_40ssp</item>
+        <item name="android:layout_height">@dimen/_40ssp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/gender</item>
+        <item name="android:tint">@color/colorWhite</item>
+        <item name="android:padding">@dimen/_5ssp</item>
+        <item name="android:layout_marginStart">@dimen/_5ssp</item>
+        <item name="android:layout_marginEnd">@dimen/_5ssp</item>
+    </style>
+
+    <style name="back_button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/_35ssp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@color/filterButtonColor</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:layout_marginStart">@dimen/_5ssp</item>
+        <item name="android:layout_marginEnd">@dimen/_5ssp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:text">@string/filter</item>
+    </style>
+
+    <style name="back_button_image">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/back_arrew</item>
+        <item name="android:tint">@color/colorWhite</item>
+        <item name="android:padding">@dimen/_5ssp</item>
+        <item name="android:layout_marginStart">@dimen/_5ssp</item>
+        <item name="android:layout_marginEnd">@dimen/_5ssp</item>
+    </style>
+
+    <style name="bottom_data_text_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+
+    <style name="form_text_views_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/_8ssp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="form_text_views_key">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">0.4</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textColor">@color/color_22_22_22</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+    </style>
+
+    <style name="form_text_views_value">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">0.6</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textColor">@color/color_22_22_22</item>
+        <item name="android:textColorHint">@color/color_22_22_22</item>
+        <item name="android:paddingStart">@dimen/_5ssp</item>
+        <item name="android:hint">"-"</item>
+        <item name="android:text">"-"</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+    </style>
+
+    <style name="form_new_edit_text_fields">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/_35ssp</item>
+        <item name="android:layout_weight">0.6</item>
+        <item name="android:background">@drawable/voter_details_edit_text_background</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginStart">@dimen/_5ssp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:paddingStart">@dimen/_5ssp</item>
+        <item name="android:paddingEnd">@dimen/_5ssp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/color_22_22_22</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+    </style>
+
+    <style name="form_new_edit_text_selection_fields">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/_35ssp</item>
+        <item name="android:layout_weight">0.6</item>
+        <item name="android:background">@drawable/voter_details_edit_text_background</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginStart">@dimen/_5ssp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:paddingStart">@dimen/_5ssp</item>
+        <item name="android:paddingEnd">@dimen/_5ssp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/color_22_22_22</item>
+        <item name="android:drawableEnd">@drawable/dropdown_arrow_h</item>
+        <item name="android:drawableTint" tools:targetApi="m">@color/color_22_22_22</item>
+        <item name="android:drawablePadding">@dimen/_5ssp</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+    </style>
+
+    <style name="form_text_views_with_background">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/_35ssp</item>
+        <item name="android:layout_weight">0.6</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:background">@drawable/voter_details_edit_text_background</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textColor">@color/color_22_22_22</item>
+        <item name="android:paddingStart">@dimen/_5ssp</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+    </style>
+
+</resources>

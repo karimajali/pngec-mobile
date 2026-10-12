@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="transferInVotersListModel"
+            type="com.pngelectoral.ui.viewModel.TransferInVotersListModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/loginBackground">
+
+        <RelativeLayout
+            android:id="@+id/rlTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50ssp"
+            android:background="@color/colorPrimary">
+
+            <!--            <androidx.appcompat.widget.AppCompatButton-->
+            <!--                android:id="@+id/btnBack"-->
+            <!--                style="@style/back_button"-->
+            <!--                 />-->
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnBack"
+                style="@style/back_button_image" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toStartOf="@id/btnHome"
+                android:layout_toEndOf="@id/btnBack"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center_horizontal"
+                android:text="@string/found_voters"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_18ssp"
+                android:textStyle="bold" />
+
+            <!--            <androidx.appcompat.widget.AppCompatImageView-->
+            <!--                android:id="@+id/btnHome"-->
+            <!--                style="@style/home_button"-->
+            <!--                android:layout_alignParentEnd="true" />-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnHome"
+                style="@style/home_button_image"
+                android:layout_alignParentEnd="true" />
+
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rlTopBar"
+            android:layout_margin="@dimen/_10ssp"
+            android:background="@drawable/edit_text_background"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_10ssp"
+                android:layout_marginTop="@dimen/_5ssp"
+                android:layout_marginBottom="@dimen/_5ssp"
+                android:src="@drawable/search_ic" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40ssp"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center_vertical"
+                android:hint="@string/search_by_voter_name"
+                android:imeOptions="actionSearch"
+                android:inputType="textNoSuggestions"
+                android:paddingStart="@dimen/_10ssp"
+                android:paddingEnd="@dimen/_10ssp"
+                android:singleLine="true"
+                android:textSize="@dimen/_9ssp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/llSearch"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/_10ssp"
+            android:paddingEnd="@dimen/_10ssp"
+            android:paddingBottom="@dimen/_5ssp">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSearchVotersList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNoVoters"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_20ssp"
+                android:layout_marginEnd="@dimen/_20ssp"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:text="@string/no_voters_found"
+                android:textColor="@color/color_59_59_59"
+                android:textSize="@dimen/_16ssp"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rlBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/_5ssp"
+            android:visibility="gone">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBottomData"
+                style="@style/bottom_data_text_view" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>

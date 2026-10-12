@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="transferInScanViewModel"
+            type="com.pngelectoral.ui.viewModel.TransferInScanViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/loginBackground">
+
+        <RelativeLayout
+            android:id="@+id/rlTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50ssp"
+            android:background="@color/colorPrimary">
+
+            <!--            <androidx.appcompat.widget.AppCompatButton-->
+            <!--                android:id="@+id/btnBack"-->
+            <!--                style="@style/back_button"-->
+            <!--                 />-->
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnBack"
+                style="@style/back_button_image" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toStartOf="@id/btnHome"
+                android:layout_toEndOf="@id/btnBack"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center_horizontal"
+                android:text="@string/transfer_in"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_18ssp"
+                android:textStyle="bold" />
+
+            <!--            <androidx.appcompat.widget.AppCompatImageView-->
+            <!--                android:id="@+id/btnHome"-->
+            <!--                style="@style/home_button"-->
+            <!--                android:layout_alignParentEnd="true" />-->
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnHome"
+                style="@style/home_button_image"
+                android:layout_alignParentEnd="true" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rlTopBar">
+
+            <LinearLayout
+                android:id="@+id/llTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_5ssp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvVoterName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvVoterId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5ssp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12ssp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5ssp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvGender"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDob"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCurrentGeo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5ssp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/_20ssp"
+                    android:layout_marginTop="@dimen/_5ssp"
+                    android:layout_marginEnd="@dimen/_20ssp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@string/scan_qr_code"
+                    android:textColor="@color/color_59_59_59"
+                    android:textSize="@dimen/_14ssp" />
+
+            </LinearLayout>
+
+            <com.pngelectoral.utility.visionBarcode.CameraSourcePreview
+                android:id="@+id/preview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/llManualOption"
+                android:layout_below="@id/llTop" />
+
+            <LinearLayout
+                android:id="@+id/llManualOption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/_10ssp"
+                    android:layout_marginTop="@dimen/_5ssp"
+                    android:layout_marginEnd="@dimen/_10ssp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_horizontal"
+                    android:text="@string/align_the_qr_code_to_fit_inside_the_frame"
+                    android:textColor="@color/color_59_59_59"
+                    android:textSize="@dimen/_14ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_horizontal"
+                    android:text="OR"
+                    android:textColor="@color/color_59_59_59"
+                    android:textSize="@dimen/_14ssp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnManualForm11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_5ssp"
+                    android:layout_marginBottom="@dimen/_10ssp"
+                    android:background="@color/buttonColor"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:paddingStart="@dimen/_10ssp"
+                    android:paddingEnd="@dimen/_10ssp"
+                    android:text="@string/manual_form_11"
+                    android:textAllCaps="false"
+                    android:visibility="visible"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_16ssp" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/_10ssp"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/_5ssp"
+            android:visibility="gone">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBottomData"
+                style="@style/bottom_data_text_view" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>

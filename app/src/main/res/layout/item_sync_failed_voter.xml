@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_5ssp"
+        app:cardCornerRadius="@dimen/_5ssp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5ssp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivVoterImage"
+                android:layout_width="@dimen/_50ssp"
+                android:layout_height="@dimen/_50ssp"
+                android:layout_marginStart="@dimen/_5ssp"
+                android:layout_marginTop="@dimen/_5ssp"
+                android:src="@drawable/e_user" />
+
+            <LinearLayout
+                android:id="@+id/llVoterInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10ssp"
+                android:layout_toEndOf="@+id/ivVoterImage"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvVoterName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_10ssp"
+                        android:layout_toStartOf="@+id/cbSelectItem"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/cbSelectItem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:visibility="visible" />
+
+
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvVoterId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5ssp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12ssp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5ssp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/_10ssp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/updated_on"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/_12ssp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvUpdatedDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5ssp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llClan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llVoterInfo"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvVoterClan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5ssp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="start"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlVoterLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llClan"
+                android:layout_margin="@dimen/_5ssp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvVoterLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5ssp"
+                    android:layout_toStartOf="@+id/tvVoterStatus"
+                    android:drawableStart="@drawable/map_ic"
+                    android:drawablePadding="@dimen/_10ssp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="start"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvVoterStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/poppins_light"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12ssp" />
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvRejectedReason"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlVoterLocation"
+                android:layout_margin="@dimen/_5ssp"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/color_22_22_22"
+                android:textSize="@dimen/_12ssp" />
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

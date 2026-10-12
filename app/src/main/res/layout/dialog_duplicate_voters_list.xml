@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/loginBackground"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rlHeader"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50ssp"
+            android:background="@color/colorPrimary">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:paddingStart="@dimen/_5ssp"
+                android:paddingEnd="@dimen/_5ssp"
+                android:src="@drawable/close_s_6"
+                android:tint="@color/colorWhite" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toStartOf="@+id/ivClose"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:text="@string/duplicate_voters"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_18ssp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rlHeader"
+            android:layout_margin="@dimen/_10ssp"
+            android:background="@drawable/edit_text_background"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/_10ssp"
+                android:layout_marginTop="@dimen/_5ssp"
+                android:layout_marginBottom="@dimen/_5ssp"
+                android:src="@drawable/search_ic" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40ssp"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center_vertical"
+                android:hint="@string/search_by_first_name_last_name_elector_id"
+                android:imeOptions="actionSearch"
+                android:inputType="textNoSuggestions"
+                android:paddingStart="@dimen/_10ssp"
+                android:paddingEnd="@dimen/_10ssp"
+                android:singleLine="true"
+                android:textSize="@dimen/_12ssp" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDuplicateVoters"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/llSearch"
+            android:layout_margin="@dimen/_10ssp" />
+
+
+    </RelativeLayout>
+</layout>
