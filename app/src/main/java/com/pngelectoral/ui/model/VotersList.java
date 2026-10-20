@@ -344,4 +344,17 @@ public class VotersList implements Serializable {
     @ColumnInfo(name = "clanName")
     public String clanName = "";
 
+    /** Phase 1 & 2 Sync V2 & SevisPass fields */
+    @ColumnInfo(name = "uploadId")
+    @SerializedName("uploadId")
+    public String uploadId = "";
+
+    @ColumnInfo(name = "sevisPassId")
+    @SerializedName("sevisPassId")
+    public String sevisPassId = "";
+
+    @ColumnInfo(name = "sevisPassStatus")
+    @SerializedName("sevisPassStatus")
+    public String sevisPassStatus = "";
+
 }

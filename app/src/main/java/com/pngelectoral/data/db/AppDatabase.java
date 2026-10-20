@@ -33,7 +33,7 @@ import com.pngelectoral.ui.model.WardList;
 @Database(entities = {VotersList.class, RegionList.class, ProvinceList.class
         , DistrictList.class, LLGList.class
         , WardList.class, LocationList.class
-        , OccupationList.class, DpoList.class, MKAGeoListData.class, MKAClanListData.class, ClanListData.class }, version = 4)
+        , OccupationList.class, DpoList.class, MKAGeoListData.class, MKAClanListData.class, ClanListData.class }, version = 5)
 
 public abstract class AppDatabase extends RoomDatabase {
 

@@ -61,6 +61,9 @@ import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.okButton
+import com.pngelectoral.datasync.SyncV2Manager
+import com.pngelectoral.datasync.SyncV2Worker
+import com.pngelectoral.utility.sharedPreference.SecuredSharedPreferenceWrapper
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -1135,15 +1138,101 @@ class VotersSyncWithDataAndImageActivity : BaseActivity(), CoroutineScope {
     }
 
     private fun startSync() {
-        if (CommonMethods.checkInternetConnection(this)) {
-            showDownloadProgressDialog()
-            currentUpdatedVotersList = 0
-            val currentRequest: VotersList =
-                selectedVotersList[currentUpdatedVotersList]
-            callSyncVoterWithDataAndImageAPI(currentRequest)
-        } else {
+        if (!CommonMethods.checkInternetConnection(this)) {
             binding?.cardSync?.isEnabled = true
-            showAlertMessage("Internet connection is not available.Please check and try again")
+            showAlertMessage("Internet connection is not available. Please check and try again.")
+            return
+        }
+
+        showDownloadProgressDialog()
+
+        launch(Dispatchers.Main) {
+            val pref = SecuredSharedPreferenceWrapper(this@VotersSyncWithDataAndImageActivity, "png_electoral")
+            val userData = pref.getObject(ApiConstants.DPO_LOGGED_IN_USER_DATA, DPOUserData::class.java)
+            val userId = userData?.userId?.toIntOrNull() ?: 1
+            val deviceId = Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID) ?: "MOBILE_DEVICE"
+
+            val batchSize = 50
+            val chunks = selectedVotersList.chunked(batchSize)
+            var totalDataSuccess = 0
+            var totalImageSuccess = 0
+
+            withContext(Dispatchers.IO) {
+                // STEP 1: Fast batch demographic data sync
+                for ((index, batch) in chunks.withIndex()) {
+                    withContext(Dispatchers.Main) {
+                        val progressPercent = if (chunks.isNotEmpty()) ((index.toDouble() / chunks.size.toDouble()) * 50).toInt() else 50
+                        uploadSyncProgress(progressPercent, chunks.size)
+                    }
+
+                    val res = SyncV2Manager.syncBatchAsync(
+                        context = this@VotersSyncWithDataAndImageActivity,
+                        voters = ArrayList(batch),
+                        actionType = "BATCH",
+                        userId = userId,
+                        deviceId = deviceId
+                    )
+
+                    if (res.status) {
+                        for (item in res.results) {
+                            if (item.isSuccess || item.status == "ALREADY_PROCESSED") {
+                                totalDataSuccess++
+                            }
+                        }
+                    }
+                }
+
+                // STEP 2: Decoupled independent image uploads
+                val votersWithImages = selectedVotersList.filter {
+                    !it.electorProfileImage.isNullOrEmpty() || !it.electorFormImage.isNullOrEmpty()
+                }
+                for ((idx, voter) in votersWithImages.withIndex()) {
+                    withContext(Dispatchers.Main) {
+                        val progressPercent = 50 + if (votersWithImages.isNotEmpty()) ((idx.toDouble() / votersWithImages.size.toDouble()) * 50).toInt() else 50
+                        uploadSyncProgress(progressPercent, votersWithImages.size)
+                    }
+
+                    if (!voter.electorProfileImage.isNullOrEmpty()) {
+                        val imgRes = SyncV2Manager.uploadVoterImageAsync(
+                            context = this@VotersSyncWithDataAndImageActivity,
+                            electorId = voter.electorId,
+                            uploadId = voter.uploadId ?: "",
+                            imageType = "profile",
+                            imagePath = voter.electorProfileImage
+                        )
+                        if (imgRes.status == true) totalImageSuccess++
+                    }
+
+                    if (!voter.electorFormImage.isNullOrEmpty()) {
+                        val imgRes = SyncV2Manager.uploadVoterImageAsync(
+                            context = this@VotersSyncWithDataAndImageActivity,
+                            electorId = voter.electorId,
+                            uploadId = voter.uploadId ?: "",
+                            imageType = "form",
+                            imagePath = voter.electorFormImage
+                        )
+                        if (imgRes.status == true) totalImageSuccess++
+                    }
+
+                    voter.isImageUploaded = 1
+                    dataBaseInstance.votersListDao().update(voter)
+                }
+            }
+
+            // Enqueue background WorkManager sync worker for guaranteed retry & resilience
+            SyncV2Worker.enqueueWardSync(this@VotersSyncWithDataAndImageActivity, wardId = wardId, isImmediate = true)
+
+            hideSyncProgress()
+            binding?.cardSync?.isEnabled = true
+            isSyncDone = true
+
+            val msg = "Synchronized $totalDataSuccess elector records and $totalImageSuccess image(s) via Phase 1 Decoupled Sync. Any pending items queued in background."
+
+            alert(msg) {
+                okButton {
+                    finish()
+                }
+            }.show().setCancelable(false)
         }
     }
 

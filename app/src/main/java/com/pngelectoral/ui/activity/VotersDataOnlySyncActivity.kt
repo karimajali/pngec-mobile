@@ -61,6 +61,9 @@ import com.pngelectoral.utility.CommonMethods
 import kotlinx.coroutines.*
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.okButton
+import com.pngelectoral.datasync.SyncV2Manager
+import com.pngelectoral.datasync.SyncV2Worker
+import com.pngelectoral.utility.sharedPreference.SecuredSharedPreferenceWrapper
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -1186,26 +1189,72 @@ class VotersDataOnlySyncActivity : BaseActivity(), CoroutineScope {
     var totalSplitCount = 0
 
     private fun startSync() {
-        if (CommonMethods.checkInternetConnection(this)) {
-            showDownloadProgressDialog()
-            if (selectedVotersList.size < 1) {
-                currentSyncSetOfVoters.clear()
-                currentSyncSetOfVoters.addAll(selectedVotersList)
-                callSyncVotersWithOnlyDataAPI(currentSyncSetOfVoters)
-            } else {
-                selectedVotersListSplit =
-                    Lists.partition(
-                        selectedVotersList,
-                        numberOfVotersPerSync
-                    ) as List<ArrayList<VotersList>>
-                totalSplitCount = selectedVotersListSplit.size
-                currentSyncSetOfVoters.clear()
-                currentSyncSetOfVoters.addAll(ArrayList(selectedVotersListSplit[numberOfDataSyncs]))
-                callSyncVotersWithOnlyDataAPI(currentSyncSetOfVoters)
-            }
-        } else {
+        if (!CommonMethods.checkInternetConnection(this)) {
             binding?.cardSync?.isEnabled = true
-            showAlertMessage("Internet connection is not available.Please check and try again")
+            showAlertMessage("Internet connection is not available. Please check and try again.")
+            return
+        }
+
+        showDownloadProgressDialog()
+
+        launch(Dispatchers.Main) {
+            val pref = SecuredSharedPreferenceWrapper(this@VotersDataOnlySyncActivity, "png_electoral")
+            val userData = pref.getObject(ApiConstants.DPO_LOGGED_IN_USER_DATA, DPOUserData::class.java)
+            val userId = userData?.userId?.toIntOrNull() ?: 1
+            val deviceId = Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID) ?: "MOBILE_DEVICE"
+
+            val batchSize = 50
+            val chunks = selectedVotersList.chunked(batchSize)
+            var totalSuccess = 0
+            var totalFailed = 0
+
+            withContext(Dispatchers.IO) {
+                for ((index, batch) in chunks.withIndex()) {
+                    withContext(Dispatchers.Main) {
+                        val progressPercent = if (chunks.isNotEmpty()) ((index.toDouble() / chunks.size.toDouble()) * 100).toInt() else 100
+                        uploadSyncProgress(progressPercent)
+                    }
+
+                    val res = SyncV2Manager.syncBatchAsync(
+                        context = this@VotersDataOnlySyncActivity,
+                        voters = ArrayList(batch),
+                        actionType = "BATCH",
+                        userId = userId,
+                        deviceId = deviceId
+                    )
+
+                    if (res.status) {
+                        for (item in res.results) {
+                            if (item.isSuccess || item.status == "ALREADY_PROCESSED") {
+                                totalSuccess++
+                            } else {
+                                totalFailed++
+                            }
+                        }
+                    } else {
+                        totalFailed += batch.size
+                    }
+                }
+            }
+
+            // Enqueue background WorkManager sync worker for guaranteed retry & resilience
+            SyncV2Worker.enqueueWardSync(this@VotersDataOnlySyncActivity, wardId = wardId, isImmediate = true)
+
+            hideSyncProgress()
+            binding?.cardSync?.isEnabled = true
+            isSyncDone = true
+
+            val msg = if (totalFailed == 0) {
+                "Successfully synchronized $totalSuccess voter record(s) via Phase 1 Resilient Queue."
+            } else {
+                "Synchronized $totalSuccess record(s). $totalFailed record(s) queued for automatic background retry."
+            }
+
+            alert(msg) {
+                okButton {
+                    finish()
+                }
+            }.show().setCancelable(false)
         }
     }
 

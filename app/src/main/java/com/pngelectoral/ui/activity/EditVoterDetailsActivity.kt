@@ -1991,6 +1991,11 @@ class EditVoterDetailsActivity : BaseActivity(), CoroutineScope {
     }
 
     private fun updatedVoterInformationDB(updatedVoterInformation: VotersList) {
+        if (updatedVoterInformation.uploadId.isNullOrEmpty()) {
+            updatedVoterInformation.uploadId = java.util.UUID.randomUUID().toString().replace("-", "")
+        }
+        updatedVoterInformation.isSyncToServer = 0
+        updatedVoterInformation.isDataUploaded = 0
         launch(Dispatchers.Main) {
             withContext(Dispatchers.IO) {
                 val isVoterDownloaded = dataBaseInstance.votersListDao()

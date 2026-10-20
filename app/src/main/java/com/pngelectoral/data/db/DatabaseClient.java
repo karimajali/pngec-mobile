@@ -22,7 +22,7 @@ public class DatabaseClient {
         //creating the app database with Room database builder
         //MyToDos is the name of the database
         appDatabase = Room.databaseBuilder(mContext, AppDatabase.class, "PNGElectoral")
-                .addMigrations(MIGRATION_1_2).addMigrations(MIGRATION_2_3).addMigrations(MIGRATION_3_4).build();
+                .addMigrations(MIGRATION_1_2).addMigrations(MIGRATION_2_3).addMigrations(MIGRATION_3_4).addMigrations(MIGRATION_4_5).build();
     }
 
     static final Migration MIGRATION_1_2 = new Migration(1, 2) {
@@ -102,6 +102,15 @@ public class DatabaseClient {
         }
     };
 
+    /** Phase 1 & 2: Migration for uploadId, sevisPassId, sevisPassStatus */
+    static final Migration MIGRATION_4_5 = new Migration(4, 5) {
+        @Override
+        public void migrate(@NonNull SupportSQLiteDatabase database) {
+            database.execSQL("ALTER TABLE voterslist ADD COLUMN uploadId TEXT");
+            database.execSQL("ALTER TABLE voterslist ADD COLUMN sevisPassId TEXT");
+            database.execSQL("ALTER TABLE voterslist ADD COLUMN sevisPassStatus TEXT");
+        }
+    };
 
     public static synchronized DatabaseClient getInstance(Context mCtx) {
         if (mInstance == null) {

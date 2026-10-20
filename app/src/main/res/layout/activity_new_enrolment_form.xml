@@ -959,6 +959,56 @@
 
                     </LinearLayout>
 
+                    <!-- Phase 2: SevisPass National Digital ID Section -->
+                    <LinearLayout
+                        android:id="@+id/llSevisPassContainer"
+                        style="@style/form_text_views_layout"
+                        android:layout_marginTop="@dimen/_15ssp"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_5ssp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/form_text_views_key"
+                            android:layout_width="match_parent"
+                            android:text="SevisPass National ID (Optional)" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/etSevisPassId"
+                                style="@style/form_new_edit_text_fields"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:hint="Enter SevisPass ID"
+                                android:imeOptions="actionDone"
+                                android:inputType="textCapCharacters" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btnVerifySevisPass"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_5ssp"
+                                android:background="@color/buttonColor"
+                                android:text="Verify"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/_12ssp" />
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvSevisPassStatusBadge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5ssp"
+                            android:padding="@dimen/_4ssp"
+                            android:text="Status: Not Verified"
+                            android:textSize="@dimen/_12ssp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
                 </LinearLayout>
 
             </LinearLayout>

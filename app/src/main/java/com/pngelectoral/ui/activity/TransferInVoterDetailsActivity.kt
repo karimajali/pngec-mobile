@@ -1328,6 +1328,11 @@ class TransferInVoterDetailsActivity : BaseActivity(), CoroutineScope {
     }
 
     private fun saveTransferredInVoterInformationToDB(updatedVoterInformation: VotersList): Boolean {
+        if (updatedVoterInformation.uploadId.isNullOrEmpty()) {
+            updatedVoterInformation.uploadId = java.util.UUID.randomUUID().toString().replace("-", "")
+        }
+        updatedVoterInformation.isSyncToServer = 0
+        updatedVoterInformation.isDataUploaded = 0
         dataBaseInstance.transferInVotersListDao().insert(updatedVoterInformation)
         return true
     }

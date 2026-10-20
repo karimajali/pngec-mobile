@@ -227,7 +227,7 @@ class NewDownloadActivity : BaseActivity(), CoroutineScope {
                 ) {
                     if (mResponse.status == true) {
                         val url = mResponse.message
-                        downloadFileUsingFetch(url)
+                        downloadFile(url)
                     } else {
                         mResponse.message?.let { showAlertMessage(it) }
                         CommonMethods.hideProgress()
@@ -265,42 +265,34 @@ class NewDownloadActivity : BaseActivity(), CoroutineScope {
         file.createNewFile()
 
         launch(Dispatchers.IO) {
-            /**Added file downloader in try catch block to the catch the exception*/
-            var count: Int
-            val u = URL(url)
-            val conn: URLConnection = u.openConnection()
-            /**Used to close the current connection request.*/
-            conn.setRequestProperty("connection", "close")
-            val contentLength: Int = conn.contentLength
-            val input: InputStream = BufferedInputStream(
-                u.openStream(),
-                8192
-            )
-            val output: OutputStream = FileOutputStream(
-                file
-            )
-            val data = ByteArray(1024)
-            var total: Long = 0
-            while (input.read(data).also { count = it } != -1) {
-                total += count.toLong()
-                val progressIntent = Intent(ApiConstants.FILE_DOWNLOAD_PROGRESS)
-                progressIntent.putExtra(
-                    "Downloaded_Progress",
-                    (total * 100 / contentLength).toInt()
-                )
-                sendBroadcast(progressIntent)
-                output.write(data, 0, count)
+            try {
+                var count: Int
+                val u = URL(url)
+                val conn = u.openConnection() as java.net.HttpURLConnection
+                conn.requestMethod = "GET"
+                conn.connectTimeout = 15000
+                conn.readTimeout = 30000
+                conn.connect()
+                val contentLength: Int = conn.contentLength
+                val input: InputStream = BufferedInputStream(conn.inputStream, 8192)
+                val output: OutputStream = FileOutputStream(file)
+                val data = ByteArray(4096)
+                var total: Long = 0
+                while (input.read(data).also { count = it } != -1) {
+                    total += count.toLong()
+                    val progress = if (contentLength > 0) (total * 100 / contentLength).toInt().coerceIn(0, 100) else 50
+                    val progressIntent = Intent(ApiConstants.FILE_DOWNLOAD_PROGRESS)
+                    progressIntent.putExtra("Downloaded_Progress", progress)
+                    sendBroadcast(progressIntent)
+                    output.write(data, 0, count)
+                }
+                output.flush()
+                output.close()
+                input.close()
+                conn.disconnect()
+            } catch (e: Exception) {
+                Log.e("FILE_DOWNLOADER", "downloadFileException ==> " + e.localizedMessage, e)
             }
-            // flushing output
-            output.flush()
-            // closing streams
-            output.close()
-            input.close()
-            /*try {
-
-            }catch (e:Exception){
-                Log.e("FILE_DOWNLOADER", "downloadFileException==>"+e.localizedMessage)
-            }*/
 
 
             //UnZipping the downloaded file
@@ -490,6 +482,11 @@ class NewDownloadActivity : BaseActivity(), CoroutineScope {
             R.layout.download_file_progress, null, false
         ) as DownloadFileProgressBinding
         builder.setView(downloadFileProgressBinding?.root)
+        builder.setNegativeButton("Skip") { dialog, _ ->
+            dialog.dismiss()
+            securedSharedPreferenceWrapper.putBoolean(ApiConstants.DPO_SETUP_COMPLETED, true)
+            navigateToWardRollScreen()
+        }
         mFileDownloadProgressDialog = builder.create()
         mFileDownloadProgressDialog?.setCanceledOnTouchOutside(false)
         mFileDownloadProgressDialog?.setCancelable(false)
@@ -599,6 +596,11 @@ class NewDownloadActivity : BaseActivity(), CoroutineScope {
             R.layout.layout_loader_download_progress_bar, null, false
         ) as LayoutLoaderDownloadProgressBarBinding
         builder.setView(bindingLayoutLoaderDownloadProgressBar?.root)
+        builder.setNegativeButton("Skip") { dialog, _ ->
+            dialog.dismiss()
+            securedSharedPreferenceWrapper.putBoolean(ApiConstants.DPO_SETUP_COMPLETED, true)
+            navigateToWardRollScreen()
+        }
         mDownloadProgressDialog = builder.create()
         mDownloadProgressDialog?.setCanceledOnTouchOutside(false)
         mDownloadProgressDialog?.setCancelable(false)

@@ -64,6 +64,7 @@ class NewEnrolmentFormActivity : BaseActivity(), CoroutineScope {
     private var provisionalCutOffDate = ""
     private var occupationListArray: List<OccupationList>? = ArrayList()
     private var isProvisional = false
+    private var sevisPassVerificationStatus: String = "Unverified"
 
     /**Define values to store selected mka data.*/
     var mkaDistrictId = 0
@@ -427,6 +428,63 @@ class NewEnrolmentFormActivity : BaseActivity(), CoroutineScope {
             ) {
                 CommonMethods.showProgress(this)
                 getMKAClanListFromDB()
+            }
+        }
+
+        binding?.btnVerifySevisPass?.setOnClickListener {
+            val sevisPassId = binding?.etSevisPassId?.text?.toString()?.trim() ?: ""
+            if (sevisPassId.isEmpty()) {
+                showAlertMessage("Please enter a SevisPass ID to verify")
+                return@setOnClickListener
+            }
+            CommonMethods.showProgress(this)
+            val givenName = binding?.etGivenName?.text?.toString()?.trim() ?: ""
+            val surname = binding?.etLastName?.text?.toString()?.trim() ?: ""
+            val dob = binding?.etDateOfBirth?.text?.toString()?.trim() ?: ""
+            val gender = binding?.etGender?.text?.toString()?.trim() ?: ""
+
+            launch(Dispatchers.Main) {
+                try {
+                    val apiRes = com.pngelectoral.datasync.SyncV2Manager.verifySevisPassAsync(
+                        sevisPassId = sevisPassId,
+                        firstName = givenName,
+                        lastName = surname,
+                        dob = dob,
+                        gender = gender
+                    )
+                    CommonMethods.hideProgress()
+                    binding?.tvSevisPassStatusBadge?.visibility = View.VISIBLE
+                    val verifyResult = apiRes.data
+                    val status = verifyResult?.status ?: if (apiRes.status == true) "Verified" else "NotFound"
+                    sevisPassVerificationStatus = status
+
+                    when (status) {
+                        "Verified" -> {
+                            binding?.tvSevisPassStatusBadge?.text = "Status: Verified (DICT National Registry)"
+                            binding?.tvSevisPassStatusBadge?.setBackgroundColor(android.graphics.Color.parseColor("#388E3C"))
+                            binding?.tvSevisPassStatusBadge?.setTextColor(android.graphics.Color.WHITE)
+                        }
+                        "Mismatch" -> {
+                            val mismatchText = if (!verifyResult?.mismatches.isNullOrEmpty()) verifyResult?.mismatches?.joinToString("; ") else verifyResult?.message
+                            binding?.tvSevisPassStatusBadge?.text = "Status: Mismatch - $mismatchText"
+                            binding?.tvSevisPassStatusBadge?.setBackgroundColor(android.graphics.Color.parseColor("#D32F2F"))
+                            binding?.tvSevisPassStatusBadge?.setTextColor(android.graphics.Color.WHITE)
+                        }
+                        else -> {
+                            val notFoundText = verifyResult?.message ?: "Not Found in SevisPass Registry"
+                            binding?.tvSevisPassStatusBadge?.text = "Status: $notFoundText"
+                            binding?.tvSevisPassStatusBadge?.setBackgroundColor(android.graphics.Color.parseColor("#F57C00"))
+                            binding?.tvSevisPassStatusBadge?.setTextColor(android.graphics.Color.WHITE)
+                        }
+                    }
+                } catch (e: Exception) {
+                    CommonMethods.hideProgress()
+                    binding?.tvSevisPassStatusBadge?.visibility = View.VISIBLE
+                    sevisPassVerificationStatus = "Unverified"
+                    binding?.tvSevisPassStatusBadge?.text = "Status: Verification Offline / Retry Later"
+                    binding?.tvSevisPassStatusBadge?.setBackgroundColor(android.graphics.Color.DKGRAY)
+                    binding?.tvSevisPassStatusBadge?.setTextColor(android.graphics.Color.WHITE)
+                }
             }
         }
 
@@ -960,6 +1018,11 @@ class NewEnrolmentFormActivity : BaseActivity(), CoroutineScope {
                             updatedVoterInformation.isDataUploaded = 0
                             updatedVoterInformation.isImageUploaded = 0
                             updatedVoterInformation.syncStatus = 0
+                            if (updatedVoterInformation.uploadId.isNullOrEmpty()) {
+                                updatedVoterInformation.uploadId = java.util.UUID.randomUUID().toString().replace("-", "")
+                            }
+                            updatedVoterInformation.sevisPassId = binding?.etSevisPassId?.text?.toString()?.trim() ?: ""
+                            updatedVoterInformation.sevisPassStatus = if (updatedVoterInformation.sevisPassId.isNullOrEmpty()) "" else sevisPassVerificationStatus
                             /**Update MKA Fields*/
                             if (mkaDistrictId != 0) {
                                 updatedVoterInformation.mkaDistrictId = mkaDistrictId

@@ -867,7 +867,46 @@ interface RetrofitInterface {
 
     @GET("General/GetGeoClanList")
     fun callGeoClanListAPI(): Call<ClanListModel>
+
+    // =======================================================
+    // Phase 1: Modular Idempotent Sync V2 Endpoints
+    // =======================================================
+
+    @POST("v2/Sync/Batch")
+    fun callSyncV2BatchAPI(@Body batchRequest: SyncV2BatchRequest): Call<SyncV2BatchResponse>
+
+    @POST("v2/Sync/New")
+    fun callSyncV2NewAPI(@Body batchRequest: SyncV2BatchRequest): Call<SyncV2BatchResponse>
+
+    @POST("v2/Sync/Update")
+    fun callSyncV2UpdateAPI(@Body batchRequest: SyncV2BatchRequest): Call<SyncV2BatchResponse>
+
+    @POST("v2/Sync/TransferIn")
+    fun callSyncV2TransferInAPI(@Body batchRequest: SyncV2BatchRequest): Call<SyncV2BatchResponse>
+
+    @POST("v2/Sync/StatusChange")
+    fun callSyncV2StatusChangeAPI(@Body batchRequest: SyncV2BatchRequest): Call<SyncV2BatchResponse>
+
+    @Multipart
+    @POST("v2/Sync/UploadImage")
+    fun callSyncV2UploadImageAPI(
+        @Part file: MultipartBody.Part,
+        @Part imageType: MultipartBody.Part,
+        @Part electorId: MultipartBody.Part,
+        @Part uploadId: MultipartBody.Part
+    ): Call<Response<String>>
+
+    @GET("v2/Sync/Status/{uploadId}")
+    fun callSyncV2GetStatusAPI(@Path("uploadId") uploadId: String): Call<Response<SyncV2RecordResult>>
+
+    // =======================================================
+    // Phase 2: SevisPass National Digital ID Verification
+    // =======================================================
+
+    @POST("v2/SevisPass/Verify")
+    fun callVerifySevisPassAPI(@Body request: SevisPassVerifyRequest): Call<Response<SevisPassVerifyResponse>>
 }
+
 
 
 

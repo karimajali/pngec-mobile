@@ -8,7 +8,7 @@ apply plugin: 'com.google.firebase.crashlytics'
 
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion "30.0.3"
 
     compileOptions {
@@ -34,20 +34,20 @@ android {
         dev {
             archivesBaseName = "PNGEC" + "$defaultConfig.versionName" + "($defaultConfig.versionCode)_" + getDate()
             dimension 'default'
-            buildConfigField "String", "BASE_URL", "\"http://192.168.1.55:57712/api/mobile/\""
+            buildConfigField "String", "BASE_URL", "\"http://192.168.1.65:57712/api/mobile/\""
         }
 
         training {
             archivesBaseName = "PNGEC" + "$defaultConfig.versionName" + "($defaultConfig.versionCode)_" + getDate()
             dimension 'default'
-            buildConfigField "String", "BASE_URL", "\"http://192.168.1.55:57712/api/mobile/\""
+            buildConfigField "String", "BASE_URL", "\"http://192.168.1.65:57712/api/mobile/\""
         }
 
 
         production {
             archivesBaseName = "PNGEC" + "$defaultConfig.versionName" + "($defaultConfig.versionCode)_" + getDate()
             dimension 'default'
-            buildConfigField "String", "BASE_URL", "\"http://192.168.1.55:57712/api/mobile/\""
+            buildConfigField "String", "BASE_URL", "\"http://192.168.1.65:57712/api/mobile/\""
         }
     }
 
@@ -56,6 +56,7 @@ android {
             multiDexEnabled true
         }
         release {
+            signingConfig signingConfigs.debug
             multiDexEnabled true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -137,6 +138,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
+    // WorkManager for background sync (Phase 1)
+    implementation "androidx.work:work-runtime-ktx:2.7.1"
     compile(
             [group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.10.4'],
             [group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.10.4'],

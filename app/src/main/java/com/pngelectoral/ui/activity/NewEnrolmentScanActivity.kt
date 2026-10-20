@@ -676,6 +676,7 @@ class NewEnrolmentScanActivity : BaseActivity(),
                     val scannedWardId = voterForm11Code[3]
 //                                val scannedProvinceId = voterForm11Code[1]
                     if (wardId.toString() == scannedWardId) {
+                        mManualForm11NumberAlertDialog?.dismiss()
                         CommonMethods.showProgress(this)
                         val formNumber = form11Number.replace("MKA-","")
                         CheckEnrolmentFormExist(formNumber.replace('-','#')).execute()
