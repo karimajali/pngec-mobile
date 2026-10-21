@@ -32,6 +32,9 @@ public interface VotersListDao {
     @Query("UPDATE voterslist SET isSyncToServer = 1, isDataUploaded = 1,status = 'OLD' WHERE electorId = :updateElectorID")
     void revertVoterStatus(Long updateElectorID);
 
+    @Query("UPDATE voterslist SET electorId = :newElectorId, isSyncToServer = 1, isDataUploaded = 1, syncStatus = 1, status = 'OLD', syncDateTime = :syncDateTime WHERE (uploadId IS NOT NULL AND uploadId != '' AND uploadId = :uploadId) OR (tempElectorId IS NOT NULL AND tempElectorId = :tempElectorId AND tempElectorId > 0) OR (electorId IS NOT NULL AND electorId = :newElectorId)")
+    void markVoterAsSynced(Long newElectorId, String uploadId, Integer tempElectorId, String syncDateTime);
+
     @Query("SELECT * FROM voterslist WHERE isSyncToServer = 0 And isDataUploaded = 0")
     List<VotersList> getUpdatedDataOnlyVotersList();
 

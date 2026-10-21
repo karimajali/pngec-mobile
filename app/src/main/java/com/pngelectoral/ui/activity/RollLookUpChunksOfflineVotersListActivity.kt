@@ -275,10 +275,51 @@ class RollLookUpChunksOfflineVotersListActivity : BaseActivity(), CoroutineScope
     }
 
     private fun readProvinceFileData() {
-//        val file = File(fileDirectory, "$provinceName$provinceFileCount.json")
-        //val files = File(zipFilePath).listFiles()
+        // Point 7: Nationwide 6M Offline SQLite Roll Check
+        val sqliteDb = com.pngelectoral.data.offline.NationwideRollManager.findNationwideRollFile(this)
+        if (sqliteDb != null && sqliteDb.exists() && sqliteDb.length() > 0) {
+            launch(Dispatchers.Main) {
+                CommonMethods.showProgress(this@RollLookUpChunksOfflineVotersListActivity)
+                val sqliteResults = withContext(Dispatchers.IO) {
+                    val query = if (firstNameSearch.isNotEmpty() || lastNameSearch.isNotEmpty()) {
+                        "$firstNameSearch $lastNameSearch".trim()
+                    } else ""
+                    com.pngelectoral.data.offline.NationwideRollManager.searchNationwideRoll(
+                        this@RollLookUpChunksOfflineVotersListActivity,
+                        query,
+                        com.pngelectoral.data.offline.NationwideRollManager.SearchType.NAME,
+                        limit = 100
+                    )
+                }
+                CommonMethods.hideProgress()
+                if (sqliteResults.isNotEmpty()) {
+                    transferInVotersList.clear()
+                    for (v in sqliteResults) {
+                        val n = NewVotersList()
+                        n.electorId = v.electorId
+                        n.voterName = v.voterName
+                        n.lName = v.lName
+                        n.fName = v.fName
+                        n.gender = v.gender
+                        n.dob = v.dob
+                        n.provinceId = v.provinceId
+                        n.districtId = v.districtId
+                        n.llgId = v.llgId
+                        n.wardId = v.wardId
+                        n.locationId = v.locationId
+                        n.status = v.status
+                        n.sevisPassId = v.sevisPassId
+                        n.sevisPassStatus = v.sevisPassStatus
+                        transferInVotersList.add(n)
+                    }
+                    setData()
+                    return@launch
+                }
+            }
+            return
+        }
+
         val files = File(fileDirectory.toString()).listFiles()
-//        val file = File(fileDirectory, provinceName + "_" + provinceFileCount + ".json")
         if (provinceFileCount <= ((files?.size ?: 0) - 1)){
             if (files?.get(provinceFileCount)?.exists() == true) {
                 launch(Dispatchers.Main) {

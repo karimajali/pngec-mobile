@@ -477,6 +477,15 @@ class ProvisionalEnrolmentFormActivity : BaseActivity(), CoroutineScope {
             }
         }
 
+        binding?.btnScanSevisPass?.setOnClickListener {
+            val integrator = com.google.zxing.integration.android.IntentIntegrator(this)
+            integrator.setPrompt("Scan SevisPass QR Code or Barcode")
+            integrator.setOrientationLocked(false)
+            integrator.setBeepEnabled(true)
+            integrator.setRequestCode(RC_SCAN_SEVISPASS)
+            integrator.initiateScan()
+        }
+
     }
 
     private fun getClanList(clans: java.util.ArrayList<ClanListData>): Array<String> {
@@ -1257,4 +1266,22 @@ class ProvisionalEnrolmentFormActivity : BaseActivity(), CoroutineScope {
         mYearPickerAlertDialog?.show()
 
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == RC_SCAN_SEVISPASS) {
+            val scanResult = com.google.zxing.integration.android.IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+            if (scanResult != null && !scanResult.contents.isNullOrEmpty()) {
+                val scannedId = scanResult.contents.trim()
+                binding?.etSevisPassId?.setText(scannedId)
+                binding?.btnVerifySevisPass?.performClick()
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data)
+        }
+    }
+
+    companion object {
+        const val RC_SCAN_SEVISPASS = 49374
+    }
+
 }

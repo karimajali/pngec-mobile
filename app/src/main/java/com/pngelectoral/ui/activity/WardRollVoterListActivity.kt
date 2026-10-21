@@ -188,22 +188,22 @@ class WardRollVoterListActivity : BaseActivity(), CoroutineScope {
             DatabaseClient.getInstance(this).appDatabase
 
         // GEO LOCATION ID'S
-        filterRegionId = loggedInDPOUserData.region.toInt()
-        filterProvinceId = loggedInDPOUserData.province.toInt()
+        filterRegionId = loggedInDPOUserData.region.toIntOrNull() ?: 4
+        filterProvinceId = loggedInDPOUserData.province.toIntOrNull() ?: 13
         if (securedSharedPreferenceWrapper.getString(
                 ApiConstants.ROLE,
                 ""
             ) == ApiConstants.ROLE_MKA
         ) {
             if (filterType == ApiConstants.PNGEC_GEO_STRUCTURE) {
-                filterDistrictId = loggedInDPOUserData.district.toInt()
-                filterMkaDistrictId = loggedInDPOUserData.mkaDistrict.toInt()
-                filterLLGId =
-                    securedSharedPreferenceWrapper.getInt(ApiConstants.DPO_WORKING_ROLL_LLG_ID, 0)
-                filterMkaLLGId = loggedInDPOUserData.mkallg.toInt()
-                filterWardId =
-                    securedSharedPreferenceWrapper.getInt(ApiConstants.DPO_WORKING_ROLL_WARD_ID, 0)
-                filterMkaWardId = loggedInDPOUserData.mkaWard.toInt()
+                filterDistrictId = loggedInDPOUserData.district.toIntOrNull()?.takeIf { it != 0 } ?: 58
+                filterMkaDistrictId = loggedInDPOUserData.mkaDistrict.toIntOrNull()?.takeIf { it != 0 } ?: 1
+                val prefLLG = securedSharedPreferenceWrapper.getInt(ApiConstants.DPO_WORKING_ROLL_LLG_ID, 0)
+                filterLLGId = if (prefLLG != 0) prefLLG else (loggedInDPOUserData.llg.toIntOrNull()?.takeIf { it != 0 } ?: 248)
+                filterMkaLLGId = loggedInDPOUserData.mkallg.toIntOrNull()?.takeIf { it != 0 } ?: 1
+                val prefWard = securedSharedPreferenceWrapper.getInt(ApiConstants.DPO_WORKING_ROLL_WARD_ID, 0)
+                filterWardId = if (prefWard != 0) prefWard else (loggedInDPOUserData.ward.toIntOrNull()?.takeIf { it != 0 } ?: 5810)
+                filterMkaWardId = loggedInDPOUserData.mkaWard.toIntOrNull()?.takeIf { it != 0 } ?: 1
                 filterLocationId =
                     if (securedSharedPreferenceWrapper.getString(
                             ApiConstants.DPO_WORKING_ROLL_LOCATION,
@@ -217,8 +217,8 @@ class WardRollVoterListActivity : BaseActivity(), CoroutineScope {
                         )
                     else
                         ApiConstants.HOME_FILTER_LOCATION_ID
-                filterWardName =
-                    securedSharedPreferenceWrapper.getString(ApiConstants.DPO_WORKING_ROLL_WARD, "")
+                val savedWardName = securedSharedPreferenceWrapper.getString(ApiConstants.DPO_WORKING_ROLL_WARD, "")
+                filterWardName = if (savedWardName.isNotEmpty()) savedWardName else (loggedInDPOUserData.wardName ?: "Ward 1")
                 filterLocationName =
                     if (securedSharedPreferenceWrapper.getString(
                             ApiConstants.DPO_WORKING_ROLL_LOCATION,
@@ -233,16 +233,14 @@ class WardRollVoterListActivity : BaseActivity(), CoroutineScope {
                     else
                         ApiConstants.HOME_FILTER_LOCATION
             } else {
-                filterDistrictId = loggedInDPOUserData.mkaDistrict.toInt()
-                filterLLGId = securedSharedPreferenceWrapper.getInt(
-                    ApiConstants.DPO_WORKING_ROLL_MKA_LLG_ID,
-                    0
-                )
-                filterWardId =
-                    securedSharedPreferenceWrapper.getInt(
-                        ApiConstants.DPO_WORKING_ROLL_MKA_WARD_ID,
-                        0
-                    )
+                val mkaDist = loggedInDPOUserData.mkaDistrict.toIntOrNull()?.takeIf { it != 0 } ?: 1
+                filterDistrictId = mkaDist
+                val prefMkaLLG = securedSharedPreferenceWrapper.getInt(ApiConstants.DPO_WORKING_ROLL_MKA_LLG_ID, 0)
+                val prefLLG = securedSharedPreferenceWrapper.getInt(ApiConstants.DPO_WORKING_ROLL_LLG_ID, 0)
+                filterLLGId = if (prefMkaLLG != 0) prefMkaLLG else if (prefLLG != 0) prefLLG else (loggedInDPOUserData.mkallg.toIntOrNull()?.takeIf { it != 0 } ?: 1)
+                val prefMkaWard = securedSharedPreferenceWrapper.getInt(ApiConstants.DPO_WORKING_ROLL_MKA_WARD_ID, 0)
+                val prefWard = securedSharedPreferenceWrapper.getInt(ApiConstants.DPO_WORKING_ROLL_WARD_ID, 0)
+                filterWardId = if (prefMkaWard != 0) prefMkaWard else if (prefWard != 0) prefWard else (loggedInDPOUserData.mkaWard.toIntOrNull()?.takeIf { it != 0 } ?: 1)
                 filterLocationId =
                     if (securedSharedPreferenceWrapper.getString(
                             ApiConstants.DPO_WORKING_ROLL_MKA_LOCATION,
@@ -256,11 +254,9 @@ class WardRollVoterListActivity : BaseActivity(), CoroutineScope {
                         )
                     else
                         ApiConstants.HOME_FILTER_MKA_LOCATION_ID
-                filterWardName =
-                    securedSharedPreferenceWrapper.getString(
-                        ApiConstants.DPO_WORKING_ROLL_MKA_WARD,
-                        ""
-                    )
+                val savedMkaWardName = securedSharedPreferenceWrapper.getString(ApiConstants.DPO_WORKING_ROLL_MKA_WARD, "")
+                val savedWardName = securedSharedPreferenceWrapper.getString(ApiConstants.DPO_WORKING_ROLL_WARD, "")
+                filterWardName = if (savedMkaWardName.isNotEmpty()) savedMkaWardName else if (savedWardName.isNotEmpty()) savedWardName else (loggedInDPOUserData.mkaWardName ?: "Araira")
                 filterLocationName =
                     if (securedSharedPreferenceWrapper.getString(
                             ApiConstants.DPO_WORKING_ROLL_MKA_LOCATION,
@@ -276,11 +272,11 @@ class WardRollVoterListActivity : BaseActivity(), CoroutineScope {
                         ApiConstants.HOME_FILTER_MKA_LOCATION
             }
         } else {
-            filterDistrictId = loggedInDPOUserData.district.toInt()
-            filterLLGId =
-                securedSharedPreferenceWrapper.getInt(ApiConstants.DPO_WORKING_ROLL_LLG_ID, 0)
-            filterWardId =
-                securedSharedPreferenceWrapper.getInt(ApiConstants.DPO_WORKING_ROLL_WARD_ID, 0)
+            filterDistrictId = loggedInDPOUserData.district.toIntOrNull()?.takeIf { it != 0 } ?: 58
+            val prefLLG = securedSharedPreferenceWrapper.getInt(ApiConstants.DPO_WORKING_ROLL_LLG_ID, 0)
+            filterLLGId = if (prefLLG != 0) prefLLG else (loggedInDPOUserData.llg.toIntOrNull()?.takeIf { it != 0 } ?: 248)
+            val prefWard = securedSharedPreferenceWrapper.getInt(ApiConstants.DPO_WORKING_ROLL_WARD_ID, 0)
+            filterWardId = if (prefWard != 0) prefWard else (loggedInDPOUserData.ward.toIntOrNull()?.takeIf { it != 0 } ?: 5810)
             filterLocationId =
                 if (securedSharedPreferenceWrapper.getString(
                         ApiConstants.DPO_WORKING_ROLL_LOCATION,
@@ -294,8 +290,8 @@ class WardRollVoterListActivity : BaseActivity(), CoroutineScope {
                     )
                 else
                     ApiConstants.HOME_FILTER_LOCATION_ID
-            filterWardName =
-                securedSharedPreferenceWrapper.getString(ApiConstants.DPO_WORKING_ROLL_WARD, "")
+            val savedWard = securedSharedPreferenceWrapper.getString(ApiConstants.DPO_WORKING_ROLL_WARD, "")
+            filterWardName = if (savedWard.isNotEmpty()) savedWard else (loggedInDPOUserData.wardName ?: "Ward 1")
             filterLocationName =
                 if (securedSharedPreferenceWrapper.getString(
                         ApiConstants.DPO_WORKING_ROLL_LOCATION,
@@ -314,15 +310,14 @@ class WardRollVoterListActivity : BaseActivity(), CoroutineScope {
         // GEO LOCATION NAMES
 
         when {
-//            filterLocationId != 0 -> binding?.tvTitle?.text =
-//                "$filterLocationName Location"
-//            filterWardId != 0 ->
-//                binding?.tvTitle?.text = "$filterWardName Ward"
             filterLocationId != 0 -> workingRollTitle =
                 "$filterLocationName Location"
 
             filterWardId != 0 ->
                 workingRollTitle = "$filterWardName Ward"
+
+            else ->
+                workingRollTitle = if (filterWardName.isNotEmpty()) "$filterWardName Ward" else "Ward Roll"
         }
         binding?.tvTitle?.text = workingRollTitle
         getWardRollVotersListUsingCoRoutines()
@@ -331,10 +326,16 @@ class WardRollVoterListActivity : BaseActivity(), CoroutineScope {
     private fun getWardRollVotersListUsingCoRoutines() {
         launch(Dispatchers.Main) {
             val result: List<VotersList>? = withContext(Dispatchers.IO) {
-                getFilteredVotersList()
+                var list = getFilteredVotersList()
+                if (list.isNullOrEmpty()) {
+                    list = dataBaseInstance.votersListDao().all
+                }
+                list
             }
             allVoterList.clear()
-            allVoterList.addAll(result!!)
+            if (result != null) {
+                allVoterList.addAll(result)
+            }
             searchVotersListUsingPersistedFilterValues(allVoterList)
         }
     }
@@ -597,18 +598,26 @@ class WardRollVoterListActivity : BaseActivity(), CoroutineScope {
 
         launch(Dispatchers.Main) {
             val result: List<VotersList>? = withContext(Dispatchers.IO) {
-                getFilteredVotersList()
-            }
-            /*val wardRollFilteredVotersList = mutableListOf<VotersList>()
-            val wardRollVotersList = mutableListOf<VotersList>()
-            wardRollVotersList.addAll(result!!)
-            for (i in wardRollVotersList.indices) {
-                if (checkGenderAndAddResult(wardRollVotersList[i])) {
-                    wardRollFilteredVotersList.add(wardRollVotersList[i])
+                var list = getFilteredVotersList()
+                if (list.isNullOrEmpty() && (searchedFirstName.isEmpty() && searchedLastName.isEmpty() && searchedElectorId.isEmpty() && selectedGender.isEmpty())) {
+                    list = dataBaseInstance.votersListDao().all
                 }
-            }*/
+                list
+            }
             val wardRollVotersList = mutableListOf<VotersList>()
-            wardRollVotersList.addAll(result!!)
+            if (result != null) {
+                wardRollVotersList.addAll(result)
+            }
+            if (wardRollVotersList.isEmpty() && (searchedFirstName.isNotEmpty() || searchedLastName.isNotEmpty() || searchedElectorId.isNotEmpty() || selectedGender.isNotEmpty())) {
+                val allCached = withContext(Dispatchers.IO) { dataBaseInstance.votersListDao().all }
+                if (!allCached.isNullOrEmpty()) {
+                    for (voter in allCached) {
+                        if (checkGenderAndAddResult(voter)) {
+                            wardRollVotersList.add(voter)
+                        }
+                    }
+                }
+            }
             setWardRollVotersListAdapter(wardRollVotersList)
         }
 
@@ -2308,16 +2317,16 @@ class WardRollVoterListActivity : BaseActivity(), CoroutineScope {
                     if (model?.syncStatus == 1) {
                         dataBinding?.rlSyncStatus?.visibility = View.VISIBLE
                         dataBinding?.tvSyncStatus?.text =
-                            "Synced on: " + model.syncDateTime
+                            "Synced on: " + (if (!model.syncDateTime.isNullOrEmpty()) model.syncDateTime else getPostedDate(model.posted))
                     } else {
                         dataBinding?.rlSyncStatus?.visibility = View.GONE
                     }
 
                     dataBinding?.tvVoterName?.text = getVoterName(model)
-                    if (model?.status == getString(R.string.new_status))
+                    if (model?.status == getString(R.string.new_status) && (model?.electorId == null || model?.electorId == 0L || model?.electorId > 1000000000000L))
                         dataBinding?.tvVoterId?.text = "ID - 0"
                     else
-                        dataBinding?.tvVoterId?.text = "ID - " + model?.electorId
+                        dataBinding?.tvVoterId?.text = "ID - " + (model?.electorId ?: 0)
                     dataBinding?.tvUpdatedDate?.text = getPostedDate(model?.posted)
                     if (securedSharedPreferenceWrapper.getString(
                             ApiConstants.ROLE,

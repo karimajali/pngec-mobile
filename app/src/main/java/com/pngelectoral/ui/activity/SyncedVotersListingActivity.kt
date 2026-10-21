@@ -947,14 +947,11 @@ class SyncedVotersListingActivity : BaseActivity(), CoroutineScope {
 
                 dataBinding?.cbSelectItem?.isChecked = selectedVotersList.contains(model)
                 dataBinding?.tvVoterName?.text = getVoterName(model)
-                if (model?.status == getString(R.string.new_status))
-                    dataBinding?.tvVoterId?.text = "ID - 0"
-                else
-                    dataBinding?.tvVoterId?.text = "ID - " + model?.electorId
+                dataBinding?.tvVoterId?.text = "ID - " + (if (model?.electorId != null && model.electorId > 0 && model.electorId < 1000000000000L) model.electorId else (if (model?.status == getString(R.string.new_status)) 0 else (model?.electorId ?: 0)))
                 dataBinding?.tvUpdatedDate?.text = getPostedDate(model?.posted)
                 dataBinding?.tvSyncStatus?.visibility = View.VISIBLE
                 dataBinding?.tvSyncStatus?.text =
-                    "Synced on: " + model?.syncDateTime
+                    "Synced on: " + (if (!model?.syncDateTime.isNullOrEmpty()) model?.syncDateTime else getPostedDate(model?.posted))
                 dataBinding?.tvVoterLocation?.text = model?.locationName
                 dataBinding?.tvVoterStatus?.text = model?.status
                 dataBinding?.tvDob?.text = "DOB: " + CommonMethods.getDisplayDate(

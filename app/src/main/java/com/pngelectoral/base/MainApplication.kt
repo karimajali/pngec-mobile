@@ -13,6 +13,13 @@ class MainApplication : MultiDexApplication() {
         sApplication = this
         // Obtain the Firebase Analytics instance.
         firebaseAnalytics = FirebaseAnalytics.getInstance(this)
+
+        // Initialize WorkManager Periodic Background Sync (every 15 min when CONNECTED)
+        try {
+            com.pngelectoral.datasync.SyncV2Worker.enqueuePeriodicSync(this)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     fun getFirebaseAnalytics(): FirebaseAnalytics? {

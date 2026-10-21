@@ -62,15 +62,18 @@ object SyncV2Manager {
         // 4. Update local database based on server results
         if (response.status && response.results.isNotEmpty()) {
             val resultMap = response.results.associateBy { it.uploadId }
+            val currentSyncTime = java.text.SimpleDateFormat("dd/MM/yyyy hh:mm a", java.util.Locale.getDefault()).format(java.util.Date())
             for (voter in voters) {
                 val res = resultMap[voter.uploadId]
-                if (res != null && (res.isSuccess || res.status == "ALREADY_PROCESSED")) {
-                    if (res.electorId > 0) {
-                        voter.electorId = res.electorId
-                    }
+                if (res != null && (res.isSuccess || res.status == "ALREADY_PROCESSED" || res.status == "QUEUED" || res.status == "SUCCESS")) {
+                    val finalElectorId = if (res.electorId > 0) res.electorId else voter.electorId
+                    db.markVoterAsSynced(finalElectorId, voter.uploadId, voter.tempElectorId, currentSyncTime)
+                    voter.electorId = finalElectorId
                     voter.isDataUploaded = 1
                     voter.isSyncToServer = 1
-                    db.update(voter)
+                    voter.syncStatus = 1
+                    voter.syncDateTime = currentSyncTime
+                    voter.status = "OLD"
                 }
             }
         }

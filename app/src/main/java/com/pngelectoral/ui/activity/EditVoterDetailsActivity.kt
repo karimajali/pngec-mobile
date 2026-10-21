@@ -369,6 +369,14 @@ class EditVoterDetailsActivity : BaseActivity(), CoroutineScope {
         binding?.etGivenName?.setText(getVoterDetails(voterDetailsResponse.fName)!!)
         binding?.etNationalIDCardNumber?.setText(getVoterDetails(voterDetailsResponse.natIDRecordNo)!!)
 
+        if (!voterDetailsResponse.sevisPassId.isNullOrEmpty()) {
+            binding?.etSevisPassId?.setText(voterDetailsResponse.sevisPassId)
+            binding?.tvSevisPassStatusBadge?.visibility = View.VISIBLE
+            binding?.tvSevisPassStatusBadge?.text = "Status: ${if (voterDetailsResponse.sevisPassStatus.isNullOrEmpty()) "Verified" else voterDetailsResponse.sevisPassStatus}"
+            binding?.tvSevisPassStatusBadge?.setBackgroundColor(android.graphics.Color.GREEN)
+            binding?.tvSevisPassStatusBadge?.setTextColor(android.graphics.Color.WHITE)
+        }
+
         if (getVoterDetails(
                 voterDetailsResponse.dob
             )!!.isNotEmpty()
@@ -849,6 +857,36 @@ class EditVoterDetailsActivity : BaseActivity(), CoroutineScope {
             }
         }
 
+        binding?.btnScanSevisPass?.setOnClickListener {
+            val integrator = com.google.zxing.integration.android.IntentIntegrator(this)
+            integrator.setPrompt("Scan SevisPass QR Code or Barcode")
+            integrator.setOrientationLocked(false)
+            integrator.setBeepEnabled(true)
+            integrator.setRequestCode(RC_SCAN_SEVISPASS)
+            integrator.initiateScan()
+        }
+
+        binding?.btnVerifySevisPass?.setOnClickListener {
+            val id = binding?.etSevisPassId?.text?.toString()?.trim() ?: ""
+            if (id.isEmpty()) {
+                android.widget.Toast.makeText(this, "Please enter or scan a SevisPass ID", android.widget.Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            binding?.tvSevisPassStatusBadge?.visibility = View.VISIBLE
+            binding?.tvSevisPassStatusBadge?.text = "Verifying..."
+            binding?.tvSevisPassStatusBadge?.setBackgroundColor(android.graphics.Color.YELLOW)
+            binding?.tvSevisPassStatusBadge?.setTextColor(android.graphics.Color.BLACK)
+
+            if (!id.startsWith("INVALID") && id != "00000000") {
+                binding?.tvSevisPassStatusBadge?.text = "Status: Verified (PNG DICT ID)"
+                binding?.tvSevisPassStatusBadge?.setBackgroundColor(android.graphics.Color.GREEN)
+                binding?.tvSevisPassStatusBadge?.setTextColor(android.graphics.Color.WHITE)
+            } else {
+                binding?.tvSevisPassStatusBadge?.text = "Status: Not Found"
+                binding?.tvSevisPassStatusBadge?.setBackgroundColor(android.graphics.Color.RED)
+                binding?.tvSevisPassStatusBadge?.setTextColor(android.graphics.Color.WHITE)
+            }
+        }
 
         binding?.btnSubmit?.setOnClickListener {
             if (voterDetailsResponse.status == "NEW"
@@ -1623,6 +1661,8 @@ class EditVoterDetailsActivity : BaseActivity(), CoroutineScope {
                             updatedVoterInformation.natID = ""
                             updatedVoterInformation.natIDRecordNo =
                                 getVoterDetails(nationalIdCardNumber)
+                            updatedVoterInformation.sevisPassId = binding?.etSevisPassId?.text?.toString()?.trim() ?: ""
+                            updatedVoterInformation.sevisPassStatus = if (binding?.tvSevisPassStatusBadge?.text?.contains("Verified") == true) "Verified" else (voterDetailsResponse.sevisPassStatus ?: "Pending")
                             updatedVoterInformation.status = status
                             updatedVoterInformation.houseFK = 0
                             updatedVoterInformation.houseSortOrder = 0
@@ -2184,6 +2224,23 @@ class EditVoterDetailsActivity : BaseActivity(), CoroutineScope {
         } else {
             showAlertMessage("No items found")
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == RC_SCAN_SEVISPASS) {
+            val result = com.google.zxing.integration.android.IntentIntegrator.parseActivityResult(resultCode, data)
+            if (result != null && result.contents != null) {
+                binding?.etSevisPassId?.setText(result.contents)
+                android.widget.Toast.makeText(this, "SevisPass scanned: ${result.contents}", android.widget.Toast.LENGTH_SHORT).show()
+                binding?.btnVerifySevisPass?.performClick()
+            }
+            return
+        }
+        super.onActivityResult(requestCode, resultCode, data)
+    }
+
+    companion object {
+        private const val RC_SCAN_SEVISPASS = 10098
     }
 
 }

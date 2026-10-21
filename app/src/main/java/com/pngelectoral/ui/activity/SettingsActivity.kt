@@ -788,43 +788,38 @@ class SettingsActivity : BaseActivity(), CoroutineScope {
             bindingSelectWardForWorkingRollFilter?.llLocation?.visibility = View.GONE
         }
 
-        if(securedSharedPreferenceWrapper.getString(ApiConstants.ROLE, "") == ApiConstants.ROLE_DPO){
-            bindingSelectWardForWorkingRollFilter?.rlLLG?.setOnClickListener {
-                if (securedSharedPreferenceWrapper.getString(ApiConstants.DPO_GEO_LLG, "").isEmpty()) {
-                    CommonMethods.showProgress(this)
-                    getLLGListUsingCoRoutines(true)
-                }
-
+        bindingSelectWardForWorkingRollFilter?.rlLLG?.setOnClickListener {
+            if (securedSharedPreferenceWrapper.getString(ApiConstants.DPO_GEO_LLG, "").isEmpty()) {
+                CommonMethods.showProgress(this)
+                getLLGListUsingCoRoutines(true)
             }
+        }
 
-            bindingSelectWardForWorkingRollFilter?.rlWard?.setOnClickListener {
-                if (securedSharedPreferenceWrapper.getString(ApiConstants.DPO_GEO_WARD, "").isEmpty()) {
-                    if (bindingSelectWardForWorkingRollFilter?.etLLG?.text.toString().isEmpty()) {
-                        showAlertMessage(
-                            "Please select llg"
-                        )
-                    } else {
-                        if (llgListArray!!.isNotEmpty() && bindingSelectWardForWorkingRollFilter?.etLLG?.tag != null)
-                            llgId =
-                                llgListArray!![bindingSelectWardForWorkingRollFilter?.etLLG?.tag as Int].llgId
-
-                        CommonMethods.showProgress(this)
-                        getWardNoAndNameListUsingCoRoutines(true)
-                    }
-                }
-
-            }
-
-            bindingSelectWardForWorkingRollFilter?.rlLocation?.setOnClickListener {
-                if (bindingSelectWardForWorkingRollFilter?.etWard?.text.toString().isEmpty()) {
+        bindingSelectWardForWorkingRollFilter?.rlWard?.setOnClickListener {
+            if (securedSharedPreferenceWrapper.getString(ApiConstants.DPO_GEO_WARD, "").isEmpty()) {
+                if (bindingSelectWardForWorkingRollFilter?.etLLG?.text.toString().isEmpty()) {
                     showAlertMessage(
-                        "Please select ward"
+                        "Please select llg"
                     )
                 } else {
-                    CommonMethods.showProgress(this)
-                    getLocationListFromDB()
-                }
+                    if (llgListArray!!.isNotEmpty() && bindingSelectWardForWorkingRollFilter?.etLLG?.tag != null)
+                        llgId =
+                            llgListArray!![bindingSelectWardForWorkingRollFilter?.etLLG?.tag as Int].llgId
 
+                    CommonMethods.showProgress(this)
+                    getWardNoAndNameListUsingCoRoutines(true)
+                }
+            }
+        }
+
+        bindingSelectWardForWorkingRollFilter?.rlLocation?.setOnClickListener {
+            if (bindingSelectWardForWorkingRollFilter?.etWard?.text.toString().isEmpty()) {
+                showAlertMessage(
+                    "Please select ward"
+                )
+            } else {
+                CommonMethods.showProgress(this)
+                getLocationListFromDB()
             }
         }
 
@@ -1152,7 +1147,6 @@ class SettingsActivity : BaseActivity(), CoroutineScope {
                         wardId
                     )
 
-
                     securedSharedPreferenceWrapper.putString(
                         ApiConstants.DPO_WORKING_ROLL_WARD,
                         wardName
@@ -1163,14 +1157,45 @@ class SettingsActivity : BaseActivity(), CoroutineScope {
                         locationId
                     )
 
-
                     securedSharedPreferenceWrapper.putString(
                         ApiConstants.DPO_WORKING_ROLL_LOCATION,
                         locationName
                     )
 
+                    securedSharedPreferenceWrapper.putInt(
+                        ApiConstants.DPO_WORKING_ROLL_MKA_LLG_ID,
+                        llgId
+                    )
+
+                    securedSharedPreferenceWrapper.putString(
+                        ApiConstants.DPO_WORKING_ROLL_MKA_LLG,
+                        llgName
+                    )
+
+                    securedSharedPreferenceWrapper.putInt(
+                        ApiConstants.DPO_WORKING_ROLL_MKA_WARD_ID,
+                        wardId
+                    )
+
+                    securedSharedPreferenceWrapper.putString(
+                        ApiConstants.DPO_WORKING_ROLL_MKA_WARD,
+                        wardName
+                    )
+
+                    securedSharedPreferenceWrapper.putInt(
+                        ApiConstants.DPO_WORKING_ROLL_MKA_LOCATION_ID,
+                        locationId
+                    )
+
+                    securedSharedPreferenceWrapper.putString(
+                        ApiConstants.DPO_WORKING_ROLL_MKA_LOCATION,
+                        locationName
+                    )
+
                     ApiConstants.HOME_FILTER_LOCATION_ID = locationId
                     ApiConstants.HOME_FILTER_LOCATION = locationName
+                    ApiConstants.HOME_FILTER_MKA_LOCATION_ID = locationId
+                    ApiConstants.HOME_FILTER_MKA_LOCATION = locationName
 
                     setFooterData()
                     alert(getString(R.string.workingr_Roll_filter_settings_saved_successfully)) {

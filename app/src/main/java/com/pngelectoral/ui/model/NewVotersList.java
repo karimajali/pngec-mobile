@@ -380,5 +380,11 @@ public class NewVotersList {
     @SerializedName("clanName")
     @Expose
     public String clanName;
+    @SerializedName("sevisPassId")
+    @Expose
+    public String sevisPassId;
+    @SerializedName("sevisPassStatus")
+    @Expose
+    public String sevisPassStatus;
 
 }

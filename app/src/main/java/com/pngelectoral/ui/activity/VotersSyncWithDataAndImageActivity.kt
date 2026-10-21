@@ -1354,10 +1354,10 @@ class VotersSyncWithDataAndImageActivity : BaseActivity(), CoroutineScope {
 
                 dataBinding?.cbSelectItem?.isChecked = selectedVotersList.contains(model)
                 dataBinding?.tvVoterName?.text = getVoterName(model)
-                if (model?.status == getString(R.string.new_status))
+                if (model?.status == getString(R.string.new_status) && (model?.electorId == null || model?.electorId == 0L || model?.electorId > 1000000000000L))
                     dataBinding?.tvVoterId?.text = "ID - 0"
                 else
-                    dataBinding?.tvVoterId?.text = "ID - " + model?.electorId
+                    dataBinding?.tvVoterId?.text = "ID - " + (model?.electorId ?: 0)
                 dataBinding?.tvUpdatedDate?.text = getPostedDate(model?.posted)
 //                dataBinding?.tvVoterLocation?.text = model?.locationName
                 dataBinding?.tvVoterStatus?.text = model?.status

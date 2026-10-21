@@ -67,6 +67,28 @@ class SyncV2Worker(
                 )
             }
         }
+
+        /**
+         * Enqueues periodic background sync (every 15 minutes when CONNECTED)
+         * Automatically pushes unsynced records to server whenever field network becomes available.
+         */
+        fun enqueuePeriodicSync(context: Context) {
+            val constraints = Constraints.Builder()
+                .setRequiredNetworkType(NetworkType.CONNECTED)
+                .build()
+
+            val periodicSyncRequest = PeriodicWorkRequestBuilder<SyncV2Worker>(15, TimeUnit.MINUTES)
+                .setConstraints(constraints)
+                .setBackoffCriteria(BackoffPolicy.EXPONENTIAL, 30, TimeUnit.SECONDS)
+                .addTag(TAG)
+                .build()
+
+            WorkManager.getInstance(context).enqueueUniquePeriodicWork(
+                "PNGEC_PERIODIC_SYNC",
+                ExistingPeriodicWorkPolicy.KEEP,
+                periodicSyncRequest
+            )
+        }
     }
 
     override suspend fun doWork(): Result = withContext(Dispatchers.IO) {
