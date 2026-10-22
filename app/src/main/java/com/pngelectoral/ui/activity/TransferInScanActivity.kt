@@ -603,6 +603,21 @@ class TransferInScanActivity : BaseActivity(),
     private var mManualForm11NumberAlertDialog: AlertDialog? = null
     private var bindingManualForm11Number: DialogManualForm11NumberBinding? = null
 
+    private fun getExpectedForm11Sample(): String {
+        val isMka = securedSharedPreferenceWrapper.getString(ApiConstants.ROLE, "") == ApiConstants.ROLE_MKA
+        return if (isMka) {
+            val dId = securedSharedPreferenceWrapper.getInt(ApiConstants.DPO_GEO_DISTRICT_ID, 1).let { if (it > 0) it else 1 }
+            val lId = securedSharedPreferenceWrapper.getInt(ApiConstants.DPO_WORKING_ROLL_LLG_ID, 1).let { if (it > 0) it else 1 }
+            val wId = if (wardId > 0) wardId else (if (wardNumber > 0) wardNumber else 1)
+            "MKA-$dId-$lId-$wId-0-0000001"
+        } else {
+            val pId = if (provinceId > 0) provinceId else 13
+            val wId = if (wardId > 0) wardId else (if (wardNumber > 0) wardNumber else 1)
+            val wStr = String.format("%04d", wId)
+            "$pId${wStr}0000001"
+        }
+    }
+
     private fun showForm11NumberInputDialog() {
         val builder = AlertDialog.Builder(this)
         bindingManualForm11Number = DataBindingUtil.inflate(
@@ -611,6 +626,10 @@ class TransferInScanActivity : BaseActivity(),
         ) as DialogManualForm11NumberBinding
         builder.setView(bindingManualForm11Number?.root)
         mManualForm11NumberAlertDialog = builder.create()
+
+        val sampleNumber = getExpectedForm11Sample()
+        bindingManualForm11Number?.tvForm11Hint?.text = "Valid format for selected Ward: $sampleNumber"
+        bindingManualForm11Number?.etForm11Number?.setText("")
 
         bindingManualForm11Number?.btnSubmit?.setOnClickListener {
             val form11Number = bindingManualForm11Number?.etForm11Number?.text.toString().trim()
@@ -625,38 +644,58 @@ class TransferInScanActivity : BaseActivity(),
     }
 
     private fun validateManualForm11Number(form11Number: String) {
-        if (form11Number.length < 12) {
-            showQRCodeInvalidMessage("Please enter valid form number.")
-        } else {
-            if(securedSharedPreferenceWrapper.getString(ApiConstants.ROLE,"") == ApiConstants.ROLE_DPO) {
-                formType = "PNG"
+        val sampleNumber = getExpectedForm11Sample()
+        if (form11Number.isEmpty()) {
+            showQRCodeInvalidMessage("Please enter Form 11 number.")
+            return
+        }
+
+        if (securedSharedPreferenceWrapper.getString(ApiConstants.ROLE, "") == ApiConstants.ROLE_DPO) {
+            formType = "PNG"
+            if (form11Number.length >= 12 && !form11Number.contains("-")) {
                 val endOfWardNumberPos = form11Number.length - 7
                 val startOfWardNumberPos = endOfWardNumberPos - 4
-                val wardNumber = form11Number.substring(startOfWardNumberPos, endOfWardNumberPos)
-                val provinceNumber = form11Number.substring(0, endOfWardNumberPos - 4)
-                if (wardId == wardNumber.toInt() && provinceId == provinceNumber.toInt()) {
+                val inputWardNumber = form11Number.substring(startOfWardNumberPos, endOfWardNumberPos).toIntOrNull()
+                val inputProvinceNumber = form11Number.substring(0, endOfWardNumberPos - 4).toIntOrNull()
+
+                val wardMatch = inputWardNumber != null && (inputWardNumber == wardId || inputWardNumber == wardNumber || wardId == 0)
+                val provMatch = inputProvinceNumber != null && (inputProvinceNumber == provinceId || provinceId == 0)
+
+                if (wardMatch && provMatch) {
                     mManualForm11NumberAlertDialog!!.dismiss()
                     CommonMethods.showProgress(this)
                     CheckEnrolmentFormExist("$form11Number@Manual").execute()
-                } else {
-                    showGeoLocationErrorMessageForForm11()
+                    return
                 }
-            }else{
-                if(form11Number.contains("-")){
-                    val voterForm11Code = form11Number.split("-")
-                    formType = "MKA"
-                    val scannedWardId = voterForm11Code[3]
-//                                val scannedProvinceId = voterForm11Code[1]
-                    if (wardId.toString() == scannedWardId) {
-                        CommonMethods.showProgress(this)
-                        CheckEnrolmentFormExist(form11Number.replace('-','#')).execute()
-                    } else {
-                        showGeoLocationErrorMessageForForm11()
-                    }
-                }else{
-                    showQRCodeInvalidMessage("Please enter valid form number.")
+            } else if (form11Number.contains("-")) {
+                val parts = form11Number.split("-")
+                val scannedWard = if (parts.size >= 4) parts[3] else ""
+                if (scannedWard == wardId.toString() || scannedWard == wardNumber.toString() || wardId == 0) {
+                    mManualForm11NumberAlertDialog!!.dismiss()
+                    CommonMethods.showProgress(this)
+                    CheckEnrolmentFormExist("$form11Number@Manual").execute()
+                    return
                 }
             }
+            showQRCodeInvalidMessage("Invalid Form 11 Number!\n\nFor Ward '$wardName', valid format is:\n$sampleNumber")
+        } else {
+            if (form11Number.contains("-")) {
+                val voterForm11Code = form11Number.split("-")
+                formType = "MKA"
+                val scannedWardId = if (voterForm11Code.size >= 4) voterForm11Code[3] else ""
+                if (wardId.toString() == scannedWardId || wardNumber.toString() == scannedWardId || wardId == 0) {
+                    mManualForm11NumberAlertDialog?.dismiss()
+                    CommonMethods.showProgress(this)
+                    CheckEnrolmentFormExist(form11Number.replace('-', '#')).execute()
+                    return
+                }
+            } else if (form11Number.length >= 12) {
+                mManualForm11NumberAlertDialog?.dismiss()
+                CommonMethods.showProgress(this)
+                CheckEnrolmentFormExist("$form11Number@Manual").execute()
+                return
+            }
+            showQRCodeInvalidMessage("Invalid Form 11 Number!\n\nFor Ward '$wardName', valid format is:\n$sampleNumber")
         }
     }
 

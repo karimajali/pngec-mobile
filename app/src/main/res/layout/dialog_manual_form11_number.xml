@@ -38,6 +38,16 @@
             android:textColor="@color/color_22_22_22"
             android:textSize="@dimen/_12ssp" />
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvForm11Hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5ssp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/color_59_59_59"
+            android:textSize="@dimen/_10ssp"
+            android:text="" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

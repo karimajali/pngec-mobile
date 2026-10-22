@@ -1154,6 +1154,13 @@ class NewEnrolmentFormActivity : BaseActivity(), CoroutineScope {
             withContext(Dispatchers.IO) {
                 dataBaseInstance.votersListDao().insert(updatedVoterInformation)
             }
+
+            // Real-time Instant Auto-Sync trigger right after save (Zero Delay)
+            try {
+                com.pngelectoral.datasync.SyncV2Worker.enqueueWardSync(this@NewEnrolmentFormActivity, wardId = 0, isImmediate = true)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
 //            alert("New Voter added successfully") {
 //                okButton {
 //                    startActivity(
