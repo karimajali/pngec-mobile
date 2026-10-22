@@ -326,6 +326,68 @@ class NewEnrolmentFormActivity : BaseActivity(), CoroutineScope {
 
     private fun setOnClickListeners() {
 
+        binding?.btnScanSevisPass?.setOnClickListener {
+            if (androidx.core.content.ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA) != android.content.pm.PackageManager.PERMISSION_GRANTED) {
+                androidx.core.app.ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.CAMERA), 101)
+                return@setOnClickListener
+            }
+            val integrator = com.google.zxing.integration.android.IntentIntegrator(this)
+            integrator.setPrompt("Scan SevisPass QR Code or Barcode")
+            integrator.setOrientationLocked(false)
+            integrator.setBeepEnabled(true)
+            integrator.setRequestCode(RC_SCAN_SEVISPASS)
+            integrator.initiateScan()
+        }
+
+        binding?.btnVerifySevisPass?.setOnClickListener {
+            val id = binding?.etSevisPassId?.text?.toString()?.trim() ?: ""
+            if (id.isEmpty()) {
+                android.widget.Toast.makeText(this, "Please enter or scan a SevisPass ID", android.widget.Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            binding?.tvSevisPassStatusBadge?.visibility = View.VISIBLE
+            binding?.tvSevisPassStatusBadge?.text = "Verifying with DICT Registry..."
+            binding?.tvSevisPassStatusBadge?.setBackgroundColor(android.graphics.Color.YELLOW)
+            binding?.tvSevisPassStatusBadge?.setTextColor(android.graphics.Color.BLACK)
+
+            launch(Dispatchers.IO) {
+                val fName = binding?.etGivenName?.text?.toString()?.trim() ?: ""
+                val lName = binding?.etLastName?.text?.toString()?.trim() ?: ""
+                val dob = binding?.etDateOfBirth?.text?.toString()?.trim() ?: ""
+                val gender = if (binding?.etGender?.text?.toString()?.startsWith("F", ignoreCase = true) == true) "F" else "M"
+                val res = com.pngelectoral.datasync.SyncV2Manager.verifySevisPassAsync(
+                    sevisPassId = id,
+                    firstName = fName,
+                    lastName = lName,
+                    dob = dob,
+                    gender = gender
+                )
+                withContext(Dispatchers.Main) {
+                    if (res.status == true && res.data?.status == "Verified") {
+                        sevisPassVerificationStatus = "Verified"
+                        binding?.tvSevisPassStatusBadge?.text = "Status: Verified (PNG DICT ID)"
+                        binding?.tvSevisPassStatusBadge?.setBackgroundColor(android.graphics.Color.GREEN)
+                        binding?.tvSevisPassStatusBadge?.setTextColor(android.graphics.Color.WHITE)
+                    } else if (res.status == true && res.data?.status == "Mismatch") {
+                        sevisPassVerificationStatus = "Mismatch"
+                        binding?.tvSevisPassStatusBadge?.text = "Status: Mismatch (${res.data?.mismatches?.firstOrNull() ?: "Discrepancy"})"
+                        binding?.tvSevisPassStatusBadge?.setBackgroundColor(android.graphics.Color.RED)
+                        binding?.tvSevisPassStatusBadge?.setTextColor(android.graphics.Color.WHITE)
+                    } else if (res.status == true && res.data?.status == "NotFound") {
+                        sevisPassVerificationStatus = "NotFound"
+                        binding?.tvSevisPassStatusBadge?.text = "Status: Not Found"
+                        binding?.tvSevisPassStatusBadge?.setBackgroundColor(android.graphics.Color.RED)
+                        binding?.tvSevisPassStatusBadge?.setTextColor(android.graphics.Color.WHITE)
+                    } else {
+                        sevisPassVerificationStatus = "Pending"
+                        binding?.tvSevisPassStatusBadge?.text = "Status: Pending (Offline)"
+                        binding?.tvSevisPassStatusBadge?.setBackgroundColor(android.graphics.Color.DKGRAY)
+                        binding?.tvSevisPassStatusBadge?.setTextColor(android.graphics.Color.WHITE)
+                    }
+                }
+            }
+        }
+
         binding?.etClan?.setOnClickListener {
             launch(Dispatchers.Main) {
                 val result: List<ClanListData>? = withContext(Dispatchers.IO) {
@@ -1300,6 +1362,8 @@ class NewEnrolmentFormActivity : BaseActivity(), CoroutineScope {
             super.onActivityResult(requestCode, resultCode, data)
         }
     }
+
+
 
     companion object {
         const val RC_SCAN_SEVISPASS = 49374

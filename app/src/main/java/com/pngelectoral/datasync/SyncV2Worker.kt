@@ -139,31 +139,41 @@ class SyncV2Worker(
                         "Uploading image $imgCount of ${votersWithImages.size}..."
                     )
 
+                    var allImagesUploaded = true
+
                     // Profile Image
                     if (!voter.electorProfileImage.isNullOrEmpty()) {
-                        SyncV2Manager.uploadVoterImageAsync(
+                        val profRes = SyncV2Manager.uploadVoterImageAsync(
                             context = appContext,
                             electorId = voter.electorId,
                             uploadId = voter.uploadId ?: "",
                             imageType = "profile",
                             imagePath = voter.electorProfileImage
                         )
+                        if (profRes.status != true) {
+                            allImagesUploaded = false
+                        }
                     }
 
                     // Form Image
                     if (!voter.electorFormImage.isNullOrEmpty()) {
-                        SyncV2Manager.uploadVoterImageAsync(
+                        val formRes = SyncV2Manager.uploadVoterImageAsync(
                             context = appContext,
                             electorId = voter.electorId,
                             uploadId = voter.uploadId ?: "",
                             imageType = "form",
                             imagePath = voter.electorFormImage
                         )
+                        if (formRes.status != true) {
+                            allImagesUploaded = false
+                        }
                     }
 
-                    // Mark image as uploaded
-                    voter.isImageUploaded = 1
-                    db.update(voter)
+                    // Mark image as uploaded ONLY if successful
+                    if (allImagesUploaded) {
+                        voter.isImageUploaded = 1
+                        db.update(voter)
+                    }
                 }
             }
 

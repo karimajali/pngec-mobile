@@ -108,9 +108,13 @@ class SharedPreferences implements PreferenceProvider {
     @Override
     public <T> T getObject(String key, Class<T> object) {
         if (containsKey(key)) {
-            String objectString = sharedPreferences.getString(key, null);
-            if (objectString != null) {
-                return new Gson().fromJson(objectString, object);
+            try {
+                String objectString = sharedPreferences.getString(key, null);
+                if (objectString != null) {
+                    return new Gson().fromJson(objectString, object);
+                }
+            } catch (Exception e) {
+                return null;
             }
         }
         return null;
@@ -126,20 +130,24 @@ class SharedPreferences implements PreferenceProvider {
     public <T> List<T> getObjectsList(String key, Class<T> classType) {
 
         if (containsKey(key)) {
-            String objectString = sharedPreferences.getString(key, null);
-            if (objectString != null) {
+            try {
+                String objectString = sharedPreferences.getString(key, null);
+                if (objectString != null) {
 
-                ArrayList<T> t = new Gson().fromJson(objectString, new TypeToken<List<T>>() {
-                }.getType());
+                    ArrayList<T> t = new Gson().fromJson(objectString, new TypeToken<List<T>>() {
+                    }.getType());
 
-                List<T> finalList = new ArrayList<>();
+                    List<T> finalList = new ArrayList<>();
 
-                for (int i = 0; i < t.size(); i++) {
-                    String s = String.valueOf(t.get(i));
-                    finalList.add(new Gson().fromJson(s, classType));
+                    for (int i = 0; i < t.size(); i++) {
+                        String s = String.valueOf(t.get(i));
+                        finalList.add(new Gson().fromJson(s, classType));
+                    }
+
+                    return finalList;
                 }
-
-                return finalList;
+            } catch (Exception e) {
+                return null;
             }
         }
 

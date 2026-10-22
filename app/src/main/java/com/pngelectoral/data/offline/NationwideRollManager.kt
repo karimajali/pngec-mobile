@@ -60,8 +60,8 @@ object NationwideRollManager {
     fun verifyChecksum(dbFile: File): Boolean {
         val checksumFile = File("${dbFile.absolutePath}.sha256")
         if (!checksumFile.exists() || !checksumFile.isFile) {
-            // Checksum file not present; consider valid if DB file size is non-trivial
-            return dbFile.length() > 1024
+            // Must have a valid .sha256 companion file
+            return false
         }
 
         return try {
@@ -96,6 +96,13 @@ object NationwideRollManager {
         limit: Int = 50
     ): List<OfflineRollVoter> {
         val dbFile = findNationwideRollFile(context) ?: return emptyList()
+
+        // Enforce SHA-256 integrity verification before opening database
+        if (!verifyChecksum(dbFile)) {
+            android.util.Log.e("NationwideRoll", "Cryptographic SHA-256 verification failed for offline database: ${dbFile.name}")
+            return emptyList()
+        }
+
         val results = mutableListOf<OfflineRollVoter>()
 
         var db: SQLiteDatabase? = null
@@ -115,7 +122,7 @@ object NationwideRollManager {
                     val trimmed = query.trim()
                     "SELECT electorId, voterName, lName, fName, gender, dob, provinceId, districtId, llgId, wardId, locationId, status, sevisPassId, sevisPassStatus " +
                             "FROM voterslist WHERE voterName LIKE ? OR lName LIKE ? OR fName LIKE ? LIMIT $limit" to
-                            arrayOf("%$trimmed%", "%$trimmed%", "%$trimmed%")
+                            arrayOf("$trimmed%", "$trimmed%", "$trimmed%")
                 }
             }
 
