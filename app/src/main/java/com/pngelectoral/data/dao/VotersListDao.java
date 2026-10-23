@@ -56,8 +56,11 @@ public interface VotersListDao {
     @Query("SELECT * FROM voterslist WHERE isSyncToServer = 0 And isDataUploaded = 0 And wardId=:wardId And locationId=:locationId")
     List<VotersList> getDPOLOCATIONWiseUpdatedVotersListToSync(String wardId, String locationId);
 
-    @Query("SELECT * FROM voterslist WHERE isSyncToServer = 0 And isImageUploaded = 0")
+    @Query("SELECT * FROM voterslist WHERE isImageUploaded = 0 AND ((electorProfileImage IS NOT NULL AND electorProfileImage != '') OR (electorFormImage IS NOT NULL AND electorFormImage != ''))")
     List<VotersList> getUpdatedImageOnlyVotersList();
+
+    @Query("UPDATE voterslist SET isImageUploaded = 1 WHERE (electorId IS NOT NULL AND electorId = :electorId) OR (uploadId IS NOT NULL AND uploadId != '' AND uploadId = :uploadId)")
+    void markImageAsUploaded(Long electorId, String uploadId);
 
     @Query("SELECT * FROM voterslist WHERE isSyncToServer = 0 And isDataUploaded = 0 And isImageUploaded = 0")
     List<VotersList> getUpdatedVotersList();

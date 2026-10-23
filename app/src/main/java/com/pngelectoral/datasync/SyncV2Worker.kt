@@ -173,6 +173,7 @@ class SyncV2Worker(
                     if (allImagesUploaded) {
                         voter.isImageUploaded = 1
                         db.update(voter)
+                        db.markImageAsUploaded(voter.electorId, voter.uploadId ?: "")
                     }
                 }
             }

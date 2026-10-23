@@ -9,6 +9,7 @@
 
     <!-- Explicitly permit local subnet and emulator domains -->
     <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">192.168.1.18</domain>
         <domain includeSubdomains="true">192.168.1.31</domain>
         <domain includeSubdomains="true">192.168.1.20</domain>
         <domain includeSubdomains="true">192.168.1.65</domain>

@@ -34,20 +34,20 @@ android {
         dev {
             archivesBaseName = "PNGEC" + "$defaultConfig.versionName" + "($defaultConfig.versionCode)_" + getDate()
             dimension 'default'
-            buildConfigField "String", "BASE_URL", "\"http://192.168.1.31:57712/api/mobile/\""
+            buildConfigField "String", "BASE_URL", "\"http://192.168.1.18:57712/api/mobile/\""
         }
 
         training {
             archivesBaseName = "PNGEC" + "$defaultConfig.versionName" + "($defaultConfig.versionCode)_" + getDate()
             dimension 'default'
-            buildConfigField "String", "BASE_URL", "\"http://192.168.1.31:57712/api/mobile/\""
+            buildConfigField "String", "BASE_URL", "\"http://192.168.1.18:57712/api/mobile/\""
         }
 
 
         production {
             archivesBaseName = "PNGEC" + "$defaultConfig.versionName" + "($defaultConfig.versionCode)_" + getDate()
             dimension 'default'
-            buildConfigField "String", "BASE_URL", "\"http://192.168.1.31:57712/api/mobile/\""
+            buildConfigField "String", "BASE_URL", "\"http://192.168.1.18:57712/api/mobile/\""
         }
     }
 
