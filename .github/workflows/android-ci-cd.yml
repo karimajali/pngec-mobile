@@ -1,0 +1,44 @@
+name: PNGEC Mobile Android CI/CD
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build-apks:
+    name: Build Android APKs (Dev & Production)
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+
+    - name: Grant Execute Permission to Gradlew
+      run: chmod +x gradlew
+
+    - name: Build Dev Debug APK
+      run: ./gradlew assembleDevDebug --stacktrace
+
+    - name: Build Production Debug APK
+      run: ./gradlew assembleProductionDebug --stacktrace
+
+    - name: Upload Dev APK Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: pngec-dev-debug-apk
+        path: app/build/outputs/apk/dev/debug/*.apk
+
+    - name: Upload Production APK Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: pngec-production-debug-apk
+        path: app/build/outputs/apk/production/debug/*.apk
